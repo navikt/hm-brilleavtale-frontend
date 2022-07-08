@@ -1,5 +1,21 @@
-import { RequestHandler, setupWorker } from 'msw'
+import { RequestHandler, rest, setupWorker } from 'msw'
+import { HentVirksomheterResponse, HentVirksomhetResponse, Virksomhet } from '../types'
 
-const handlers: RequestHandler[] = []
+const virksomheter: Record<string, Virksomhet> = {
+  '123456789': {
+    orgnr: '123456789',
+    navn: 'Optikerkjeden AS',
+    signert: false,
+  },
+}
+
+const handlers: RequestHandler[] = [
+  rest.get<{}, {}, HentVirksomheterResponse>('/api/virksomheter', (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(Object.values(virksomheter)))
+  }),
+  rest.get<{}, { orgnr: string }, HentVirksomhetResponse>('/api/virksomheter/:orgnr', (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
+  }),
+]
 
 export const worker = setupWorker(...handlers)
