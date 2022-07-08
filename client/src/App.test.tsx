@@ -10,6 +10,5 @@ describe('App', () => {
         <App />
       </BrowserRouter>
     )
-    expect(screen.getByText('NAV Brilleavtale')).toBeDefined()
   })
 })
