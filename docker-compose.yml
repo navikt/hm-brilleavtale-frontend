@@ -1,0 +1,7 @@
+version: "3"
+services:
+  hm-brilleavtale-frontend:
+    build: .
+    image: "hm-brilleavtale-frontend"
+    ports:
+      - "5000:5000"
