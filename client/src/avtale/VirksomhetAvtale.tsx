@@ -26,7 +26,7 @@ export function VirksomhetAvtale(props: VirksomhetAvtaleProps) {
         Opprett avtale for {virksomhet.navn}
       </Heading>
       <BodyLong spacing>
-        <Link href="/brille.pdf" target="_blank">
+        <Link href="/Brille.pdf" target="_blank">
           Åpne avtalen
         </Link>
       </BodyLong>
