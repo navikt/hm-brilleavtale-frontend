@@ -1,5 +1,5 @@
-import { RequestHandler, setupWorker } from "msw";
+import { RequestHandler, setupWorker } from 'msw'
 
-const handlers: RequestHandler[] = [];
+const handlers: RequestHandler[] = []
 
-export const worker = setupWorker(...handlers);
+export const worker = setupWorker(...handlers)
