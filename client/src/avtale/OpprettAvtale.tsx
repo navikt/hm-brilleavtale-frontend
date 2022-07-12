@@ -5,9 +5,9 @@ import { Avstand } from '../components/Avstand'
 import { HentVirksomhetResponse } from '../types'
 import { useGet } from '../useGet'
 
-export interface VirksomhetAvtaleProps {}
+export interface OpprettAvtaleProps {}
 
-export function VirksomhetAvtale(props: VirksomhetAvtaleProps) {
+export function OpprettAvtale(props: OpprettAvtaleProps) {
   const {} = props
   const { orgnr } = useParams<{ orgnr: string }>()
   const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/virksomheter/${orgnr}`)

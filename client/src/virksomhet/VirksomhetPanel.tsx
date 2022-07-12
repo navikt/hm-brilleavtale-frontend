@@ -14,7 +14,7 @@ export function VirksomhetPanel(props: VirksomhetPanelProps) {
         {virksomhet.navn}
       </Heading>
       <BodyLong spacing>Organisasjonsnummer: {virksomhet.orgnr}</BodyLong>
-      <Button as={Link} to={`/avtale/${virksomhet.orgnr}`} variant="secondary">
+      <Button as={Link} to={`/opprett-avtale/${virksomhet.orgnr}`} variant="secondary">
         Opprett avtale
       </Button>
     </Panel>
