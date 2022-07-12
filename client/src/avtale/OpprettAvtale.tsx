@@ -10,7 +10,7 @@ export interface OpprettAvtaleProps {}
 export function OpprettAvtale(props: OpprettAvtaleProps) {
   const {} = props
   const { orgnr } = useParams<{ orgnr: string }>()
-  const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/virksomheter/${orgnr}`)
+  const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/avtale/virksomheter/${orgnr}`)
   const { register, control, handleSubmit } = useForm<{ kontonr: string; lest: boolean }>({
     defaultValues: {
       kontonr: '',
