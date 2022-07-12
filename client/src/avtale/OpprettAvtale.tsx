@@ -1,9 +1,10 @@
 import { BodyLong, Button, ConfirmationPanel, Heading, Link, TextField } from '@navikt/ds-react'
 import { Controller, useForm } from 'react-hook-form'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Avstand } from '../components/Avstand'
-import { HentVirksomhetResponse } from '../types'
+import { HentVirksomhetResponse, OpprettAvtaleRequest } from '../types'
 import { useGet } from '../useGet'
+import { usePost } from '../usePost'
 
 export interface OpprettAvtaleProps {}
 
@@ -17,6 +18,8 @@ export function OpprettAvtale(props: OpprettAvtaleProps) {
       lest: false,
     },
   })
+  const { post: opprettAvtale } = usePost<OpprettAvtaleRequest, void>('/avtale/virksomheter')
+  const navigate = useNavigate()
   if (!virksomhet) {
     return null
   }
@@ -32,7 +35,17 @@ export function OpprettAvtale(props: OpprettAvtaleProps) {
       </BodyLong>
       <form
         onSubmit={handleSubmit(async (data) => {
-          console.log({ orgnr: virksomhet.orgnr, ...data })
+          const avtale = {
+            orgnr: virksomhet.orgnr,
+            kontonr: data.kontonr,
+          }
+          await opprettAvtale(avtale)
+          return navigate('/opprett-avtale/kvittering', {
+            state: {
+              virksomhet,
+              avtale,
+            },
+          })
         })}
       >
         <TextField label="Kontonummer" {...register('kontonr')} />

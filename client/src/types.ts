@@ -20,3 +20,8 @@ export interface Virksomhet {
 export interface HentVirksomheterResponse extends Array<Virksomhet> {}
 
 export interface HentVirksomhetResponse extends Virksomhet {}
+
+export interface OpprettAvtaleRequest {
+  orgnr: string
+  kontonr: string
+}

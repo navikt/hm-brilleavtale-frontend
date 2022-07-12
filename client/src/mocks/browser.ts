@@ -1,5 +1,5 @@
 import { RequestHandler, rest, setupWorker } from 'msw'
-import { HentVirksomheterResponse, HentVirksomhetResponse, Virksomhet } from '../types'
+import { HentVirksomheterResponse, HentVirksomhetResponse, OpprettAvtaleRequest, Virksomhet } from '../types'
 
 const virksomheter: Record<string, Virksomhet> = {
   '123456789': {
@@ -15,6 +15,9 @@ const handlers: RequestHandler[] = [
   }),
   rest.get<{}, { orgnr: string }, HentVirksomhetResponse>('/api/avtale/virksomheter/:orgnr', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
+  }),
+  rest.post<OpprettAvtaleRequest, {}, {}>('/api/avtale/virksomheter', (req, res, ctx) => {
+    return res(ctx.status(201))
   }),
 ]
 
