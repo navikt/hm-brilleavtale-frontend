@@ -1,4 +1,4 @@
-import { Heading } from '@navikt/ds-react'
+import { Alert, BodyLong, Heading } from '@navikt/ds-react'
 import styled from 'styled-components'
 import { AvtalePanel } from '../avtale/AvtalePanel'
 import { Avstand } from '../components/Avstand'
@@ -6,40 +6,48 @@ import { HentVirksomheterResponse } from '../types'
 import { useGet } from '../useGet'
 import { VirksomhetPanel } from './VirksomhetPanel'
 
-export interface VirksomheterProps {}
-
-export function Virksomheter(props: VirksomheterProps) {
+export function Virksomheter() {
   const { data: virksomheter } = useGet<HentVirksomheterResponse>('/avtale/virksomheter')
 
   if (!virksomheter) {
     return null
   }
 
-  const ikkeSignerteVirksomheter = virksomheter.filter((virksomhet) => !virksomhet.harNavAvtale)
-  const signerteVirksomheter = virksomheter.filter((virksomhet) => virksomhet.harNavAvtale)
+  const virksomheterUtenAvtale = virksomheter.filter((virksomhet) => !virksomhet.harNavAvtale)
+  const virksomheterMedAvtale = virksomheter.filter((virksomhet) => virksomhet.harNavAvtale)
+
+  if (virksomheter && !virksomheter.length) {
+    return (
+      <main>
+        <Alert variant="info">
+          <BodyLong>Vi fant ingen virksomheter i Altinn som du er hovedadministrator for.</BodyLong>
+        </Alert>
+      </main>
+    )
+  }
 
   return (
     <main>
-      {ikkeSignerteVirksomheter.length > 0 && (
+      {virksomheterUtenAvtale.length > 0 && (
         <>
-          <Heading level="1" size="large" spacing>
-            Virksomheter til signering
+          <Heading level="2" size="medium" spacing>
+            Virksomheter uten avtale
           </Heading>
           <Kolonne>
-            {ikkeSignerteVirksomheter.map((virksomhet) => (
+            {virksomheterUtenAvtale.map((virksomhet) => (
               <VirksomhetPanel key={virksomhet.orgnr} virksomhet={virksomhet} />
             ))}
           </Kolonne>
         </>
       )}
-      {signerteVirksomheter.length > 0 && (
+      {virksomheterMedAvtale.length > 0 && (
         <>
           <Avstand marginTop={10} />
-          <Heading level="1" size="large" spacing>
-            Virksomheter som er signert
+          <Heading level="2" size="medium" spacing>
+            Virksomheter med avtale
           </Heading>
           <Kolonne>
-            {signerteVirksomheter.map((virksomhet) => (
+            {virksomheterMedAvtale.map((virksomhet) => (
               <AvtalePanel key={virksomhet.orgnr} virksomhet={virksomhet} />
             ))}
           </Kolonne>

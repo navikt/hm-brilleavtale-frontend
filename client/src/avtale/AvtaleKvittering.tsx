@@ -14,7 +14,7 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
   }
   return (
     <main>
-      <Heading level="1" size="large" spacing>
+      <Heading level="2" size="medium" spacing>
         Kvittering for {virksomhet.navn}
       </Heading>
       <Alert variant="success">Avtale ble opprettet</Alert>

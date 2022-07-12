@@ -1,5 +1,8 @@
-import { BodyLong, Button, Heading, Panel } from '@navikt/ds-react'
-import { Link } from 'react-router-dom'
+import { LinkPanel } from '@navikt/ds-react'
+import { useNavigate } from 'react-router-dom'
+import { Data } from '../components/Data'
+import { Datum } from '../components/Datum'
+import { Organisasjonsnummer } from '../components/Organisasjonsnummer'
 import { Virksomhet } from '../types'
 
 export interface VirksomhetPanelProps {
@@ -8,15 +11,21 @@ export interface VirksomhetPanelProps {
 
 export function VirksomhetPanel(props: VirksomhetPanelProps) {
   const { virksomhet } = props
+  const navigate = useNavigate()
   return (
-    <Panel border>
-      <Heading level="2" size="medium" spacing>
-        {virksomhet.navn}
-      </Heading>
-      <BodyLong spacing>Organisasjonsnummer: {virksomhet.orgnr}</BodyLong>
-      <Button as={Link} to={`/opprett-avtale/${virksomhet.orgnr}`} variant="secondary">
-        Opprett avtale
-      </Button>
-    </Panel>
+    <LinkPanel
+      onClick={() => {
+        navigate(`/opprett-avtale/${virksomhet.orgnr}`)
+      }}
+    >
+      <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
+      <LinkPanel.Description>
+        <Data>
+          <Datum label="Organisasjonsnummer">
+            <Organisasjonsnummer verdi={virksomhet.orgnr} />
+          </Datum>
+        </Data>
+      </LinkPanel.Description>
+    </LinkPanel>
   )
 }

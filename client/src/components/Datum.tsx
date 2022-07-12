@@ -12,7 +12,7 @@ export function Datum(props: DatumProps) {
   return (
     <>
       <dt>
-        <Label>{label}</Label>
+        <Label as="span">{label}</Label>
       </dt>
       <dd>{children}</dd>
     </>

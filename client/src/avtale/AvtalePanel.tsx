@@ -1,6 +1,10 @@
-import { Heading, Panel } from '@navikt/ds-react'
+import { LinkPanel } from '@navikt/ds-react'
+import { useNavigate } from 'react-router-dom'
 import { Data } from '../components/Data'
+import { Dato } from '../components/Dato'
 import { Datum } from '../components/Datum'
+import { Kontonummer } from '../components/Kontonummer'
+import { Organisasjonsnummer } from '../components/Organisasjonsnummer'
 import { Virksomhet } from '../types'
 
 export interface AvtalePanelProps {
@@ -9,24 +13,27 @@ export interface AvtalePanelProps {
 
 export function AvtalePanel(props: AvtalePanelProps) {
   const { virksomhet } = props
+  const navigate = useNavigate()
   return (
-    <Panel border>
-      <Heading level="2" size="medium" spacing>
-        {virksomhet.navn}
-      </Heading>
-      <Data>
-        <Datum label="Organisasjonsnummer">{virksomhet.orgnr}</Datum>
-        <Datum label="Kontonummer">{virksomhet.kontonr}</Datum>
-        {virksomhet.opprettet && (
-          <Datum label="Dato opprettet">{formatter.format(new Date(virksomhet.opprettet))}</Datum>
-        )}
-      </Data>
-    </Panel>
+    <LinkPanel
+      onClick={() => {
+        navigate(`/rediger-avtale/${virksomhet.orgnr}`)
+      }}
+    >
+      <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
+      <LinkPanel.Description>
+        <Data>
+          <Datum label="Organisasjonsnummer">
+            <Organisasjonsnummer verdi={virksomhet.orgnr} />
+          </Datum>
+          <Datum label="Kontonummer">
+            <Kontonummer verdi={virksomhet.kontonr} />
+          </Datum>
+          <Datum label="Dato opprettet">
+            <Dato verdi={virksomhet.opprettet} />
+          </Datum>
+        </Data>
+      </LinkPanel.Description>
+    </LinkPanel>
   )
 }
-
-const formatter = new Intl.DateTimeFormat('nb', {
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
-})

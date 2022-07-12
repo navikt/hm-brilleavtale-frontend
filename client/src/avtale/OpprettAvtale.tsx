@@ -2,7 +2,9 @@ import { BodyLong, Button, ConfirmationPanel, Heading, Link, TextField } from '@
 import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
+import styled from 'styled-components'
 import { Avstand } from '../components/Avstand'
+import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
 import { HentVirksomhetResponse, OpprettAvtaleRequest } from '../types'
 import { useGet } from '../useGet'
 import { usePost } from '../usePost'
@@ -13,7 +15,12 @@ export function OpprettAvtale(props: OpprettAvtaleProps) {
   const {} = props
   const { orgnr } = useParams<{ orgnr: string }>()
   const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/avtale/virksomheter/${orgnr}`)
-  const { register, control, handleSubmit } = useForm<{ kontonr: string; lest: boolean }>({
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<{ kontonr: string; lest: boolean }>({
     defaultValues: {
       kontonr: '',
       lest: false,
@@ -33,7 +40,7 @@ export function OpprettAvtale(props: OpprettAvtaleProps) {
   }
   return (
     <main>
-      <Heading level="1" size="large" spacing>
+      <Heading level="2" size="medium" spacing>
         Opprett avtale for {virksomhet.navn}
       </Heading>
       <BodyLong spacing>
@@ -42,26 +49,71 @@ export function OpprettAvtale(props: OpprettAvtaleProps) {
         </Link>
       </BodyLong>
       <form
-        onSubmit={handleSubmit(async (data) => {
-          await opprettAvtale({
-            orgnr: virksomhet.orgnr,
-            navn: virksomhet.navn,
-            kontonr: data.kontonr,
-          })
-        })}
+        onSubmit={handleSubmit(
+          async (data) => {
+            await opprettAvtale({
+              orgnr: virksomhet.orgnr,
+              navn: virksomhet.navn,
+              kontonr: removeWhitespaceAndDot(data.kontonr),
+            })
+          },
+          (errors) => console.log(errors)
+        )}
       >
-        <TextField label="Kontonummer" {...register('kontonr')} />
+        <KontonummerTextField
+          label="Kontonummer"
+          error={errors.kontonr?.message}
+          {...register('kontonr', {
+            validate(kontonummer) {
+              return validerKontonummer(kontonummer) ? true : 'Ugyldig kontonummer'
+            },
+          })}
+        />
         <Avstand marginTop={5} marginBottom={5}>
           <Controller
             control={control}
             name="lest"
+            rules={{
+              validate(value) {
+                return value || 'Du må huke av for å gå videre'
+              },
+            }}
             render={({ field }) => (
-              <ConfirmationPanel label="Jeg har lest og forstått avtalen" checked={field.value} {...field} />
+              <ConfirmationPanel
+                error={errors.lest?.message}
+                label="Jeg har lest og forstått avtalen"
+                checked={field.value}
+                {...field}
+              />
             )}
           />
         </Avstand>
-        <Button type="submit">Opprett avtale</Button>
+        <Knapper>
+          <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
+            Opprett avtale
+          </Button>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => {
+              navigate('/')
+            }}
+          >
+            Avbryt
+          </Button>
+        </Knapper>
       </form>
     </main>
   )
 }
+
+const Knapper = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--navds-spacing-3);
+  justify-content: left;
+`
+
+const KontonummerTextField = styled(TextField)`
+  max-width: 330px;
+`
