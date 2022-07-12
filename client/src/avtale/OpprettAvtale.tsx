@@ -1,4 +1,5 @@
 import { BodyLong, Button, ConfirmationPanel, Heading, Link, TextField } from '@navikt/ds-react'
+import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Avstand } from '../components/Avstand'
@@ -18,8 +19,15 @@ export function OpprettAvtale(props: OpprettAvtaleProps) {
       lest: false,
     },
   })
-  const { post: opprettAvtale } = usePost<OpprettAvtaleRequest, void>('/avtale/virksomheter')
+  const { post: opprettAvtale, data: avtale } = usePost<OpprettAvtaleRequest, void>('/avtale/virksomheter')
   const navigate = useNavigate()
+  useEffect(() => {
+    if (avtale) {
+      navigate('/opprett-avtale/kvittering', {
+        state: avtale,
+      })
+    }
+  }, [avtale])
   if (!virksomhet) {
     return null
   }
@@ -35,17 +43,10 @@ export function OpprettAvtale(props: OpprettAvtaleProps) {
       </BodyLong>
       <form
         onSubmit={handleSubmit(async (data) => {
-          const avtale = {
+          await opprettAvtale({
             orgnr: virksomhet.orgnr,
             navn: virksomhet.navn,
             kontonr: data.kontonr,
-          }
-          await opprettAvtale(avtale)
-          return navigate('/opprett-avtale/kvittering', {
-            state: {
-              virksomhet,
-              avtale,
-            },
           })
         })}
       >

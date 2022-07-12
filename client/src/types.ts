@@ -15,6 +15,7 @@ export interface Virksomhet {
   harNavAvtale: boolean
   kontonr?: string
   avtaleVersjon?: string
+  opprettet?: string
 }
 
 export interface HentVirksomheterResponse extends Array<Virksomhet> {}
@@ -26,3 +27,5 @@ export interface OpprettAvtaleRequest {
   navn: string
   kontonr: string
 }
+
+export interface OpprettAvtaleResponse extends Virksomhet {}
