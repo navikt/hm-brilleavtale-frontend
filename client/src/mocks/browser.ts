@@ -5,15 +5,15 @@ const virksomheter: Record<string, Virksomhet> = {
   '123456789': {
     orgnr: '123456789',
     navn: 'Optikerkjeden AS',
-    signert: false,
+    harNavAvtale: false,
   },
 }
 
 const handlers: RequestHandler[] = [
-  rest.get<{}, {}, HentVirksomheterResponse>('/api/virksomheter', (req, res, ctx) => {
+  rest.get<{}, {}, HentVirksomheterResponse>('/api/avtale/virksomheter', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(Object.values(virksomheter)))
   }),
-  rest.get<{}, { orgnr: string }, HentVirksomhetResponse>('/api/virksomheter/:orgnr', (req, res, ctx) => {
+  rest.get<{}, { orgnr: string }, HentVirksomhetResponse>('/api/avtale/virksomheter/:orgnr', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
   }),
 ]

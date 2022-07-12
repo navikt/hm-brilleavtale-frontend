@@ -12,9 +12,9 @@ export interface Resultat<T> {
 export interface Virksomhet {
   orgnr: string
   navn: string
-  signert: boolean
+  harNavAvtale: boolean
   kontonr?: string
-  avtaledato?: string
+  avtaleVersjon?: string
 }
 
 export interface HentVirksomheterResponse extends Array<Virksomhet> {}

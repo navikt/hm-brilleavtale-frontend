@@ -6,14 +6,14 @@ import { VirksomhetPanel } from './VirksomhetPanel'
 export interface VirksomheterProps {}
 
 export function Virksomheter(props: VirksomheterProps) {
-  const { data: virksomheter } = useGet<HentVirksomheterResponse>('/virksomheter')
+  const { data: virksomheter } = useGet<HentVirksomheterResponse>('/avtale/virksomheter')
 
   if (!virksomheter) {
     return null
   }
 
-  const ikkeSignerteVirksomheter = virksomheter.filter((virksomhet) => !virksomhet.signert)
-  const signerteVirksomheter = virksomheter.filter((virksomhet) => virksomhet.signert)
+  const ikkeSignerteVirksomheter = virksomheter.filter((virksomhet) => !virksomhet.harNavAvtale)
+  const signerteVirksomheter = virksomheter.filter((virksomhet) => virksomhet.harNavAvtale)
 
   const {} = props
   return (
