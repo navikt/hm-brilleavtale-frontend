@@ -37,6 +37,7 @@ export function OpprettAvtale(props: OpprettAvtaleProps) {
         onSubmit={handleSubmit(async (data) => {
           const avtale = {
             orgnr: virksomhet.orgnr,
+            navn: virksomhet.navn,
             kontonr: data.kontonr,
           }
           await opprettAvtale(avtale)

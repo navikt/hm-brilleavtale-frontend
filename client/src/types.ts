@@ -23,5 +23,6 @@ export interface HentVirksomhetResponse extends Virksomhet {}
 
 export interface OpprettAvtaleRequest {
   orgnr: string
+  navn: string
   kontonr: string
 }
