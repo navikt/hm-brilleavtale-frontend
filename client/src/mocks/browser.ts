@@ -39,7 +39,6 @@ const virksomheter: Record<string, Virksomhet> = {
 const handlers: RequestHandler[] = [
   rest.get<{}, {}, HentVirksomheterResponse>('/api/avtale/virksomheter', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(Object.values(virksomheter)))
-    //return res(ctx.status(200), ctx.json([]))
   }),
   rest.get<{}, { orgnr: string }, HentVirksomhetResponse>('/api/avtale/virksomheter/:orgnr', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
