@@ -31,12 +31,12 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
         briller til barn.
       </BodyLong>
       <BodyLong spacing>
-        Optikere kan legge inn krav i løsningen etter at brillen er bestilt. Første gang optiker bruker løsningen vil
+        Optikeren kan legge inn krav i løsningen etter at brillen er bestilt. Første gang optikeren bruker løsningen vil
         hen inngå en avtale med NAV om bruk av løsningen.
       </BodyLong>
       <BodyLong spacing>
-        Stønaden utbetales fortløpende til firmaets kontonummer etter at kravet er registrert. Utbetaling vil skje
-        senest 30 dager etter at kravet er registrert.
+        Stønaden utbetales fortløpende til firmaets kontonummer etter at kravet er registrert. Utbetaling skjer senest
+        30 dager etter at kravet er registrert.
       </BodyLong>
       <AvtalePanel virksomhet={virksomhet} />
       <Avstand marginBottom={5} />
