@@ -40,9 +40,14 @@ export function OpprettAvtale() {
       <Heading level="2" size="medium" spacing>
         Opprett avtale for {virksomhet.navn}
       </Heading>
+      <BodyLong>
+        Her kan firmaet deres inngå avtale om direkte oppgjør av stønad til briller til barn. Vi ber deg lese grundig
+        gjennom avtaleteksten. Du inngår avtalen på vegne av ditt optikerfirma ved å krysse av i boksen og trykke på
+        inngå avtale.
+      </BodyLong>
       <BodyLong spacing>
-        <Link href="/Brille.pdf" target="_blank">
-          Åpne avtalen
+        <Link href="/brilleavtale.pdf" target="_blank">
+          Her er avtaleteksten signert av NAV
         </Link>
       </BodyLong>
       <form
@@ -78,7 +83,7 @@ export function OpprettAvtale() {
             render={({ field }) => (
               <ConfirmationPanel
                 error={errors.lest?.message}
-                label="Jeg har lest og forstått avtalen"
+                label="Jeg erklærer å ha satt meg inn i avtaletekstens vilkår og på vegne av optikerfirmaet å forplikte firmaet til vilkårene i avtale om direkte oppgjør om stønad til briller til barn."
                 checked={field.value}
                 {...field}
               />
