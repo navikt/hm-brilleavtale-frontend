@@ -1,6 +1,6 @@
-import { BodyLong, Button, ConfirmationPanel, Heading, Link, TextField } from '@navikt/ds-react'
+import { Button, Heading, TextField } from '@navikt/ds-react'
 import { useEffect } from 'react'
-import { Controller, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { Avstand } from '../components/Avstand'
