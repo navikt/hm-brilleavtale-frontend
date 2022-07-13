@@ -1,5 +1,6 @@
-import { BodyLong, Button, ConfirmationPanel, Heading, Link, TextField } from '@navikt/ds-react'
-import { useEffect } from 'react'
+import { BodyLong, Button, ConfirmationPanel, Heading, Link, Panel, TextField } from '@navikt/ds-react'
+import PDFObject from 'pdfobject'
+import { useEffect, useRef } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
@@ -45,6 +46,8 @@ export function OpprettAvtale() {
         gjennom avtaleteksten. Du inngår avtalen på vegne av ditt optikerfirma ved å krysse av i boksen og trykke på
         inngå avtale.
       </BodyLong>
+
+      <EmbeddedPDF href="/brilleavtale.pdf#toolbar=0" />
       <BodyLong spacing>
         <Link href="/brilleavtale.pdf" target="_blank">
           Her er avtaleteksten signert av NAV
@@ -118,4 +121,18 @@ const Knapper = styled.div`
 
 const KontonummerTextField = styled(TextField)`
   max-width: 330px;
+`
+
+function EmbeddedPDF({ href }: { href: string }) {
+  const embed = useRef(null)
+  useEffect(() => {
+    PDFObject.embed(href, embed.current, {})
+  }, [href])
+  return <Content ref={embed} border></Content>
+}
+
+const Content = styled(Panel)`
+  height: 90vh;
+  padding: 0;
+  margin: var(--navds-spacing-5) 0;
 `
