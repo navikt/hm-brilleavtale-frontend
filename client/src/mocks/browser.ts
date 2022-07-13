@@ -4,6 +4,8 @@ import {
   HentVirksomhetResponse,
   OpprettAvtaleRequest,
   OpprettAvtaleResponse,
+  RedigerAvtaleRequest,
+  RedigerAvtaleResponse,
   Virksomhet,
 } from '../types'
 
@@ -45,6 +47,12 @@ const handlers: RequestHandler[] = [
   rest.post<OpprettAvtaleRequest, {}, OpprettAvtaleResponse>('/api/avtale/virksomheter', (req, res, ctx) => {
     return res(ctx.status(201), ctx.json(virksomheter['123456789']))
   }),
+  rest.put<RedigerAvtaleRequest, { orgnr: string }, RedigerAvtaleResponse>(
+    '/api/avtale/virksomheter/:orgnr',
+    (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
+    }
+  ),
 ]
 
 export const worker = setupWorker(...handlers)

@@ -21,10 +21,10 @@ export const http = {
       return Promise.reject(HttpError.wrap(err))
     }
   },
-  async post<B, T>(url: string, body: B): Promise<Resultat<T>> {
+  async request<B, T>(url: string, body: B, method: string): Promise<Resultat<T>> {
     try {
       const response = await fetch(BASE_API_URL + url, {
-        method: 'post',
+        method,
         cache: 'no-store',
         headers: {
           Accept: 'application/json',

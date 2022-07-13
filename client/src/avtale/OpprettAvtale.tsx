@@ -9,10 +9,7 @@ import { HentVirksomhetResponse, OpprettAvtaleRequest } from '../types'
 import { useGet } from '../useGet'
 import { usePost } from '../usePost'
 
-export interface OpprettAvtaleProps {}
-
-export function OpprettAvtale(props: OpprettAvtaleProps) {
-  const {} = props
+export function OpprettAvtale() {
   const { orgnr } = useParams<{ orgnr: string }>()
   const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/avtale/virksomheter/${orgnr}`)
   const {

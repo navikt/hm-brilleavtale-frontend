@@ -29,3 +29,10 @@ export interface OpprettAvtaleRequest {
 }
 
 export interface OpprettAvtaleResponse extends Virksomhet {}
+
+export interface RedigerAvtaleRequest {
+  navn: string
+  kontonr: string
+}
+
+export interface RedigerAvtaleResponse extends Virksomhet {}
