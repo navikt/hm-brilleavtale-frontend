@@ -23,7 +23,7 @@ export function App() {
       <header>
         <Banner>
           <Heading level="1" size="large">
-            Avtale om direkteoppgjør for barnebriller
+            Avtale om direkte oppgjør av briller for barn
           </Heading>
         </Banner>
       </header>
