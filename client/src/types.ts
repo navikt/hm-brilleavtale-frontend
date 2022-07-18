@@ -12,10 +12,11 @@ export interface Resultat<T> {
 export interface Virksomhet {
   orgnr: string
   navn: string
-  harNavAvtale: boolean
+  aktiv: boolean
   kontonr?: string
-  avtaleVersjon?: string
+  avtaleversjon?: string
   opprettet?: string
+  oppdatert?: string
 }
 
 export interface HentVirksomheterResponse extends Array<Virksomhet> {}

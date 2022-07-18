@@ -13,26 +13,26 @@ const virksomheter: Record<string, Virksomhet> = {
   '123456789': {
     orgnr: '123456789',
     navn: 'Optikerkjeden AS',
-    harNavAvtale: true,
+    aktiv: true,
     kontonr: '12341112345',
     opprettet: '2022-07-12T12:07:08.487356',
   },
   '987654321': {
-    orgnr: '987654321',
-    navn: 'Sterke Briller AS',
-    harNavAvtale: true,
-    kontonr: '12341112345',
-    opprettet: '2022-07-12T12:07:08.487356',
+    orgnr:"987654321"',
+    navn:"Sterke Briller AS"',
+    aktiv: true,
+    kontonr:"12341112345"',
+    opprettet:"2022-07-12T12:07:08.487356",
   },
   '112233445': {
-    orgnr: '112233445',
-    navn: 'Bedre Briller AS',
-    harNavAvtale: false,
+    orgnr: "112233445",
+    navn: "Bedre Briller AS",
+    aktiv: false
   },
   '544332211': {
-    orgnr: '544332211',
-    navn: 'Brillesjø AS',
-    harNavAvtale: false,
+    orgnr: "544332211",
+    navn: "Brillesjø AS",
+    aktiv: false
   },
 }
 

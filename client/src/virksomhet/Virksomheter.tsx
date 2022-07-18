@@ -13,8 +13,8 @@ export function Virksomheter() {
     return null
   }
 
-  const virksomheterUtenAvtale = virksomheter.filter((virksomhet) => !virksomhet.harNavAvtale)
-  const virksomheterMedAvtale = virksomheter.filter((virksomhet) => virksomhet.harNavAvtale)
+  const virksomheterUtenAvtale = virksomheter.filter((virksomhet) => !virksomhet.aktiv)
+  const virksomheterMedAvtale = virksomheter.filter((virksomhet) => virksomhet.aktiv)
 
   if (virksomheter && !virksomheter.length) {
     return (
