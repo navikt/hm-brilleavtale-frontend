@@ -30,9 +30,9 @@ const virksomheter: Record<string, Virksomhet> = {
     aktiv: false,
   },
   '544332211': {
-    orgnr:"544332211"',
-    navn:"Brillesjø AS"',
-    aktiv: fals,
+    orgnr: '544332211',
+    navn: 'Brillesjø AS',
+    aktiv: false,
   },
 }
 
