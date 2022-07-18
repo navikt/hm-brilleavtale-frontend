@@ -18,7 +18,7 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
         Kvittering for {virksomhet.navn}
       </Heading>
       <Alert variant="success">
-        Nå har firmaet deres inngått avtale med NAV om direkte oppgjør for stønad til briller til barn.
+        Du har inngått avtale med NAV om direkte oppgjør for stønad til briller til barn på vegne av firmaet ditt.
       </Alert>
       <Avstand marginBottom={5} />
       <BodyLong spacing>
@@ -26,18 +26,21 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
           Last ned kopi av avtalen
         </DsLink>
       </BodyLong>
+      <Heading level="3" size="medium" spacing>
+        Slik sender dere inn krav og får utbetaling
+      </Heading>
       <BodyLong spacing>
-        Krav om direkte oppgjør sendes inn gjennom løsningen for krav om direkte oppgjør ved stønad etter forskrift om
-        briller til barn.
+        Optikeren sender inn krav gjennom den <DsLink href="todo">digitale løsningen</DsLink>. Hver enkelt optiker
+        inngår en avtale med NAV første gangen hen skal bruke løsningen.
+      </BodyLong>
+      <BodyLong spacing>Legg inn kravet etter at brillen er bestilt.</BodyLong>
+      <BodyLong spacing>
+        NAV utbetaler stønaden til firmaets kontonummer senest 30 dager etter at kravet er registrert.
       </BodyLong>
       <BodyLong spacing>
-        Optikeren kan legge inn krav i løsningen etter at brillen er bestilt. Første gang optikeren bruker løsningen vil
-        hen inngå en avtale med NAV om bruk av løsningen.
+        Her kan dere finne mer informasjon om briller til barn: <DsLink href="todo">NAV barnebriller</DsLink>
       </BodyLong>
-      <BodyLong spacing>
-        Stønaden utbetales fortløpende til firmaets kontonummer etter at kravet er registrert. Utbetaling skjer senest
-        30 dager etter at kravet er registrert.
-      </BodyLong>
+
       <AvtalePanel virksomhet={virksomhet} />
       <Avstand marginBottom={5} />
       <Link to="/">Tilbake til forsiden</Link>

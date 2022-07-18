@@ -42,9 +42,8 @@ export function OpprettAvtale() {
         Opprett avtale for {virksomhet.navn}
       </Heading>
       <BodyLong>
-        Her kan du inngå avtale om direkte oppgjør av stønad til briller til barn på vegne av firmaet ditt. Vi ber deg
-        lese grundig gjennom avtaleteksten. Du inngår avtalen ved å krysse av for at du har satt deg inn i vilkårene for
-        avtalen og trykke inngå avtale.
+        Her kan du inngå avtale om direkte oppgjør for stønad til briller til barn på vegne av firmaet ditt. Les grundig
+        gjennom avtaleteksten. Kryss av for at du har satt deg inn i vilkårene for avtalen, og trykk på "inngå avtale".
       </BodyLong>
 
       <EmbeddedPDF href="/brilleavtale.pdf#toolbar=0" />
@@ -86,7 +85,7 @@ export function OpprettAvtale() {
             render={({ field }) => (
               <ConfirmationPanel
                 error={errors.lest?.message}
-                label="Jeg erklærer å ha satt meg inn i avtaletekstens vilkår og at firmaet forplikter seg til fylle vilkårene i avtalen om direkte oppgjør om stønad til briller til barn."
+                label="Jeg har satt meg inn i vilkårene i avtalen, og bekrefter at firmaet forplikter seg til vilkårene i avtalen om direkte oppgjør for stønad til briller til barn."
                 checked={field.value}
                 {...field}
               />
@@ -95,7 +94,7 @@ export function OpprettAvtale() {
         </Avstand>
         <Knapper>
           <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
-            Opprett avtale
+            Inngå avtale
           </Button>
           <Button
             type="button"
