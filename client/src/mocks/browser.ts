@@ -25,14 +25,14 @@ const virksomheter: Record<string, Virksomhet> = {
     opprettet: '2022-07-12T12:07:08.487356',
   },
   '112233445': {
-    orgnr:"112233445"',
-    navn:"Bedre Briller AS"',
-    aktiv: fals,
+    orgnr: '112233445',
+    navn: 'Bedre Briller AS',
+    aktiv: false,
   },
   '544332211': {
-    orgnr: "544332211",
-    navn: "Brillesjø AS",
-    aktiv: false
+    orgnr:"544332211"',
+    navn:"Brillesjø AS"',
+    aktiv: fals,
   },
 }
 
