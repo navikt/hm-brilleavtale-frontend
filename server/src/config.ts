@@ -1,7 +1,7 @@
 import path from 'path'
 
 export const config = {
-  base_path: '/hjelpemidler/brilleavtale/',
+  base_path: '/',
   build_path: path.join(__dirname, '../../client/dist'),
   port: process.env.PORT || 5000,
   node_env: process.env.NODE_ENV || 'production',

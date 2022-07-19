@@ -12,7 +12,6 @@ spec:
   port: 5000
   ingresses:
     - https://brilleavtale.dev.nav.no
-    - https://hjelpemidler.dev.nav.no/hjelpemidler/brilleavtale
   liveness:
     path: /internal/isalive
   readiness:
