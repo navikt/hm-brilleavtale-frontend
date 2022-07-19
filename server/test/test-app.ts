@@ -8,7 +8,7 @@ export const testApp = {
   },
   async get(url: string, token = 'secret') {
     return this.app()
-      .get(url)
+      .get('/hjelpemidler/brilleavtale' + url)
       .set(token ? { Authorization: `Bearer ${token}` } : {})
   },
 }
