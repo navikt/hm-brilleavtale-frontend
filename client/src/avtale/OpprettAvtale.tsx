@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { AppLink } from '../components/AppLink'
 import { Avstand } from '../components/Avstand'
+import { validerEpost } from '../epost'
 import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
 import { HentVirksomhetResponse, OpprettAvtaleRequest } from '../types'
 import { useGet } from '../useGet'
@@ -19,9 +20,10 @@ export function OpprettAvtale() {
     control,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<{ kontonr: string; lest: boolean }>({
+  } = useForm<{ kontonr: string; epost: string; lest: boolean }>({
     defaultValues: {
       kontonr: '',
+      epost: '',
       lest: false,
     },
   })
@@ -60,15 +62,26 @@ export function OpprettAvtale() {
             orgnr: virksomhet.orgnr,
             navn: virksomhet.navn,
             kontonr: removeWhitespaceAndDot(data.kontonr),
+            epost: data.epost,
           })
         })}
       >
-        <KontonummerTextField
+        <Tekstfelt
           label="Kontonummer"
           error={errors.kontonr?.message}
           {...register('kontonr', {
             validate(kontonummer) {
               return validerKontonummer(kontonummer) ? true : 'Ugyldig kontonummer'
+            },
+          })}
+        />
+        <Avstand marginBottom={5} />
+        <Tekstfelt
+          label="Epost"
+          error={errors.epost?.message}
+          {...register('epost', {
+            validate(epost) {
+              return validerEpost(epost) ? true : 'Ugyldig epost'
             },
           })}
         />
@@ -117,6 +130,6 @@ const Knapper = styled.div`
   justify-content: left;
 `
 
-const KontonummerTextField = styled(TextField)`
+const Tekstfelt = styled(TextField)`
   max-width: 330px;
 `

@@ -15,6 +15,7 @@ const virksomheter: Record<string, Virksomhet> = {
     navn: 'Optikerkjeden AS',
     aktiv: true,
     kontonr: '12341112345',
+    epost: 'test@test',
     opprettet: '2022-07-12T12:07:08.487356',
   },
   '987654321': {
@@ -22,6 +23,7 @@ const virksomheter: Record<string, Virksomhet> = {
     navn: 'Sterke Briller AS',
     aktiv: true,
     kontonr: '12341112345',
+    epost: 'test@test',
     opprettet: '2022-07-12T12:07:08.487356',
   },
   '112233445': {

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { Avstand } from '../components/Avstand'
+import { validerEpost } from '../epost'
 import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
 import { HentVirksomhetResponse, RedigerAvtaleRequest, RedigerAvtaleResponse } from '../types'
 import { useGet } from '../useGet'
@@ -14,13 +15,13 @@ export function RedigerAvtale() {
   const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/avtale/virksomheter/${orgnr}`)
   const {
     register,
-    control,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<{ kontonr: string }>({
+  } = useForm<{ kontonr: string; epost: string }>({
     defaultValues: {
       kontonr: '',
+      epost: '',
     },
   })
   const { put: endreAvtale, data: avtale } = usePut<RedigerAvtaleRequest, RedigerAvtaleResponse>(
@@ -29,7 +30,7 @@ export function RedigerAvtale() {
 
   useEffect(() => {
     if (virksomhet) {
-      reset({ kontonr: virksomhet.kontonr })
+      reset({ kontonr: virksomhet.kontonr, epost: virksomhet.epost })
     }
   }, [virksomhet])
 
@@ -48,21 +49,31 @@ export function RedigerAvtale() {
       <Heading level="2" size="medium" spacing>
         Endre {virksomhet.navn}
       </Heading>
-
       <form
         onSubmit={handleSubmit(async (data) => {
           await endreAvtale({
             navn: virksomhet.navn,
             kontonr: removeWhitespaceAndDot(data.kontonr),
+            epost: data.epost,
           })
         })}
       >
-        <KontonummerTextField
+        <Tekstfelt
           label="Kontonummer"
           error={errors.kontonr?.message}
           {...register('kontonr', {
             validate(kontonummer) {
               return validerKontonummer(kontonummer) ? true : 'Ugyldig kontonummer'
+            },
+          })}
+        />
+        <Avstand marginBottom={5} />
+        <Tekstfelt
+          label="Epost"
+          error={errors.epost?.message}
+          {...register('epost', {
+            validate(epost) {
+              return validerEpost(epost) ? true : 'Ugyldig epost'
             },
           })}
         />
@@ -93,6 +104,6 @@ const Knapper = styled.div`
   justify-content: left;
 `
 
-const KontonummerTextField = styled(TextField)`
+const Tekstfelt = styled(TextField)`
   max-width: 330px;
 `

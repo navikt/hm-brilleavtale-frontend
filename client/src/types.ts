@@ -14,6 +14,7 @@ export interface Virksomhet {
   navn: string
   aktiv: boolean
   kontonr?: string
+  epost?: string
   avtaleversjon?: string
   opprettet?: string
   oppdatert?: string
@@ -27,6 +28,7 @@ export interface OpprettAvtaleRequest {
   orgnr: string
   navn: string
   kontonr: string
+  epost: string
 }
 
 export interface OpprettAvtaleResponse extends Virksomhet {}
@@ -34,6 +36,7 @@ export interface OpprettAvtaleResponse extends Virksomhet {}
 export interface RedigerAvtaleRequest {
   navn: string
   kontonr: string
+  epost: string
 }
 
 export interface RedigerAvtaleResponse extends Virksomhet {}
