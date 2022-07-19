@@ -12,9 +12,6 @@ export function createApp(auth: Auth): Express {
   router.use('/', routes.public())
 
   const app = express()
-  app.get('/', (req, res) => {
-    res.redirect(config.base_path)
-  })
   app.use(config.base_path, router)
   app.set('views', config.build_path)
   app.set('view engine', 'mustache')
