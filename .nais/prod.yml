@@ -11,7 +11,7 @@ spec:
   team: teamdigihot
   port: 5000
   ingresses:
-    - https://nav.no/hjelpemidler/brilleavtale
+    - https://www.nav.no/hjelpemidler/brilleavtale
   liveness:
     path: /internal/isalive
   readiness:
