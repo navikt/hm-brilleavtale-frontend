@@ -12,6 +12,7 @@ spec:
   port: 5000
   ingresses:
     - https://brilleavtale.labs.nais.io
+    - https://brilleavtale.labs.nais.io/hjelpemidler/brilleavtale
   liveness:
     path: /internal/isalive
   readiness:
