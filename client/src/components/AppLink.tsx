@@ -1,5 +1,4 @@
-import { Link } from '@navikt/ds-react'
-import { LinkProps } from '@navikt/ds-react/src/link/Link'
+import { Link, LinkProps } from '@navikt/ds-react'
 import { baseUrl } from '../http'
 
 export function AppLink(props: LinkProps) {
