@@ -31,7 +31,7 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
         Slik sender dere inn krav og får utbetaling
       </Heading>
       <BodyLong spacing>
-        Optikeren sender inn krav gjennom den
+        Optikeren sender inn krav gjennom den&nbsp;
         <DsLink href="https://nav.no/hjelpemidler/barnebriller">digitale løsningen</DsLink>. Hver enkelt optiker inngår
         en avtale med NAV første gangen hen skal bruke løsningen.
       </BodyLong>
@@ -40,7 +40,7 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
         NAV utbetaler stønaden til firmaets kontonummer senest 30 dager etter at kravet er registrert.
       </BodyLong>
       <BodyLong spacing>
-        Her kan dere finne mer informasjon om briller til barn:
+        Her kan dere finne mer informasjon om briller til barn:&nbsp;
         <DsLink href="https://nav.no/barnebriller" target="_blank">
           NAV barnebriller
         </DsLink>

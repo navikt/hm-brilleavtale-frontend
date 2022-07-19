@@ -24,7 +24,7 @@ initMSW().then(() => {
     <React.StrictMode>
       <GlobalStyle />
       <SWRConfig value={swrConfig}>
-        <BrowserRouter basename={baseUrl()}>
+        <BrowserRouter basename={baseUrl('/')}>
           <App />
         </BrowserRouter>
       </SWRConfig>

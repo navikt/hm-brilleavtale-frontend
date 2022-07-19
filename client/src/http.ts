@@ -1,22 +1,23 @@
 import { HttpError } from './error'
 import type { Resultat } from './types'
 
-export function baseUrl() {
+export function baseUrl(url: string) {
   if (window.appSettings.MILJO === 'prod-gcp') {
-    return '/hjelpemidler/brilleavtale'
+    return `/hjelpemidler/brilleavtale${url}`
   } else {
-    return ''
+    return url
   }
 }
 
-export function apiUrl() {
-  return baseUrl() + '/api'
+export function apiUrl(url: string) {
+  return baseUrl(`/api${url}`)
 }
 
 export const http = {
-  async get<T>(url: string): Promise<T> {
+  async get<T>(path: string): Promise<T> {
     try {
-      const response = await fetch(apiUrl() + url, {
+      const url = apiUrl(path)
+      const response = await fetch(url, {
         method: 'get',
         cache: 'no-store',
         headers: {
@@ -31,9 +32,10 @@ export const http = {
       return Promise.reject(HttpError.wrap(err))
     }
   },
-  async request<B, T>(url: string, body: B, method: string): Promise<Resultat<T>> {
+  async request<B, T>(path: string, body: B, method: string): Promise<Resultat<T>> {
     try {
-      const response = await fetch(apiUrl() + url, {
+      const url = apiUrl(path)
+      const response = await fetch(url, {
         method,
         cache: 'no-store',
         headers: {
