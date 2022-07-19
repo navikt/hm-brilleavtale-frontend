@@ -1,5 +1,6 @@
 import { Alert, BodyLong, Heading, Link as DsLink } from '@navikt/ds-react'
 import { Link, useLocation } from 'react-router-dom'
+import { AppLink } from '../components/AppLink'
 import { Avstand } from '../components/Avstand'
 import { Virksomhet } from '../types'
 import { AvtalePanel } from './AvtalePanel'
@@ -22,9 +23,9 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
       </Alert>
       <Avstand marginBottom={5} />
       <BodyLong spacing>
-        <DsLink href="/avtale.pdf" target="_blank">
+        <AppLink href="/avtale.pdf" target="_blank">
           Last ned kopi av avtalen
-        </DsLink>
+        </AppLink>
       </BodyLong>
       <Heading level="3" size="medium" spacing>
         Slik sender dere inn krav og får utbetaling

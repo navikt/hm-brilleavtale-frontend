@@ -1,8 +1,9 @@
-import { BodyLong, Button, ConfirmationPanel, Heading, Link, TextField } from '@navikt/ds-react'
+import { BodyLong, Button, ConfirmationPanel, Heading, TextField } from '@navikt/ds-react'
 import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
+import { AppLink } from '../components/AppLink'
 import { Avstand } from '../components/Avstand'
 import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
 import { HentVirksomhetResponse, OpprettAvtaleRequest } from '../types'
@@ -49,21 +50,18 @@ export function OpprettAvtale() {
         <Avtale />
       </Avstand>
       <BodyLong spacing>
-        <Link href="/avtale.pdf" target="_blank">
+        <AppLink href="/avtale.pdf" target="_blank">
           Her er avtaleteksten signert av NAV
-        </Link>
+        </AppLink>
       </BodyLong>
       <form
-        onSubmit={handleSubmit(
-          async (data) => {
-            await opprettAvtale({
-              orgnr: virksomhet.orgnr,
-              navn: virksomhet.navn,
-              kontonr: removeWhitespaceAndDot(data.kontonr),
-            })
-          },
-          (errors) => console.log(errors)
-        )}
+        onSubmit={handleSubmit(async (data) => {
+          await opprettAvtale({
+            orgnr: virksomhet.orgnr,
+            navn: virksomhet.navn,
+            kontonr: removeWhitespaceAndDot(data.kontonr),
+          })
+        })}
       >
         <KontonummerTextField
           label="Kontonummer"

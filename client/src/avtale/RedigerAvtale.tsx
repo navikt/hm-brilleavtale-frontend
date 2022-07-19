@@ -50,15 +50,12 @@ export function RedigerAvtale() {
       </Heading>
 
       <form
-        onSubmit={handleSubmit(
-          async (data) => {
-            await endreAvtale({
-              navn: virksomhet.navn,
-              kontonr: removeWhitespaceAndDot(data.kontonr),
-            })
-          },
-          (errors) => console.log(errors)
-        )}
+        onSubmit={handleSubmit(async (data) => {
+          await endreAvtale({
+            navn: virksomhet.navn,
+            kontonr: removeWhitespaceAndDot(data.kontonr),
+          })
+        })}
       >
         <KontonummerTextField
           label="Kontonummer"
