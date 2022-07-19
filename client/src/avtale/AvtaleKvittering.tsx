@@ -22,7 +22,7 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
       </Alert>
       <Avstand marginBottom={5} />
       <BodyLong spacing>
-        <DsLink href="/brilleavtale.pdf" target="_blank">
+        <DsLink href="/avtale.pdf" target="_blank">
           Last ned kopi av avtalen
         </DsLink>
       </BodyLong>
@@ -30,17 +30,20 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
         Slik sender dere inn krav og får utbetaling
       </Heading>
       <BodyLong spacing>
-        Optikeren sender inn krav gjennom den <DsLink href="todo">digitale løsningen</DsLink>. Hver enkelt optiker
-        inngår en avtale med NAV første gangen hen skal bruke løsningen.
+        Optikeren sender inn krav gjennom den
+        <DsLink href="https://nav.no/hjelpemidler/barnebriller">digitale løsningen</DsLink>. Hver enkelt optiker inngår
+        en avtale med NAV første gangen hen skal bruke løsningen.
       </BodyLong>
       <BodyLong spacing>Legg inn kravet etter at brillen er bestilt.</BodyLong>
       <BodyLong spacing>
         NAV utbetaler stønaden til firmaets kontonummer senest 30 dager etter at kravet er registrert.
       </BodyLong>
       <BodyLong spacing>
-        Her kan dere finne mer informasjon om briller til barn: <DsLink href="todo">NAV barnebriller</DsLink>
+        Her kan dere finne mer informasjon om briller til barn:
+        <DsLink href="https://nav.no/barnebriller" target="_blank">
+          NAV barnebriller
+        </DsLink>
       </BodyLong>
-
       <AvtalePanel virksomhet={virksomhet} />
       <Avstand marginBottom={5} />
       <Link to="/">Tilbake til forsiden</Link>

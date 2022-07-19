@@ -1,6 +1,5 @@
-import { BodyLong, Button, ConfirmationPanel, Heading, Link, Panel, TextField } from '@navikt/ds-react'
-import PDFObject from 'pdfobject'
-import { useEffect, useRef } from 'react'
+import { BodyLong, Button, ConfirmationPanel, Heading, Link, TextField } from '@navikt/ds-react'
+import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
@@ -9,6 +8,7 @@ import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
 import { HentVirksomhetResponse, OpprettAvtaleRequest } from '../types'
 import { useGet } from '../useGet'
 import { usePost } from '../usePost'
+import { Avtale } from './Avtale'
 
 export function OpprettAvtale() {
   const { orgnr } = useParams<{ orgnr: string }>()
@@ -45,10 +45,11 @@ export function OpprettAvtale() {
         Her kan du inngå avtale om direkte oppgjør for stønad til briller til barn på vegne av firmaet ditt. Les grundig
         gjennom avtaleteksten. Kryss av for at du har satt deg inn i vilkårene for avtalen, og trykk på "inngå avtale".
       </BodyLong>
-
-      <EmbeddedPDF href="/brilleavtale.pdf#toolbar=0" />
+      <Avstand marginTop={5} marginBottom={5}>
+        <Avtale />
+      </Avstand>
       <BodyLong spacing>
-        <Link href="/brilleavtale.pdf" target="_blank">
+        <Link href="/avtale.pdf" target="_blank">
           Her er avtaleteksten signert av NAV
         </Link>
       </BodyLong>
@@ -120,18 +121,4 @@ const Knapper = styled.div`
 
 const KontonummerTextField = styled(TextField)`
   max-width: 330px;
-`
-
-function EmbeddedPDF({ href }: { href: string }) {
-  const embed = useRef(null)
-  useEffect(() => {
-    PDFObject.embed(href, embed.current, {})
-  }, [href])
-  return <Content ref={embed} border></Content>
-}
-
-const Content = styled(Panel)`
-  height: 90vh;
-  padding: 0;
-  margin: var(--navds-spacing-5) 0;
 `
