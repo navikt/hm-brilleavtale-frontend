@@ -1,7 +1,7 @@
 import { HttpError } from './error'
 import type { Resultat } from './types'
 
-export function baseUrl(url: string) {
+export function baseUrl(url: string = '') {
   if (window.appSettings.MILJO === 'prod-gcp') {
     return `/hjelpemidler/brilleavtale${url}`
   } else {
