@@ -26,12 +26,13 @@ export function AvtalePanel(props: AvtalePanelProps) {
           <Datum label="Organisasjonsnummer">
             <Organisasjonsnummer verdi={virksomhet.orgnr} />
           </Datum>
-          <Datum label="Kontonummer">
-            <Kontonummer verdi={virksomhet.kontonr} />
-          </Datum>
           <Datum label="Dato opprettet">
             <Dato verdi={virksomhet.opprettet} />
           </Datum>
+          <Datum label="Kontonummer">
+            <Kontonummer verdi={virksomhet.kontonr} />
+          </Datum>
+          <Datum label="Epost">{virksomhet.epost}</Datum>
         </Data>
       </LinkPanel.Description>
     </LinkPanel>
