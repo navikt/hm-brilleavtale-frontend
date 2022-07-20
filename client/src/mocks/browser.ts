@@ -1,4 +1,5 @@
 import { RequestHandler, rest, setupWorker } from 'msw'
+import { apiUrl } from '../http'
 import {
   HentVirksomheterResponse,
   HentVirksomhetResponse,
@@ -39,17 +40,17 @@ const virksomheter: Record<string, Virksomhet> = {
 }
 
 const handlers: RequestHandler[] = [
-  rest.get<{}, {}, HentVirksomheterResponse>('/api/avtale/virksomheter', (req, res, ctx) => {
+  rest.get<{}, {}, HentVirksomheterResponse>(apiUrl('/avtale/virksomheter'), (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(Object.values(virksomheter)))
   }),
-  rest.get<{}, { orgnr: string }, HentVirksomhetResponse>('/api/avtale/virksomheter/:orgnr', (req, res, ctx) => {
+  rest.get<{}, { orgnr: string }, HentVirksomhetResponse>(apiUrl('/avtale/virksomheter/:orgnr'), (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
   }),
-  rest.post<OpprettAvtaleRequest, {}, OpprettAvtaleResponse>('/api/avtale/virksomheter', (req, res, ctx) => {
+  rest.post<OpprettAvtaleRequest, {}, OpprettAvtaleResponse>(apiUrl('/avtale/virksomheter'), (req, res, ctx) => {
     return res(ctx.status(201), ctx.json(virksomheter['123456789']))
   }),
   rest.put<RedigerAvtaleRequest, { orgnr: string }, RedigerAvtaleResponse>(
-    '/api/avtale/virksomheter/:orgnr',
+    apiUrl('/avtale/virksomheter/:orgnr'),
     (req, res, ctx) => {
       return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
     }
