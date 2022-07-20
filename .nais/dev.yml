@@ -13,12 +13,12 @@ spec:
   ingresses:
     - https://brilleavtale.dev.nav.no/hjelpemidler/brilleavtale
   liveness:
-    path: /internal/isalive
+    path: /hjelpemidler/brilleavtale/internal/isalive
   readiness:
-    path: /internal/isready
+    path: /hjelpemidler/brilleavtale/internal/isready
   prometheus:
     enabled: true
-    path: /internal/metrics
+    path: /hjelpemidler/brilleavtale/internal/metrics
   replicas:
     max: 1
     min: 1
