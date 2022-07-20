@@ -1,6 +1,7 @@
 import { Heading } from '@navikt/ds-react'
 import { ErrorBoundary } from 'react-error-boundary'
 import { Route, Routes } from 'react-router-dom'
+import styled from 'styled-components'
 import { AvtaleKvittering } from './avtale/AvtaleKvittering'
 import { OpprettAvtale } from './avtale/OpprettAvtale'
 import { RedigerAvtale } from './avtale/RedigerAvtale'
@@ -34,6 +35,17 @@ export function App() {
         <Route path="/rediger-avtale/:orgnr" element={<RedigerAvtale />} />
         <Route path="*" element={<Feilside status={404} />} />
       </Routes>
+      <Kontakt className="main">
+        Har du problemer med å inngå avtale, opplever du feil i løsningen eller har du andre spørsmål? Kontakt oss på
+        epost:&nbsp;
+        <a href="mailto:digihot@nav.no">digihot@nav.no</a>
+      </Kontakt>
     </ErrorBoundary>
   )
 }
+
+const Kontakt = styled.div`
+  width: 680px;
+  margin: 0 auto;
+  padding: 0 40px 40px 40px;
+`
