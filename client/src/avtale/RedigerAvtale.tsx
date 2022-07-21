@@ -1,4 +1,4 @@
-import { Button, Heading, TextField } from '@navikt/ds-react'
+import { BodyShort, Button, Heading, TextField } from '@navikt/ds-react'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -49,6 +49,7 @@ export function RedigerAvtale() {
       <Heading level="2" size="medium" spacing>
         Endre {virksomhet.navn}
       </Heading>
+      <BodyShort spacing>Orgnr. {virksomhet.orgnr}</BodyShort>
       <form
         onSubmit={handleSubmit(async (data) => {
           await endreAvtale({
