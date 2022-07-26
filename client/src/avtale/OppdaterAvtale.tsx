@@ -6,11 +6,11 @@ import styled from 'styled-components'
 import { Avstand } from '../components/Avstand'
 import { validerEpost } from '../epost'
 import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
-import { HentVirksomhetResponse, RedigerAvtaleRequest, RedigerAvtaleResponse } from '../types'
+import { HentVirksomhetResponse, OppdaterAvtaleRequest, OppdaterAvtaleResponse } from '../types'
 import { useGet } from '../useGet'
 import { usePut } from '../usePut'
 
-export function RedigerAvtale() {
+export function OppdaterAvtale() {
   const { orgnr } = useParams<{ orgnr: string }>()
   const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/avtale/virksomheter/${orgnr}`)
   const {
@@ -24,7 +24,7 @@ export function RedigerAvtale() {
       epost: '',
     },
   })
-  const { put: endreAvtale, data: avtale } = usePut<RedigerAvtaleRequest, RedigerAvtaleResponse>(
+  const { put: endreAvtale, data: avtale } = usePut<OppdaterAvtaleRequest, OppdaterAvtaleResponse>(
     `/avtale/virksomheter/${orgnr}`
   )
 
@@ -53,7 +53,6 @@ export function RedigerAvtale() {
       <form
         onSubmit={handleSubmit(async (data) => {
           await endreAvtale({
-            navn: virksomhet.navn,
             kontonr: removeWhitespaceAndDot(data.kontonr),
             epost: data.epost,
           })

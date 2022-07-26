@@ -5,8 +5,8 @@ import { ErrorBoundary } from 'react-error-boundary'
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 import { AvtaleKvittering } from './avtale/AvtaleKvittering'
+import { OppdaterAvtale } from './avtale/OppdaterAvtale'
 import { OpprettAvtale } from './avtale/OpprettAvtale'
-import { RedigerAvtale } from './avtale/RedigerAvtale'
 import { Banner } from './components/Banner'
 import { isHttpError } from './error'
 import { Feilside } from './Feilside'
@@ -42,7 +42,7 @@ export function App() {
         <Route path="/" element={<Virksomheter />} />
         <Route path="/opprett-avtale/kvittering" element={<AvtaleKvittering />} />
         <Route path="/opprett-avtale/:orgnr" element={<OpprettAvtale />} />
-        <Route path="/rediger-avtale/:orgnr" element={<RedigerAvtale />} />
+        <Route path="/oppdater-avtale/:orgnr" element={<OppdaterAvtale />} />
         <Route path="*" element={<Feilside status={404} />} />
       </Routes>
       <Kontakt className="main">

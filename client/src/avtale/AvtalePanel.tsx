@@ -17,7 +17,7 @@ export function AvtalePanel(props: AvtalePanelProps) {
   return (
     <LinkPanel
       onClick={() => {
-        navigate(`/rediger-avtale/${virksomhet.orgnr}`)
+        navigate(`/oppdater-avtale/${virksomhet.orgnr}`)
       }}
     >
       <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>

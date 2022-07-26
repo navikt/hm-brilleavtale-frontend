@@ -60,7 +60,6 @@ export function OpprettAvtale() {
         onSubmit={handleSubmit(async (data) => {
           await opprettAvtale({
             orgnr: virksomhet.orgnr,
-            navn: virksomhet.navn,
             kontonr: removeWhitespaceAndDot(data.kontonr),
             epost: data.epost,
           })

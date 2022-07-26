@@ -26,17 +26,15 @@ export interface HentVirksomhetResponse extends Virksomhet {}
 
 export interface OpprettAvtaleRequest {
   orgnr: string
-  navn: string
   kontonr: string
   epost: string
 }
 
 export interface OpprettAvtaleResponse extends Virksomhet {}
 
-export interface RedigerAvtaleRequest {
-  navn: string
+export interface OppdaterAvtaleRequest {
   kontonr: string
   epost: string
 }
 
-export interface RedigerAvtaleResponse extends Virksomhet {}
+export interface OppdaterAvtaleResponse extends Virksomhet {}
