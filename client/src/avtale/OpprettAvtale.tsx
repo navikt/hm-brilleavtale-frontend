@@ -11,6 +11,7 @@ import { HentVirksomhetResponse, OpprettAvtaleRequest } from '../types'
 import { useGet } from '../useGet'
 import { usePost } from '../usePost'
 import { Avtale } from './Avtale'
+import { logSkjemaFullført, skjemanavn } from '../utils/amplitude'
 
 export function OpprettAvtale() {
   const { orgnr } = useParams<{ orgnr: string }>()
@@ -63,6 +64,7 @@ export function OpprettAvtale() {
             kontonr: removeWhitespaceAndDot(data.kontonr),
             epost: data.epost,
           })
+          logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
         })}
       >
         <Tekstfelt

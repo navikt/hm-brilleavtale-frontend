@@ -44,9 +44,7 @@
   },
   {
     "overskrift": "Frist for å sette fram av krav",
-    "tekst": [
-      "Kravet må settes fram for NAV innen seks måneder regnet fra den dato brillen ble bestilt."
-    ]
+    "tekst": ["Kravet må settes fram for NAV innen seks måneder regnet fra den dato brillen ble bestilt."]
   },
   {
     "overskrift": "Mislighold og misbruk",
@@ -69,9 +67,7 @@
   },
   {
     "overskrift": "Oppfølging og kontroll",
-    "tekst": [
-      "NAV Kontroll kan foreta kontroll overfor Firmaet."
-    ]
+    "tekst": ["NAV Kontroll kan foreta kontroll overfor Firmaet."]
   },
   {
     "overskrift": "Ikrafttredelse og oppsigelse",

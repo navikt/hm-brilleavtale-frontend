@@ -6,6 +6,7 @@ import { Datum } from '../components/Datum'
 import { Kontonummer } from '../components/Kontonummer'
 import { Organisasjonsnummer } from '../components/Organisasjonsnummer'
 import { Virksomhet } from '../types'
+import { logSkjemaStartet, skjemanavn } from '../utils/amplitude'
 
 export interface AvtalePanelProps {
   virksomhet: Virksomhet
@@ -17,6 +18,7 @@ export function AvtalePanel(props: AvtalePanelProps) {
   return (
     <LinkPanel
       onClick={() => {
+        logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
         navigate(`/oppdater-avtale/${virksomhet.orgnr}`)
       }}
     >

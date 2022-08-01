@@ -8,6 +8,7 @@ import { App } from './App'
 import { GlobalStyle } from './GlobalStyle'
 import { baseUrl, http } from './http'
 import { initMSW } from './mocks/initMSW'
+import { initAmplitude } from './utils/amplitude'
 
 const swrConfig: SWRConfiguration = {
   async fetcher(url: string) {
@@ -17,6 +18,7 @@ const swrConfig: SWRConfiguration = {
 
 initMSW().then(() => {
   const container = document.getElementById('root')!
+  initAmplitude()
   if (Modal.setAppElement) {
     Modal.setAppElement(container)
   }

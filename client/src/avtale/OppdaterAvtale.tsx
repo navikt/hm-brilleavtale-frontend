@@ -9,6 +9,7 @@ import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
 import { HentVirksomhetResponse, OppdaterAvtaleRequest, OppdaterAvtaleResponse } from '../types'
 import { useGet } from '../useGet'
 import { usePut } from '../usePut'
+import { logSkjemaFullført, skjemanavn } from '../utils/amplitude'
 
 export function OppdaterAvtale() {
   const { orgnr } = useParams<{ orgnr: string }>()
@@ -56,6 +57,7 @@ export function OppdaterAvtale() {
             kontonr: removeWhitespaceAndDot(data.kontonr),
             epost: data.epost,
           })
+          logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
         })}
       >
         <Tekstfelt
