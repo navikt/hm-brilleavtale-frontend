@@ -57,11 +57,10 @@ export function logSkjemaFullført(id: string, skjemanavn: skjemanavn) {
   })
 }
 
-export function logSkjemaValideringFeilet(id: string, skjemanavn: skjemanavn, feilmelding: string) {
+export function logNavigering(destinasjon: string, lenketekst: string) {
   logAmplitudeEvent(amplitude_taxonomy.SKJEMAVALIDERING_FEILET, {
-    skjemanavn: skjemanavn,
-    skjemaId: id,
-    feilmelding: feilmelding,
+    destinasjon: destinasjon,
+    lenketekst: lenketekst,
   })
 }
 

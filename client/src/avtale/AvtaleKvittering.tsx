@@ -1,6 +1,7 @@
-import { Alert, BodyLong, Heading, Link as DsLink } from '@navikt/ds-react'
+import { Alert, BodyLong, Heading } from '@navikt/ds-react'
 import { Link, useLocation } from 'react-router-dom'
 import { AppLink } from '../components/AppLink'
+import { DsLink } from '../components/DsLink'
 import { Avstand } from '../components/Avstand'
 import { Virksomhet } from '../types'
 import { AvtalePanel } from './AvtalePanel'
