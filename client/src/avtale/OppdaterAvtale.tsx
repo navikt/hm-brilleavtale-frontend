@@ -38,7 +38,6 @@ export function OppdaterAvtale() {
   const navigate = useNavigate()
   useEffect(() => {
     if (avtale) {
-      virksomhet?.orgnr && logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
       navigate('/')
     }
   }, [avtale])
@@ -58,6 +57,7 @@ export function OppdaterAvtale() {
             kontonr: removeWhitespaceAndDot(data.kontonr),
             epost: data.epost,
           })
+          logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
         })}
       >
         <Tekstfelt

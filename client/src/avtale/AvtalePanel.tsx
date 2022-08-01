@@ -6,6 +6,7 @@ import { Datum } from '../components/Datum'
 import { Kontonummer } from '../components/Kontonummer'
 import { Organisasjonsnummer } from '../components/Organisasjonsnummer'
 import { Virksomhet } from '../types'
+import { logSkjemaStartet, skjemanavn } from '../utils/amplitude'
 
 export interface AvtalePanelProps {
   virksomhet: Virksomhet

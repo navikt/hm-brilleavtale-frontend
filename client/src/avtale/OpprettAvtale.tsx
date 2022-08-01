@@ -32,7 +32,6 @@ export function OpprettAvtale() {
   const navigate = useNavigate()
   useEffect(() => {
     if (avtale) {
-      virksomhet?.orgnr && logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
       navigate('/opprett-avtale/kvittering', {
         state: avtale,
       })
@@ -65,6 +64,7 @@ export function OpprettAvtale() {
             kontonr: removeWhitespaceAndDot(data.kontonr),
             epost: data.epost,
           })
+          logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
         })}
       >
         <Tekstfelt
