@@ -17,6 +17,7 @@ export function AvtalePanel(props: AvtalePanelProps) {
   return (
     <LinkPanel
       onClick={() => {
+        logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
         navigate(`/oppdater-avtale/${virksomhet.orgnr}`)
       }}
     >

@@ -4,6 +4,7 @@ import { Data } from '../components/Data'
 import { Datum } from '../components/Datum'
 import { Organisasjonsnummer } from '../components/Organisasjonsnummer'
 import { Virksomhet } from '../types'
+import { logSkjemaStartet, skjemanavn } from '../utils/amplitude'
 
 export interface VirksomhetPanelProps {
   virksomhet: Virksomhet
@@ -15,6 +16,7 @@ export function VirksomhetPanel(props: VirksomhetPanelProps) {
   return (
     <LinkPanel
       onClick={() => {
+        logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
         navigate(`/opprett-avtale/${virksomhet.orgnr}`)
       }}
     >
