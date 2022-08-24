@@ -1,4 +1,5 @@
 import { Alert, BodyLong, Heading } from '@navikt/ds-react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { AvtalePanel } from '../avtale/AvtalePanel'
 import { Avstand } from '../components/Avstand'
@@ -7,6 +8,7 @@ import { useGet } from '../useGet'
 import { VirksomhetPanel } from './VirksomhetPanel'
 
 export function Virksomheter() {
+  const { t } = useTranslation()
   const { data: virksomheter } = useGet<HentVirksomheterResponse>('/avtale/virksomheter')
 
   if (!virksomheter) {
@@ -20,7 +22,7 @@ export function Virksomheter() {
     return (
       <main>
         <Alert variant="info">
-          <BodyLong>Vi fant ingen virksomheter i Altinn som du er hovedadministrator for.</BodyLong>
+          <BodyLong>{t('virksomhet.ingen_virksomheter')}</BodyLong>
         </Alert>
       </main>
     )
@@ -31,7 +33,7 @@ export function Virksomheter() {
       {virksomheterUtenAvtale.length > 0 && (
         <>
           <Heading level="2" size="medium" spacing>
-            Virksomheter uten avtale
+            {t('virksomhet.uten_avtale')}
           </Heading>
           <Kolonne>
             {virksomheterUtenAvtale.map((virksomhet) => (
@@ -44,7 +46,7 @@ export function Virksomheter() {
         <>
           <Avstand marginTop={10} />
           <Heading level="2" size="medium" spacing>
-            Virksomheter med avtale
+            {t('virksomhet.med_avtale')}
           </Heading>
           <Kolonne>
             {virksomheterMedAvtale.map((virksomhet) => (

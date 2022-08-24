@@ -25,16 +25,16 @@ export function AvtalePanel(props: AvtalePanelProps) {
       <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
       <LinkPanel.Description>
         <Data>
-          <Datum label="Organisasjonsnummer">
+          <Datum label="ledetekst.orgnr">
             <Organisasjonsnummer verdi={virksomhet.orgnr} />
           </Datum>
-          <Datum label="Dato opprettet">
+          <Datum label="ledetekst.dato_opprettet">
             <Dato verdi={virksomhet.opprettet} />
           </Datum>
-          <Datum label="Kontonummer">
+          <Datum label="ledetekst.kontonr">
             <Kontonummer verdi={virksomhet.kontonr} />
           </Datum>
-          <Datum label="Epost">{virksomhet.epost}</Datum>
+          <Datum label="ledetekst.epost">{virksomhet.epost}</Datum>
         </Data>
       </LinkPanel.Description>
     </LinkPanel>

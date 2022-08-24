@@ -1,6 +1,7 @@
 import { BodyShort, Button, Heading, TextField } from '@navikt/ds-react'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { Avstand } from '../components/Avstand'
@@ -12,6 +13,7 @@ import { usePut } from '../usePut'
 import { logSkjemaFullført, skjemanavn } from '../utils/amplitude'
 
 export function OppdaterAvtale() {
+  const { t } = useTranslation()
   const { orgnr } = useParams<{ orgnr: string }>()
   const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/avtale/virksomheter/${orgnr}`)
   const {
@@ -48,9 +50,9 @@ export function OppdaterAvtale() {
   return (
     <main>
       <Heading level="2" size="medium" spacing>
-        Endre {virksomhet.navn}
+        {t('avtale.endre', { navn: virksomhet.navn })}
       </Heading>
-      <BodyShort spacing>Orgnr. {virksomhet.orgnr}</BodyShort>
+      <BodyShort spacing>{t('avtale.endre_orgnr', { orgnr: virksomhet.orgnr })}</BodyShort>
       <form
         onSubmit={handleSubmit(async (data) => {
           await endreAvtale({
@@ -61,28 +63,28 @@ export function OppdaterAvtale() {
         })}
       >
         <Tekstfelt
-          label="Kontonummer"
+          label={t('ledetekst.kontonr')}
           error={errors.kontonr?.message}
           {...register('kontonr', {
             validate(kontonummer) {
-              return validerKontonummer(kontonummer) ? true : 'Ugyldig kontonummer'
+              return validerKontonummer(kontonummer) ? true : t('felles.ugyldig_kontonr')
             },
           })}
         />
         <Avstand marginBottom={5} />
         <Tekstfelt
-          label="Epost"
+          label={t('ledetekst.epost')}
           error={errors.epost?.message}
           {...register('epost', {
             validate(epost) {
-              return validerEpost(epost) ? true : 'Ugyldig epost'
+              return validerEpost(epost) ? true : t('felles.ugyldig_epost')
             },
           })}
         />
         <Avstand marginBottom={5} />
         <Knapper>
           <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
-            Lagre
+            {t('felles.lagre')}
           </Button>
           <Button
             type="button"
@@ -91,7 +93,7 @@ export function OppdaterAvtale() {
               navigate('/')
             }}
           >
-            Avbryt
+            {t('felles.avbryt')}
           </Button>
         </Knapper>
       </form>

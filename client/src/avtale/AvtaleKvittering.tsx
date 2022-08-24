@@ -1,15 +1,14 @@
 import { Alert, BodyLong, Heading } from '@navikt/ds-react'
+import { Trans, useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
 import { AppLink } from '../components/AppLink'
-import { DsLink } from '../components/DsLink'
 import { Avstand } from '../components/Avstand'
+import { DsLink } from '../components/DsLink'
 import { Virksomhet } from '../types'
 import { AvtalePanel } from './AvtalePanel'
 
-export interface AvtaleKvitteringProps {}
-
-export function AvtaleKvittering(props: AvtaleKvitteringProps) {
-  const {} = props
+export function AvtaleKvittering() {
+  const { t } = useTranslation()
   const { state: virksomhet } = useLocation() as { state: Virksomhet }
   if (!virksomhet) {
     return null
@@ -17,38 +16,40 @@ export function AvtaleKvittering(props: AvtaleKvitteringProps) {
   return (
     <main>
       <Heading level="2" size="medium" spacing>
-        Kvittering for {virksomhet.navn}
+        {t('avtale.kvittering_for', { navn: virksomhet.navn })}
       </Heading>
-      <Alert variant="success">
-        Du har inngått avtale med NAV om direkte oppgjør for stønad til briller til barn på vegne av firmaet ditt.
-      </Alert>
+      <Alert variant="success">{t('avtale.suksess')}</Alert>
       <Avstand marginBottom={5} />
       <BodyLong spacing>
         <AppLink href="/avtale.pdf" target="_blank">
-          Last ned kopi av avtalen
+          {t('avtale.lenke_last_ned_avtalen')}
         </AppLink>
       </BodyLong>
       <Heading level="3" size="medium" spacing>
-        Slik sender dere inn krav og får utbetaling
+        {t('avtale.overskrift_forklaring')}
       </Heading>
       <BodyLong spacing>
-        Optikeren sender inn krav gjennom den&nbsp;
-        <DsLink href="https://nav.no/hjelpemidler/barnebriller">digitale løsningen</DsLink>. Hver enkelt optiker inngår
-        en avtale med NAV første gangen hen skal bruke løsningen.
+        <Trans t={t} i18nKey="avtale.optiker_sender_krav">
+          <></>
+          <DsLink href="https://nav.no/hjelpemidler/barnebriller">
+            <></>
+          </DsLink>
+          <></>
+        </Trans>
       </BodyLong>
-      <BodyLong spacing>Legg inn kravet etter at brillen er bestilt.</BodyLong>
+      <BodyLong spacing>{t('avtale.legg_inn_kravet')}</BodyLong>
+      <BodyLong spacing>{t('avtale.nav_utbetaler')}</BodyLong>
       <BodyLong spacing>
-        NAV utbetaler stønaden til firmaets kontonummer senest 30 dager etter at kravet er registrert.
-      </BodyLong>
-      <BodyLong spacing>
-        Her kan dere finne mer informasjon om briller til barn:&nbsp;
-        <DsLink href="https://nav.no/barnebriller" target="_blank">
-          NAV barnebriller
-        </DsLink>
+        <Trans t={t} i18nKey="avtale.mer_informasjon">
+          <></>
+          <DsLink href="https://nav.no/barnebriller" target="_blank">
+            <></>
+          </DsLink>
+        </Trans>
       </BodyLong>
       <AvtalePanel virksomhet={virksomhet} />
       <Avstand marginBottom={5} />
-      <Link to="/">Tilbake til forsiden</Link>
+      <Link to="/">{t('avtale.lenke_tilbake_til_forsiden')}</Link>
     </main>
   )
 }

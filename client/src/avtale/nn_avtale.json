@@ -1,0 +1,79 @@
+[
+  {
+    "overskrift": "Formål og omfang",
+    "tekst": [
+      "Formålet med avtalen er å regulere det økonomiske oppgjøret for stønad for briller til barn mellom NAV og Firmaet.",
+      "Avtalen omfatter utbetaling av stønad til briller til barn med hjemmel i forskrift om stønad til briller til barn. Avtalen omfatter direkte oppgjør for stønadsbeløpet som Firmaet har forskuttert til stønadsmottakeren."
+    ]
+  },
+  {
+    "overskrift": "Optikerfirmaets plikter",
+    "tekst": [
+      "Firmaet skal følge lover, forskrifter, NAVs retningslinjer og offentlige krav til produkt og virksomhet. Som en del av dette må Firmaet sørge for å etterleve personvernregelverket, og gi stønadsmottaker riktig og tilstrekkelig informasjon.",
+      "Firmaet skal sørge for at en autorisert optiker har vurdert at barnet har behov for briller og at dokumentasjon på behovet for synskorreksjon blir oppbevart i pasientjournalen.",
+      "Optikerfirmaet skal tilby tilpassing av briller til barn."
+    ]
+  },
+  {
+    "overskrift": "Pris og stønadssatser",
+    "tekst": [
+      "Stønadsmottakeren, dvs. barnet ved verge, kan fritt velge hvilken type briller barnet skal ha.",
+      "Stønaden er inndelt i ulike satser, avhengig av hvilken brillestyrke barnet har behov for, jf. forskrift om stønad til briller til barn. Satsenes størrelse ligger på nav.no.",
+      "Hvis brillen koster mindre enn satsen, skal Firmaet kun be om oppgjør tilsvarende brillens kostnad inkl. moms. Hvis brillen koster mer enn stønadsbeløpet, må stønadsmottakeren selv dekke overskytende.",
+      "Brillens kostnad skal bare inkludere glass, slip av glass og innfatning inkl. moms, og brilletilpasning.",
+      "Stønadsmottakerens utgifter til synsundersøkelse skal ikke inngå i brillens kostnad."
+    ]
+  },
+  {
+    "overskrift": "Krav til registrering og dokumentasjon",
+    "tekst": [
+      "Ved å sende inn krav om direkte oppgjør til NAV setter Firmaet fram krav om stønad på vegne av stønadsmottaker, dvs. barnet ved verge.",
+      "Registrering av kravet skjer etter at stønadsmottakeren har bestilt brillen.",
+      "Firmaet må bruke NAVs løsning for krav om direkte oppgjør ved stønad etter forskrift om briller til barn. Firmaet forplikter seg til at opplysninger som legges inn i systemet for innsending av krav er riktige, slik at riktig stønad blir utbetalt.",
+      "Når NAV ber om det, må Firmaet kunne dokumentere at brillen er bestilt, samt totalpris, stønadsbeløp/rabatt og stønadsmottakers eventuelle egenandel for brillen."
+    ]
+  },
+  {
+    "overskrift": "Utbetaling mv.",
+    "tekst": [
+      "Utbetaling skjer senest 30 dager etter at NAV har mottatt kravet.",
+      "NAV utbetaler ikke forskudd.",
+      "Dersom Firmaet har fått for mye utbetalt, plikter Firmaet å betale tilbake beløpet. Tilbakebetalingen skal skje uten ugrunnet opphold etter at Firmaet blir kjent med at det var utbetalt for mye.",
+      "Hvis stønadsmottaker hever kjøpet etter at Firma har sendt inn kravet om direkte oppgjør og Firmaet godkjenner opphevingen, skal kravet bli annullert og stønaden refundert til NAV."
+    ]
+  },
+  {
+    "overskrift": "Frist for å sette fram av krav",
+    "tekst": ["Kravet må settes fram for NAV innen seks måneder regnet fra den dato brillen ble bestilt."]
+  },
+  {
+    "overskrift": "Mislighold og misbruk",
+    "tekst": [
+      "Arbeids- og velferdsdirektoratet kan utelukke Firmaet fra avtalen dersom Firmaet misligholder sine plikter etter avtalen, ikke oppfyller lovbestemte plikter eller gir NAV misvisende opplysninger som kan føre til utbetaling av høyere stønad enn det er grunnlag for."
+    ]
+  },
+  {
+    "overskrift": "Taushetsplikt",
+    "tekst": [
+      "Ansatte i Firmaet har taushetsplikt om personlige forhold som de blir kjent med på grunnlag av denne avtalen. Det omfatter blant annet informasjon om hvilke personer som får stønad etter forskriften om stønad til briller for barn og hvilke krav som ikke lar seg registrere i systemet for innsending av krav."
+    ]
+  },
+  {
+    "overskrift": "Forbehold om bevilgninger og eiendomsrett",
+    "tekst": [
+      "Avtalen er inngått med forbehold om at Stortinget bevilger midler til briller til barn.",
+      "Briller som leveres etter denne avtalen blir stønadsmottakerens eiendom etter levering."
+    ]
+  },
+  {
+    "overskrift": "Oppfølging og kontroll",
+    "tekst": ["NAV Kontroll kan foreta kontroll overfor Firmaet."]
+  },
+  {
+    "overskrift": "Ikrafttredelse og oppsigelse",
+    "tekst": [
+      "Avtalen gjelder fra dato for inngåelse. Krav kan likevel settes fram for briller bestilt fra 1. august 2022 med den begrensingen som ligger i punkt 6 i denne avtalen.",
+      "Avtalen kan sies opp med 3 – tre - måneders gjensidig skriftlig varsel."
+    ]
+  }
+]

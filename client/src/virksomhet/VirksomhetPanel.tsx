@@ -23,7 +23,7 @@ export function VirksomhetPanel(props: VirksomhetPanelProps) {
       <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
       <LinkPanel.Description>
         <Data>
-          <Datum label="Organisasjonsnummer">
+          <Datum label="ledetekst.orgnr">
             <Organisasjonsnummer verdi={virksomhet.orgnr} />
           </Datum>
         </Data>

@@ -1,6 +1,7 @@
 import { BodyLong, Button, ConfirmationPanel, Heading, TextField } from '@navikt/ds-react'
 import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { AppLink } from '../components/AppLink'
@@ -10,10 +11,11 @@ import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
 import { HentVirksomhetResponse, OpprettAvtaleRequest } from '../types'
 import { useGet } from '../useGet'
 import { usePost } from '../usePost'
-import { Avtale } from './Avtale'
 import { logSkjemaFullført, skjemanavn } from '../utils/amplitude'
+import { Avtale } from './Avtale'
 
 export function OpprettAvtale() {
+  const { t } = useTranslation()
   const { orgnr } = useParams<{ orgnr: string }>()
   const { data: virksomhet } = useGet<HentVirksomhetResponse>(`/avtale/virksomheter/${orgnr}`)
   const {
@@ -43,18 +45,15 @@ export function OpprettAvtale() {
   return (
     <main>
       <Heading level="2" size="medium" spacing>
-        Opprett avtale for {virksomhet.navn}
+        {t('avtale.opprett_avtale_for', { navn: virksomhet.navn })}
       </Heading>
-      <BodyLong>
-        Her kan du inngå avtale om direkte oppgjør for stønad til briller til barn på vegne av firmaet ditt. Les grundig
-        gjennom avtaleteksten. Kryss av for at du har satt deg inn i vilkårene for avtalen, og trykk på "inngå avtale".
-      </BodyLong>
+      <BodyLong>{t('avtale.ingress')}</BodyLong>
       <Avstand marginTop={5} marginBottom={5}>
         <Avtale />
       </Avstand>
       <BodyLong spacing>
         <AppLink href="/avtale.pdf" target="_blank">
-          Her er avtaleteksten signert av NAV
+          {t('avtale.lenke_signert_avtale')}
         </AppLink>
       </BodyLong>
       <form
@@ -68,21 +67,21 @@ export function OpprettAvtale() {
         })}
       >
         <Tekstfelt
-          label="Kontonummer"
+          label={t('ledetekst.kontonr')}
           error={errors.kontonr?.message}
           {...register('kontonr', {
             validate(kontonummer) {
-              return validerKontonummer(kontonummer) ? true : 'Ugyldig kontonummer'
+              return validerKontonummer(kontonummer) ? true : t('felles.ugyldig_kontonr')
             },
           })}
         />
         <Avstand marginBottom={5} />
         <Tekstfelt
-          label="Epost"
+          label={t('ledetekst.epost')}
           error={errors.epost?.message}
           {...register('epost', {
             validate(epost) {
-              return validerEpost(epost) ? true : 'Ugyldig epost'
+              return validerEpost(epost) ? true : t('felles.ugyldig_epost')
             },
           })}
         />
@@ -92,13 +91,13 @@ export function OpprettAvtale() {
             name="lest"
             rules={{
               validate(value) {
-                return value || 'Du må huke av for å gå videre'
+                return value || t('avtale.må_huke_av')
               },
             }}
             render={({ field }) => (
               <ConfirmationPanel
                 error={errors.lest?.message}
-                label="Jeg har satt meg inn i vilkårene i avtalen, og bekrefter at firmaet forplikter seg til vilkårene i avtalen om direkte oppgjør for stønad til briller til barn."
+                label={t('avtale.bekreftelse')}
                 checked={field.value}
                 {...field}
               />
@@ -107,7 +106,7 @@ export function OpprettAvtale() {
         </Avstand>
         <Knapper>
           <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
-            Inngå avtale
+            {t('avtale.inngå_avtale')}
           </Button>
           <Button
             type="button"
@@ -116,7 +115,7 @@ export function OpprettAvtale() {
               navigate('/')
             }}
           >
-            Avbryt
+            {t('felles.avbryt')}
           </Button>
         </Knapper>
       </form>

@@ -1,5 +1,6 @@
 import { Label } from '@navikt/ds-react'
 import { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Nullable } from '../types'
 
 export interface DatumProps {
@@ -9,10 +10,11 @@ export interface DatumProps {
 
 export function Datum(props: DatumProps) {
   const { label, children } = props
+  const { t } = useTranslation()
   return (
     <>
       <dt>
-        <Label as="span">{label}</Label>
+        <Label as="span">{t(label)}</Label>
       </dt>
       <dd>{children}</dd>
     </>

@@ -2,6 +2,7 @@ import { Heading } from '@navikt/ds-react'
 import { setBreadcrumbs } from '@navikt/nav-dekoratoren-moduler'
 import { useEffect } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
+import { Trans, useTranslation } from 'react-i18next'
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 import { AvtaleKvittering } from './avtale/AvtaleKvittering'
@@ -14,10 +15,11 @@ import { baseUrl } from './http'
 import { Virksomheter } from './virksomhet/Virksomheter'
 
 export function App() {
+  const { t } = useTranslation()
   useEffect(() => {
     setBreadcrumbs([
-      { url: 'https://www.nav.no/barnebriller', title: 'Briller til barn - optikers rolle' },
-      { url: baseUrl('/'), title: 'Avtale om direkte oppgjør av briller for barn' },
+      { url: 'https://www.nav.no/barnebriller', title: t('brødsmuler.optikers_rolle') },
+      { url: baseUrl('/'), title: t('brødsmuler.avtale') },
     ])
   }, [])
 
@@ -34,7 +36,7 @@ export function App() {
       <header>
         <Banner>
           <Heading level="1" size="large">
-            Avtale om direkte oppgjør av briller for barn
+            {t('banner')}
           </Heading>
         </Banner>
       </header>
@@ -46,9 +48,10 @@ export function App() {
         <Route path="*" element={<Feilside status={404} />} />
       </Routes>
       <Kontakt className="main">
-        Har du problemer med å inngå avtale, opplever du feil i løsningen eller har du andre spørsmål? Kontakt oss på
-        epost:&nbsp;
-        <a href="mailto:digihot@nav.no">digihot@nav.no</a>
+        <Trans t={t} i18nKey="problemer">
+          <></>
+          <a href="mailto:digihot@nav.no" />
+        </Trans>
       </Kontakt>
     </ErrorBoundary>
   )
