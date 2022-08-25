@@ -18,8 +18,8 @@ export function App() {
   const { t } = useTranslation()
   useEffect(() => {
     setBreadcrumbs([
-      { url: 'https://www.nav.no/barnebriller', title: t('brødsmuler.optikers_rolle') },
-      { url: baseUrl('/'), title: t('brødsmuler.avtale') },
+      { url: 'https://www.nav.no/barnebriller', title: t('brødsmuler.1') },
+      { url: baseUrl('/'), title: t('brødsmuler.2') },
     ])
   }, [])
 
