@@ -15,7 +15,6 @@ i18n.use(initReactI18next).init({
       translation: nn,
     },
   },
-  lng: 'nb',
   fallbackLng: false,
   supportedLngs: ['nb', 'nn'],
   fallbackNS: 'App',
@@ -35,4 +34,4 @@ onLanguageSelect(async (language) => {
   await i18n.changeLanguage(language.locale, handleError).catch(handleError)
 })
 
-export default i18n
+export default i18n 

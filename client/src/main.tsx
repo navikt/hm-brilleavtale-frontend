@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { SWRConfig, SWRConfiguration } from 'swr'
 import { App } from './App'
+import { initDecorator } from './decorator'
 import { GlobalStyle } from './GlobalStyle'
 import { baseUrl, http } from './http'
 import './i18n'
@@ -34,3 +35,5 @@ initMSW().then(() => {
     </React.StrictMode>
   )
 })
+
+initDecorator()
