@@ -8,6 +8,7 @@ on:
       - 'CODEOWNERS'
     branches:
       - main
+      - nynorsk
 
 env:
   IMAGE: 'ghcr.io/navikt/hm-brilleavtale-frontend:${{ github.sha }}'
