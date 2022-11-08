@@ -2,9 +2,8 @@ import { Heading } from '@navikt/ds-react'
 import { setBreadcrumbs } from '@navikt/nav-dekoratoren-moduler'
 import { useEffect } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { Route, Routes } from 'react-router-dom'
-import styled from 'styled-components'
 import { AvtaleKvittering } from './avtale/AvtaleKvittering'
 import { OppdaterAvtale } from './avtale/OppdaterAvtale'
 import { OpprettAvtale } from './avtale/OpprettAvtale'
@@ -47,18 +46,6 @@ export function App() {
         <Route path="/oppdater-avtale/:orgnr" element={<OppdaterAvtale />} />
         <Route path="*" element={<Feilside status={404} />} />
       </Routes>
-      <Kontakt className="main">
-        <Trans t={t} i18nKey="problemer">
-          <></>
-          <a href="mailto:nav.hot.behandlingsbriller@nav.no" />
-        </Trans>
-      </Kontakt>
     </ErrorBoundary>
   )
 }
-
-const Kontakt = styled.div`
-  width: 680px;
-  margin: 0 auto;
-  padding: 0 40px 40px 40px;
-`

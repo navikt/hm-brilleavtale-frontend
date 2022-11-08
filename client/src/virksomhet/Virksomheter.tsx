@@ -1,5 +1,5 @@
 import { Alert, BodyLong, Heading } from '@navikt/ds-react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { AvtalePanel } from '../avtale/AvtalePanel'
 import { Avstand } from '../components/Avstand'
@@ -29,37 +29,51 @@ export function Virksomheter() {
   }
 
   return (
-    <main>
-      {virksomheterUtenAvtale.length > 0 && (
-        <>
-          <Heading level="2" size="medium" spacing>
-            {t('virksomhet.uten_avtale')}
-          </Heading>
-          <Kolonne>
-            {virksomheterUtenAvtale.map((virksomhet) => (
-              <VirksomhetPanel key={virksomhet.orgnr} virksomhet={virksomhet} />
-            ))}
-          </Kolonne>
-        </>
-      )}
-      {virksomheterMedAvtale.length > 0 && (
-        <>
-          <Avstand marginTop={10} />
-          <Heading level="2" size="medium" spacing>
-            {t('virksomhet.med_avtale')}
-          </Heading>
-          <Kolonne>
-            {virksomheterMedAvtale.map((virksomhet) => (
-              <AvtalePanel key={virksomhet.orgnr} virksomhet={virksomhet} />
-            ))}
-          </Kolonne>
-        </>
-      )}
-    </main>
+    <>
+      <main>
+        {virksomheterUtenAvtale.length > 0 && (
+          <>
+            <Heading level="2" size="medium" spacing>
+              {t('virksomhet.uten_avtale')}
+            </Heading>
+            <Kolonne>
+              {virksomheterUtenAvtale.map((virksomhet) => (
+                <VirksomhetPanel key={virksomhet.orgnr} virksomhet={virksomhet} />
+              ))}
+            </Kolonne>
+          </>
+        )}
+        {virksomheterMedAvtale.length > 0 && (
+          <>
+            <Avstand marginTop={10} />
+            <Heading level="2" size="medium" spacing>
+              {t('virksomhet.med_avtale')}
+            </Heading>
+            <Kolonne>
+              {virksomheterMedAvtale.map((virksomhet) => (
+                <AvtalePanel key={virksomhet.orgnr} virksomhet={virksomhet} />
+              ))}
+            </Kolonne>
+          </>
+        )}
+      </main>
+      <Kontakt className="main">
+        <Trans t={t} i18nKey="problemer">
+          <></>
+          <a href="mailto:nav.hot.behandlingsbriller@nav.no" />
+        </Trans>
+      </Kontakt>
+    </>
   )
 }
 
 const Kolonne = styled.div`
   display: grid;
   gap: var(--navds-spacing-5);
+`
+
+const Kontakt = styled.div`
+  width: 680px;
+  margin: 0 auto;
+  padding: 0 40px 40px 40px;
 `
