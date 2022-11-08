@@ -50,7 +50,7 @@ export function App() {
       <Kontakt className="main">
         <Trans t={t} i18nKey="problemer">
           <></>
-          <a href="mailto:digihot@nav.no" />
+          <a href="mailto:nav.hot.behandlingsbriller@nav.no" />
         </Trans>
       </Kontakt>
     </ErrorBoundary>
