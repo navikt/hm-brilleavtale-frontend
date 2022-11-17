@@ -38,7 +38,7 @@
   "ledetekst.kontonr": "Kontonummer",
   "ledetekst.orgnr": "Organisasjonsnummer",
   "problemer": "Har du problemer med å inngå avtale, opplever du feil i løsningen eller har du andre spørsmål? Kontakt oss på epost: <1>nav.hot.behandlingsbriller@nav.no</1>",
-  "virksomhet.ingen_virksomheter": "Vi fant ingen virksomheter i Altinn som du er hovedadministrator for.",
+  "virksomhet.ingen_virksomheter": "Vi fant ingen virksomheter i Altinn som du har rettigheten 'Avtale om direkte oppgjør av briller for barn' for.",
   "virksomhet.med_avtale": "Virksomheter med avtale",
   "virksomhet.uten_avtale": "Virksomheter uten avtale"
 }
