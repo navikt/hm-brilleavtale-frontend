@@ -12,6 +12,7 @@ import { isHttpError } from './error'
 import { Feilside } from './Feilside'
 import { baseUrl } from './http'
 import { Virksomheter } from './virksomhet/Virksomheter'
+import {Helmet} from "react-helmet";
 
 export function App() {
   const { t } = useTranslation()
@@ -40,12 +41,24 @@ export function App() {
         </Banner>
       </header>
       <Routes>
-        <Route path="/" element={<Virksomheter />} />
-        <Route path="/opprett-avtale/kvittering" element={<AvtaleKvittering />} />
-        <Route path="/opprett-avtale/:orgnr" element={<OpprettAvtale />} />
-        <Route path="/oppdater-avtale/:orgnr" element={<OppdaterAvtale />} />
-        <Route path="*" element={<Feilside status={404} />} />
+        <Route path="/" element={<SettTittel title="helmet.title.virksomheter"><Virksomheter /></SettTittel>} />
+        <Route path="/opprett-avtale/kvittering" element={<SettTittel title="helmet.title.avtale_kvittering"><AvtaleKvittering /></SettTittel>} />
+        <Route path="/opprett-avtale/:orgnr" element={<SettTittel title="helmet.title.opprett_avtale"><OpprettAvtale /></SettTittel>} />
+        <Route path="/oppdater-avtale/:orgnr" element={<SettTittel title="helmet.title.oppdater_avtale"><OppdaterAvtale /></SettTittel>} />
+        <Route path="*" element={<SettTittel title="helmet.title.feilside"><Feilside status={404} /></SettTittel>} />
       </Routes>
     </ErrorBoundary>
   )
 }
+
+const SettTittel = ({title, children}: {title: string, children?: React.ReactNode}) => {
+  const { t } = useTranslation()
+  return (
+      <>
+        <Helmet htmlAttributes={{ lang: 'no' }}>
+          <title>{t(title)}</title>
+        </Helmet>
+        {children}
+      </>
+  )
+};

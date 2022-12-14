@@ -40,5 +40,11 @@
   "problemer": "Har du problem med å inngå avtale, opplever du feil i løysinga eller har du andre spørsmål? Kontakt oss på epost: <1>nav.hot.behandlingsbriller@nav.no</1>",
   "virksomhet.ingen_virksomheter": "Vi fann ingen verksemder i Altinn som du har rettigheten 'Avtale om direkte oppgjør av briller for barn' for.",
   "virksomhet.med_avtale": "Verksemder med avtale",
-  "virksomhet.uten_avtale": "Verksemder uten avtale"
+  "virksomhet.uten_avtale": "Verksemder uten avtale",
+  "helmet.title.forside": "Brilleavtale",
+  "helmet.title.virksomheter": "Virksomheter – Brilleavtale",
+  "helmet.title.feilside": "Feilside – Brilleavtale",
+  "helmet.title.opprett_avtale": "Opprett avtale - Brilleavtale",
+  "helmet.title.oppdater_avtale": "Oppdater avtale - Brilleavtale",
+  "helmet.title.avtale_kvittering": "Kvittering opprettet avtale - Brilleavtale"
 }
