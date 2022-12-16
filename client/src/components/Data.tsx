@@ -6,4 +6,9 @@ export const Data = styled.dl`
   gap: var(--navds-spacing-1);
   margin: 0;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    display: block;
+    scale: 80%;
+  }
 `
