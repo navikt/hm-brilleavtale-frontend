@@ -6,6 +6,7 @@ import { Avstand } from '../components/Avstand'
 import { HentVirksomheterResponse } from '../types'
 import { useGet } from '../useGet'
 import { VirksomhetPanel } from './VirksomhetPanel'
+import ScrollToTop from "../components/ScrollToTop";
 
 export function Virksomheter() {
   const { t } = useTranslation()
@@ -21,6 +22,7 @@ export function Virksomheter() {
   if (virksomheter && !virksomheter.length) {
     return (
       <main>
+        <ScrollToTop />
         <Alert variant="info">
           <BodyLong>{t('virksomhet.ingen_virksomheter')}</BodyLong>
         </Alert>
@@ -31,6 +33,7 @@ export function Virksomheter() {
   return (
     <>
       <main>
+        <ScrollToTop />
         {virksomheterUtenAvtale.length > 0 && (
           <>
             <Heading level="2" size="medium" spacing>
