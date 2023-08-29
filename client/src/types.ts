@@ -31,6 +31,10 @@ export interface OpprettAvtaleRequest {
   epost: string
 }
 
+export interface OpprettUtvidetAvtaleRequest {
+  orgnr: string
+}
+
 export interface OpprettAvtaleResponse extends Virksomhet {}
 
 export interface OppdaterAvtaleRequest {

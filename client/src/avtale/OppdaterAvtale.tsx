@@ -10,7 +10,7 @@ import {removeWhitespaceAndDot, validerKontonummer} from '../kontonummer'
 import {HentVirksomhetResponse, OppdaterAvtaleRequest, OppdaterAvtaleResponse} from '../types'
 import {useGet} from '../useGet'
 import {usePut} from '../usePut'
-import {logSkjemaFullført, skjemanavn} from '../utils/amplitude'
+import {logSkjemaFullført, logSkjemaStartet, skjemanavn} from '../utils/amplitude'
 import {ChevronRightIcon, DownloadIcon} from "@navikt/aksel-icons";
 import {AppLink} from "../components/AppLink";
 import {Dato} from "../components/Dato";
@@ -62,7 +62,7 @@ export function OppdaterAvtale() {
                     </BodyShort>
                 </div>
                 <LastNedKnapp>
-                    <AppLink href="/avtale.pdf" target="_blank">
+                    <AppLink href="/avtale.pdf" target="_blank" style={{textDecoration: "none", cursor: "pointer"}}>
                         Last ned
                         <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
                     </AppLink>
@@ -70,17 +70,22 @@ export function OppdaterAvtale() {
                 </LastNedKnapp>
             </Avtaleboks>
 
-            {virksomhet.utvidetAvtale && (
+            {!virksomhet.utvidetAvtale && (
 
                 <UtvidetAvtaleBoks>
                     <Heading level="2" size="small" style={{maxWidth: '70%'}}>
-                        {t('avtale.utvidet_avtale_tittel')}
+                        {t('avtale.utvid_avtale_tittel')}
                     </Heading>
-                    <LastNedKnapp>
-                        <AppLink href="/avtale.pdf" target="_blank">
+                    <LastNedKnapp
+                        onClick={() => {
+                            logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
+                            navigate(`/opprett-utvidet-avtale/${virksomhet.orgnr}`)
+                        }}
+                    >
+                        <div style={{display: 'flex', alignItems: 'center', cursor: "pointer" }}>
                             Se avtale
-                            <ChevronRightIcon title="a11y-title" />
-                        </AppLink>
+                            <ChevronRightIcon title="a11y-title"/>
+                        </div>
 
                     </LastNedKnapp>
                 </UtvidetAvtaleBoks>
