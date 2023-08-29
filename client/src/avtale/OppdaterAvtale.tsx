@@ -1,5 +1,5 @@
 import { BodyShort, Button, Heading, TextField } from '@navikt/ds-react'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -11,6 +11,7 @@ import { HentVirksomhetResponse, OppdaterAvtaleRequest, OppdaterAvtaleResponse }
 import { useGet } from '../useGet'
 import { usePut } from '../usePut'
 import { logSkjemaFullført, skjemanavn } from '../utils/amplitude'
+import {DownloadIcon} from "@navikt/aksel-icons";
 
 export function OppdaterAvtale() {
   const { t } = useTranslation()
@@ -49,7 +50,18 @@ export function OppdaterAvtale() {
 
   return (
     <main>
-      <Heading level="2" size="medium" spacing>
+
+      <Avtaleboks>
+          <Heading level="2" size="xsmall" spacing>
+            Avtale om direkte oppgjør av briller til barn
+          </Heading>
+          <LastNedKnapp>
+              Last ned
+              <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft:'0.25rem'}}/>
+          </LastNedKnapp>
+      </Avtaleboks>
+
+      <Heading level="2" size="small" spacing>
         {t('avtale.endre_kontaktinformasjon')}
       </Heading>
 
@@ -114,5 +126,14 @@ const Tekstfelt = styled(TextField)`
 
 const Avtaleboks = styled.div`
   display: flex;
-  background-color: var(--a-gray-300);
+  background-color: var(--a-gray-100);
+  padding: var(--a-spacing-8);
+  margin: var(--a-spacing-4) 0;
+`
+
+const LastNedKnapp = styled.div`
+  display: flex;
+  color: var(--a-blue-600);
+  margin-left: auto
+
 `
