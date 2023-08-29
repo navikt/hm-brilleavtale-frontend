@@ -69,7 +69,7 @@ export function OppdaterAvtale() {
                             </BodyShort>
                             <Avstand marginBottom={1}/>
                             <BodyShort size="small">
-                                {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.opprettet}/>
+                                {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.utvidetAvtaleOpprettet}/>
                             </BodyShort>
                         </>
                     )}
