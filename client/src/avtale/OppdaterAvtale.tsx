@@ -57,9 +57,22 @@ export function OppdaterAvtale() {
                     <Heading level="2" size="small">
                         {t('avtale.hovedavtale_tittel')}
                     </Heading>
-                    <BodyShort size="small" spacing>
+                    <BodyShort size="small">
                         {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.opprettet}/>
                     </BodyShort>
+
+                    {virksomhet.utvidetAvtale && (
+                        <>
+                            <Avstand marginBottom={10}/>
+                            <BodyShort size="medium">
+                                {t('avtale.utvidet_avtale_tittel')}
+                            </BodyShort>
+                            <Avstand marginBottom={1}/>
+                            <BodyShort size="small">
+                                {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.opprettet}/>
+                            </BodyShort>
+                        </>
+                    )}
                 </div>
                 <LastNedKnapp>
                     <AppLink href="/avtale.pdf" target="_blank" style={{textDecoration: "none", cursor: "pointer"}}>
@@ -82,7 +95,7 @@ export function OppdaterAvtale() {
                             navigate(`/opprett-utvidet-avtale/${virksomhet.orgnr}`)
                         }}
                     >
-                        <div style={{display: 'flex', alignItems: 'center', cursor: "pointer" }}>
+                        <div style={{display: 'flex', alignItems: 'center', cursor: "pointer"}}>
                             Se avtale
                             <ChevronRightIcon title="a11y-title"/>
                         </div>
