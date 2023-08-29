@@ -15,6 +15,7 @@ export interface Virksomhet {
   aktiv: boolean
   kontonr?: string
   epost?: string
+  utvidetAvtale: boolean
   avtaleversjon?: string
   opprettet?: string
   oppdatert?: string

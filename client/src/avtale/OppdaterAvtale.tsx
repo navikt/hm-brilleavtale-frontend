@@ -50,9 +50,9 @@ export function OppdaterAvtale() {
   return (
     <main>
       <Heading level="2" size="medium" spacing>
-        {t('avtale.endre', { navn: virksomhet.navn })}
+        {t('avtale.endre_kontaktinformasjon')}
       </Heading>
-      <BodyShort spacing>{t('avtale.endre_orgnr', { orgnr: virksomhet.orgnr })}</BodyShort>
+
       <form
         onSubmit={handleSubmit(async (data) => {
           await endreAvtale({
@@ -84,7 +84,7 @@ export function OppdaterAvtale() {
         <Avstand marginBottom={5} />
         <Knapper>
           <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
-            {t('felles.lagre')}
+            {t('felles.lagre_endringer')}
           </Button>
           <Button
             type="button"
@@ -104,10 +104,15 @@ export function OppdaterAvtale() {
 const Knapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  gap: var(--navds-spacing-3);
+  gap: var(--a-spacing-3);
   justify-content: left;
 `
 
 const Tekstfelt = styled(TextField)`
   max-width: 330px;
+`
+
+const Avtaleboks = styled.div`
+  display: flex;
+  background-color: var(--a-gray-300);
 `
