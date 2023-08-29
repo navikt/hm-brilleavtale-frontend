@@ -6,6 +6,7 @@ import { Avstand } from '../components/Avstand'
 import { DsLink } from '../components/DsLink'
 import { Virksomhet } from '../types'
 import { AvtalePanel } from './AvtalePanel'
+import ScrollToTop from "../components/ScrollToTop";
 
 export function UtvidetAvtaleKvittering() {
   const { t } = useTranslation()
@@ -15,6 +16,7 @@ export function UtvidetAvtaleKvittering() {
   }
   return (
     <main>
+      <ScrollToTop />
       <Heading level="2" size="medium" spacing>
         {t('avtale.kvittering_for', { navn: virksomhet.navn })}
       </Heading>
