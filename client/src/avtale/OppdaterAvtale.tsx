@@ -11,7 +11,9 @@ import {HentVirksomhetResponse, OppdaterAvtaleRequest, OppdaterAvtaleResponse} f
 import {useGet} from '../useGet'
 import {usePut} from '../usePut'
 import {logSkjemaFullført, skjemanavn} from '../utils/amplitude'
-import {DownloadIcon} from "@navikt/aksel-icons";
+import {ChevronRightIcon, DownloadIcon} from "@navikt/aksel-icons";
+import {AppLink} from "../components/AppLink";
+import {Dato} from "../components/Dato";
 
 export function OppdaterAvtale() {
     const {t} = useTranslation()
@@ -50,18 +52,40 @@ export function OppdaterAvtale() {
 
     return (
         <main>
-
             <Avtaleboks>
-                <Heading level="2" size="xsmall" spacing>
-                    Avtale om direkte oppgjør av briller til barn
-                </Heading>
+                <div style={{maxWidth: '70%'}}>
+                    <Heading level="2" size="small">
+                        {t('avtale.hovedavtale_tittel')}
+                    </Heading>
+                    <BodyShort size="small" spacing>
+                        {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.opprettet}/>
+                    </BodyShort>
+                </div>
                 <LastNedKnapp>
-                    Last ned
-                    <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
+                    <AppLink href="/avtale.pdf" target="_blank">
+                        Last ned
+                        <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
+                    </AppLink>
+
                 </LastNedKnapp>
             </Avtaleboks>
 
+            {virksomhet.utvidetAvtale && (
 
+                <UtvidetAvtaleBoks>
+                    <Heading level="2" size="small" style={{maxWidth: '70%'}}>
+                        {t('avtale.utvidet_avtale_tittel')}
+                    </Heading>
+                    <LastNedKnapp>
+                        <AppLink href="/avtale.pdf" target="_blank">
+                            Se avtale
+                            <ChevronRightIcon title="a11y-title" />
+                        </AppLink>
+
+                    </LastNedKnapp>
+                </UtvidetAvtaleBoks>
+
+            )}
 
             <Kontaktinformasjon>
                 <Heading level="2" size="small" spacing>
@@ -133,6 +157,16 @@ const Avtaleboks = styled.div`
   padding: var(--a-spacing-8);
   margin: var(--a-spacing-4) 0;
   border-radius: 10px;
+  align-items: center;
+`
+
+const UtvidetAvtaleBoks = styled.div`
+  display: flex;
+  background-color: var(--a-blue-50);
+  padding: var(--a-spacing-8);
+  margin: var(--a-spacing-4) 0;
+  border-radius: 10px;
+  align-items: center;
 `
 
 const LastNedKnapp = styled.a`
