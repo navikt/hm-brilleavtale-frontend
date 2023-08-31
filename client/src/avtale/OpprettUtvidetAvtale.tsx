@@ -43,23 +43,21 @@ export function OpprettUtvidetAvtale() {
     }
     return (
         <main>
-            <Panel border>
-                <Heading level="2" size="medium" spacing>
-                    {t('avtale.utvidet_avtale_tittel')}
+            <Heading level="2" size="medium" spacing>
+                {t('avtale.utvidet_avtale_tittel')}
+            </Heading>
+            <Avstand marginTop={5} marginBottom={5}>
+                <Heading level="2" size="small">
+                    {virksomhet.navn}
                 </Heading>
-                <Avstand marginTop={5} marginBottom={5}>
-                    <Heading level="2" size="small">
-                        {virksomhet.navn}
-                    </Heading>
-                    <BodyShort size="small">
-                        org. nr. {virksomhet.orgnr}
-                    </BodyShort>
-                </Avstand>
-                <BodyLong>{t('avtale.ingress')}</BodyLong>
-                <Avstand marginTop={5} marginBottom={5}>
-                    <UtvidetAvtale/>
-                </Avstand>
-            </Panel>
+                <BodyShort size="small">
+                    org. nr. {virksomhet.orgnr}
+                </BodyShort>
+            </Avstand>
+            <BodyLong>{t('utvidet_avtale.ingress')}</BodyLong>
+            <Avstand marginTop={5} marginBottom={5}>
+                <UtvidetAvtale/>
+            </Avstand>
             <form
                 onSubmit={handleSubmit(async (data) => {
                     await opprettUtvidetAvtale({

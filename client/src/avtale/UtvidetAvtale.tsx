@@ -9,7 +9,7 @@ export function UtvidetAvtale() {
     } = useTranslation()
     const avtale: Avtaletekst = nb
     return (
-        <Panel>
+        <Panel border>
             {avtale.kapittel.map(({overskrift, avsnitt}, index) => (
                 <div key={index}>
                     <Heading size="small" level="3" spacing>
