@@ -1,17 +1,364 @@
-[
-  {
-    "overskrift": "Formål og omfang",
-    "tekst": [
-      "Formålet med avtalen er å regulere det økonomiske oppgjøret for stønad for briller til barn mellom NAV og Firmaet.",
-      "Avtalen omfatter utbetaling av stønad til briller til barn med hjemmel i forskrift om stønad til briller til barn. Avtalen omfatter direkte oppgjør for stønadsbeløpet som Firmaet har forskuttert til stønadsmottakeren."
-    ]
-  },
-  {
-    "overskrift": "Optikerfirmaets plikter",
-    "tekst": [
-      "Firmaet skal følge lover, forskrifter, NAVs retningslinjer og offentlige krav til produkt og virksomhet. Som en del av dette må Firmaet sørge for å etterleve personvernregelverket, og gi stønadsmottaker riktig og tilstrekkelig informasjon.",
-      "Firmaet skal sørge for at en autorisert optiker har vurdert at barnet har behov for briller og at dokumentasjon på behovet for synskorreksjon blir oppbevart i pasientjournalen.",
-      "Optikerfirmaet skal tilby tilpassing av briller til barn."
-    ]
-  }
-]
+{
+  "kapittel": [
+    {
+      "overskrift": "Avtalens formål",
+      "avsnitt": [
+        {
+          "tekst": "Avtalen gjelder etablering av elektronisk samhandling mellom partene. Formålet med avtalen er å regulere partenes forhold og samarbeid når det gjelder utveksling av personopplysninger i forbindelse med arbeid med en pilot-applikasjon for automatisk saksbehandling av stønad til briller til barn. Avtalen skal legge til rette for at partene etter beste evne skal få gjennomført den elektroniske samhandlingen som fremgår av denne avtalen og dens bilag.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Avtalens parter",
+      "avsnitt": [
+        {
+          "tekst": "Partene i denne avtalen er Arbeids- og velferdsdirektoratet og YY som selvstendige behandlingsansvarlige.",
+          "liste": []
+        },
+        {
+          "tekst": "Arbeids- og velferdsdirektoratet opptrer som mottaker og avgiver. YY opptrer i denne avtalen som avgiver og mottaker. Se herunder bilag 1 for hvilke opplysninger som blir mottatt og avgitt av de ulike partene.",
+          "liste": []
+        },
+        {
+          "tekst": "YY har rett til å benytte databehandler/leverandør for å avgi/motta informasjon på sine vegne, se herunder kapittel 18 i denne avtalen.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Avtaledokumentene",
+      "avsnitt": [
+        {
+          "tekst": "Avtalen består av dette avtaledokument og 4 tilhørende bilag/vedlegg som hver for seg er underskrevet.",
+          "liste": []
+        },
+        {
+          "tekst": "Bilagsoversikt",
+          "liste": [
+            "Bilag 1: Formål med innhenting/utveksling av personopplysninger og opplysningstyper",
+            "Bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet",
+            "Bilag 3: Varsling, feilretting og kontakt",
+            "Bilag 4: Endringslogg for avtalen"
+          ]
+        },
+        {
+          "tekst": "Løsningen som leveres er en pilot i et utforskende stadium, som innebærer at det vil være endringer i tjenesten, og det er i større grad forventet ustabilitet enn ved en etablert løsning. Endringer og utvikling av løsningen kan ikke avvike fra krav satt i Bilag 2, tekniske grensesnitt og særskilte krav til sikkerhet.",
+          "liste": []
+        },
+        {
+          "tekst": "Endringer i selve avtalen, herunder etablering av ny informasjonstjeneste, skal også føres i særskilt endringslogg, se bilag 4: Endringslogg for avtalen.",
+          "liste": []
+        },
+        {
+          "tekst": "Bilag kan endres uavhengig av den generelle avtaleteksten. Ved motstrid mellom avtalen og bilagene går den generelle avtaleteksten foran.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Grunnlag for utveksling av opplysninger",
+      "avsnitt": [
+        {
+          "tekst": "NAV har plikt til å påse at saken er så godt opplyst som mulig før det blir fattet vedtak i saken, jf. forvaltningsloven § 17. Hvilke opplysninger som er nødvendige å innhente for å kunne fatte vedtak følger av forskrift om stønad til briller til barn.",
+          "liste": []
+        },
+        {
+          "tekst": "Innhenting av personopplysninger følger rettslig grunnlag i personvernforordningens artikkel 6, punkt 1 bokstav e og artikkel 9, punkt 2 bokstav b. For saker vedrørende behandling om krav om støtte til briller til barn, følger NAV rett til å innhente nødvendige opplysninger i supplerende rettslig grunnlag av forskrift om stønad til briller til barn §§ 2, 6-7.",
+          "liste": []
+        },
+        {
+          "tekst": "Videre innhentes opplysninger som følge av avtale «Avtale om direkte oppgjør for stønad til briller til barn» som inngås før optikerbedrift kan benytte og tilby direkteoppgjørsløsningen.",
+          "liste": []
+        },
+        {
+          "tekst": "Opplysningene som utveksles skal ikke benyttes utenfor avtalens formål eller utenfor hjemmelsgrunnlag, ei heller viderebehandles for andre formål.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Overordnede krav",
+      "avsnitt": [
+        {
+          "tekst": "Partene plikter å følge lovpålagte krav til behandling av opplysningene. Avtalen er begrenset til lovpålagt utveksling av opplysninger. Partene plikter å holde seg informert og oppdatert om gjeldende lover og forskrifter, og instrukser som regulerer informasjonsutvekslingen.",
+          "liste": []
+        },
+        {
+          "tekst": "Overføring og behandling av opplysninger skal oppfylle de krav som følger av personopplysningsloven.",
+          "liste": []
+        },
+        {
+          "tekst": "Overføring av opplysninger i henhold til avtalen skjer slik som definert i bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Behandlingsansvar ",
+      "avsnitt": [
+        {
+          "tekst": "Mottaker blir behandlingsansvarlig for opplysningene fra det tidspunktet opplysningene er mottatt, og plikter da å følge de krav som følger av personopplysningsloven og øvrig lovgivning.",
+          "liste": []
+        },
+        {
+          "tekst": "Opplysningene anses mottatt når mottaker sender kvittering for at opplysningene er mottatt uten feil i eller ved forsendelsen. Slik kvittering skal sendes umiddelbart etter mottakelsen av forsendelse uten feil. Dersom mottaker registrerer feil i eller ved forsendelsen fra avgivende part, skal dette tas opp som bestemt i denne avtalens bilag 3 om feilretting. Avsender er ansvarlig for å rette opp feil ved forsendelsen.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Taushetsplikt",
+      "avsnitt": [
+        {
+          "overskrift": "7.1. Taushetsplikt - personopplysninger",
+          "tekst": "Enhver som utfører tjeneste eller arbeid for en enhet i Arbeids- og velferdsetaten har taushetsplikt etter arbeids- og velferdsforvaltningsloven § 7, jf. forvaltningsloven §§ 13 til 13e.",
+          "liste": []
+        },
+        {
+          "tekst": "YY-ansatte har taushetsplikt etter forvaltningsloven §§ 13 – 13 e. Taushetsplikten gjelder både ansatte i YY og kontraktshjelpere for YY. Databehandlere eller andre kontraktshjelpere for YY må følge kravene som fremkommer fra denne avtalen. Opplysninger som utveksles eller mottas kan ikke brukes videre for egne formål.",
+          "liste": []
+        },
+        {
+          "tekst": "Partene forplikter seg videre til ikke å utlevere noen opplysninger som er mottatt i forbindelse med gjennomføringen av denne avtalen til andre, med mindre slik utlevering er tillatt etter gjeldende lovgivning.",
+          "liste": []
+        },
+        {
+          "overskrift": "7.2. Taushetsplikt - driftshemmeligheter",
+          "tekst": "Bedriftshemmeligheter, herunder opplysninger som kan skade noen av partene eller som kan utnyttes av utenforstående, er underlagt taushetsplikt jf. forvaltningsloven § 13 første ledd nr. 2. Taushetsplikten omfatter også kunnskap om motpartens sikkerhetsrutiner m.v. som partene får kjennskap til i forbindelse med inngåelse og oppfyllelse av denne avtalen.",
+          "liste": []
+        },
+        {
+          "tekst": "Dette punktet er likevel ikke til hinder for at partene kan rapportere nødvendige opplysninger til overordnet myndighet, eller gi nødvendige opplysninger til underliggende enheter i vedkommende etat.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Opplysningenes kvalitet",
+      "avsnitt": [
+        {
+          "tekst": "Partene leverer opplysninger med den kvalitet som til enhver tid er i de enkelte systemene.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Ansvar, sikkerhet og rutiner ved utveksling og bruk av opplysninger",
+      "avsnitt": [
+        {
+          "tekst": "Den enkelte part har ansvaret for at opplysningene sikres under overføring slik at informasjonen ikke kommer uvedkommende i hende, at integriteten i opplysningene ivaretas og at tilgjengelighet ivaretas.",
+          "liste": []
+        },
+        {
+          "overskrift": "9.1 Overføring av opplysninger",
+          "tekst": "Kommunikasjonen mellom partene skal sikre nødvendig konfidensialitet, integritet og tilgjengelighet.",
+          "liste": []
+        },
+        {
+          "tekst": "Teknisk og sikkerhetsmessig løsning for overføring av opplysninger er beskrevet i bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Kommunikasjon og grensesnitt",
+      "avsnitt": [
+        {
+          "tekst": "Kommunikasjon og grensesnitt mellom partene er regulert i bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet og bilag 3.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Varslingsplikt og avvikshåndtering",
+      "avsnitt": [
+        {
+          "tekst": "Partene har gjensidig varslingsplikt hvis det er oppdaget, eller man har mistanke om, brudd på avtalens bestemmelser, herunder om det som ledd i overføringen kan ha eller har skjedd et brudd på personopplysningssikkerheten. Avvik skal varsles uten ugrunnet opphold etter at avviket er oppdaget.",
+          "liste": []
+        },
+        {
+          "tekst": "Varselet skal bidra til at den av partene som er behandlingsansvarlig på overføringstidspunktet jf. punkt 6, får den informasjonen som er nødvendig til å oppfylle sin varslingsplikt etter personopplysningsloven § 1 jf. personvernforordningen artikkel 33 og 34. Det skal varsles umiddelbart med vurdering av alvorlighetsgrad, og spesielt dersom det er foretatt en uautorisert utveksling av opplysninger. Varslingsplikten og varslingsrutiner er nærmere beskrevet i bilag 3.",
+          "liste": []
+        },
+        {
+          "tekst": "Avvik skal rapporteres skriftlig innen 36 timer fra avviket ble oppdaget og inneholde informasjon om hva som har inntruffet, hvor og når hendelsen inntraff, hovedårsaken til avviket, antall og hvilke registrerte som er berørt, hva slags type personopplysninger som er berørt, hvor de berørte personopplysningene befinner seg nå, strakstiltak som ble iverksatt, hvilke konsekvenser hendelsen har eller kan ha for de registrertes rettigheter og friheter og hvem som er ansvarlig for videre oppfølging.",
+          "liste": []
+        },
+        {
+          "tekst": "Varsling av avtalebrudd eller sikkerhetsbrudd skal loggføres hos hver av partene. Varslingen skal skje via oppnevnte kontakter, jf. bilag 3.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Ansvar for retting av feil",
+      "avsnitt": [
+        {
+          "tekst": "Den parten som oppdager feil i opplysninger, eller andre feil ved tjenestene, skal uten ugrunnet opphold varsle den annen part i henhold til bilag 3.",
+          "liste": []
+        },
+        {
+          "tekst": "Partene skal rette større feil og sikkerhetsfeil så raskt som mulig, og mindre feil så snart dette er praktisk mulig. Ved teknisk svikt i linjeoverføringen mellom partene skal partene i fellesskap sørge for at feilen blir rettet. Se bilag 3 om varsling, feilretting og kontakt.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Beredskap/Kontinuitetsplan",
+      "avsnitt": [
+        {
+          "tekst": "I en beredskapssituasjon, eller annen ekstraordinær situasjon utenfor partenes kontroll, forutsettes det at partene samarbeider om å etablere alternative elektroniske og/eller manuelle rutiner for utveksling av opplysninger, så fremt situasjonen gjør dette mulig.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Force Majeure",
+      "avsnitt": [
+        {
+          "tekst": "Skulle det inntreffe en ekstraordinær situasjon, som etter norsk rett må regnes som force majeure, og som gjør det umulig for partene å oppfylle forpliktelsene i denne avtalen, blir partenes forpliktelser suspendert for det tidsrom den ekstraordinære situasjonen varer.",
+          "liste": []
+        },
+        {
+          "tekst": "I forbindelse med force majeure situasjonen har begge parter gjensidig informasjonsplikt om alle forhold som antas å være av betydning for den andre parten. Slik informasjon skal gis uten ugrunnet opphold. Partene dekker selv sine kostnader som følger av force majeure situasjonen.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Endringshåndtering/revisjon av avtale og bilag ",
+      "avsnitt": [
+        {
+          "tekst": "Partene kan kreve endring i avtalen dersom endringer i lov eller forskrift nødvendiggjør dette. Krav som følger av endringer i lover og forskrifter skal gjennomføres innen de tidsfrister som følger av lov eller forskrift. Det samme gjelder krav som følger av pålegg eller instrukser fra regjeringen eller departementene.",
+          "liste": []
+        },
+        {
+          "tekst": "Partene skal alltid varsle hverandre så snart som mulig ved planlagte endringer av datasystemene som kan påvirke overføringen av opplysninger til/fra den andre part, eller på annen måte påvirke den andre parts systemer. Prosedyre for varsling fremkommer av bilag 3.",
+          "liste": []
+        },
+        {
+          "tekst": "Endres krav til sikkerhet skal nye retningslinjer tas inn som en del av avtalen umiddelbart, og partene har da gjensidig varslingsplikt.",
+          "liste": []
+        },
+        {
+          "tekst": "Endring og tillegg til avtalen og/eller bilag skal følge fastsatte prosedyrer, skje skriftlig, og være undertegnet. Endringer i avtale skal fremkomme av egen endringslogg, jf bilag 8 der det føres logg over alle endringer.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Mislighold av avtalen",
+      "avsnitt": [
+        {
+          "tekst": "Den som vil påberope seg mislighold av avtalen, må meddele dette til den annen part med skriftlig begrunnelse, uten ugrunnet opphold etter at det aktuelle forholdet ble kjent.  ",
+          "liste": []
+        },
+        {
+          "tekst": "Dersom sikkerheten ikke er tilfredsstillende jf. krav fastsatt i punkt 9 og bilag 2 vil overføringer av opplysninger fra partene opphøre inntil mangler eller mislighold er rettet.",
+          "liste": []
+        },
+        {
+          "tekst": "En part kan heve avtalen dersom den annen part i vesentlig grad misligholder sine forpliktelser etter avtalen. En part som ønsker å heve avtalen skal i skriftlig varsel sette en rimelig frist for retting av forholdet. Av varselet skal det fremgå at avtalen vil bli hevet dersom forholdet ikke er rettet innen fristen.",
+          "liste": []
+        },
+        {
+          "tekst": "Overtredelse av taushetsplikt vil alltid anses som vesentlig mislighold.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Samarbeid",
+      "avsnitt": [
+        {
+          "tekst": "Partene har plikt til å samarbeide om oppfyllelse av avtalens intensjon. Alle meldinger, pålegg, krav etc. i tilknytning til avtalen og det den regulerer, skal gis skriftlig til den annen part ved den avtalte kontaktperson/enhet, såfremt ikke noe annet fremkommer i avtalen eller bilag.",
+          "liste": []
+        },
+        {
+          "overskrift": "17.1 Kontaktopplysninger",
+          "tekst": "Hver av partene skal oppnevne en person/enhet, som skal være vedkommende parts kontaktperson/enhet under utøvelsen av avtalen.",
+          "liste": []
+        },
+        {
+          "tekst": "Partenes kontakter/enhet fremgår av Bilag 3. Ved skifte av kontakter/enhet skal dette meddeles skriftlig til den annen part. Samtidig må parten som foretar skiftet oppdatere Bilag 3 med ny kontaktinformasjon.",
+          "liste": []
+        },
+        {
+          "overskrift": "17.2. Forholdet til tilsynsmyndigheter",
+          "tekst": "Partene skal bistå hverandre i å fremskaffe nødvendig dokumentasjon som etterspørres om den annen parts virksomhet av tilsynsmyndigheten ved vurdering av sikkerhetskrav, eller ved tilsyn/kontroll.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Bruk av underleverandør ",
+      "avsnitt": [
+        {
+          "tekst": "Partene har rett til å la deler av sine avtaleforpliktelser utføres av underleverandør. Partene er fullt ut ansvarlig for utførelsen av underleverandørens oppgaver, på samme måte som om parten selv stod for utførselen.",
+          "liste": []
+        },
+        {
+          "tekst": "Dersom underleverandøren er en databehandler, må kravene som etter denne avtalen påhviler parten som benytter underleverandør, gjenspeiles i avtalen med underleverandøren.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Overdragelse ved fusjon og/eller eierskifte",
+      "avsnitt": [
+        {
+          "tekst": "Avtalen, eller rettigheter og forpliktelser etter avtalen, kan ikke overdras eller overføres til andre.",
+          "liste": []
+        },
+        {
+          "tekst": "Dersom det finner sted strukturelle endringer hos en eller begge parter som medfører behov for å la andre juridiske personer stå som part i avtalen, forplikter partene seg etter beste evne til å bistå hverandre, slik at avtalen og ordningen den regulerer, kan opprettholdes.",
+          "liste": []
+        },
+        {
+          "tekst": "Arbeids- og velferdsdirektoratet tar forbehold om godkjenning av en ny part, for å sikre seg at en eventuell ny part tilfredsstiller de krav, herunder lovmessige krav og krav til informasjonssikkerhet, som denne avtalen forutsetter.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Godtgjørelse/utgiftsdekning",
+      "avsnitt": [
+        {
+          "tekst": "Hver av partene dekker egne kostnader ved gjennomføring av denne avtalen.",
+          "liste": []
+        },
+        {
+          "tekst": "Partene dekker også egne kostnader ved nødvendig oppgradering av den tekniske løsningen. Arbeids- og velferdsdirektoratet dekker ingen kostander knyttet til kostnader for optiker eller deres leverandører/databehandlere/kontraktsparter.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Tvister",
+      "avsnitt": [
+        {
+          "tekst": "Dersom det oppstår tvist mellom partene om tolkningen eller rettsvirkningen av avtalen, skal tvisten søkes løst ved forhandlinger mellom partene. Hvis tvisten ikke løses ved forhandlinger eskaleres tvisten linjevei av partene.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Avtalens varighet og ikrafttredelse ",
+      "avsnitt": [
+        {
+          "tekst": "Denne avtalen gjelder i pilotperioden frem til og med [dato]. Når løsningen er besluttet satt i produksjon skal det inngås ny avtale som erstatter pilotavtalen. Hvis begge partene er enige, kan avtalen i en mellomperiode forlenges med seks måneder utover avtalt dato. Dette skal gjøres skriftlig før utløpet av pilotperioden.",
+          "liste": []
+        },
+        {
+          "tekst": "Avtalen trer i kraft fra dato for undertegnelse.",
+          "liste": []
+        },
+        {
+          "tekst": "Avtalen er utarbeidet i to eksemplarer, hvorav partene beholder hvert sitt underskrevne eksemplar.",
+          "liste": []
+        }
+      ]
+    }
+  ]
+}
