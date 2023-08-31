@@ -79,7 +79,7 @@ export function OpprettUtvidetAvtale() {
                         render={({field}) => (
                             <ConfirmationPanel
                                 error={errors.lest?.message}
-                                label={t('avtale.bekreftelse')}
+                                label={t('utvidet_avtale.bekreftelse')}
                                 checked={field.value}
                                 {...field}
                             />
