@@ -1,5 +1,5 @@
-import {BodyLong, BodyShort, Button, ConfirmationPanel, Heading, Panel, TextField} from '@navikt/ds-react'
-import {useEffect} from 'react'
+import {BodyLong, BodyShort, Button, ConfirmationPanel, Heading, Link, Panel, TextField} from '@navikt/ds-react'
+import React, {useEffect} from 'react'
 import {Controller, useForm} from 'react-hook-form'
 import {useTranslation} from 'react-i18next'
 import {useNavigate, useParams} from 'react-router-dom'
@@ -11,6 +11,8 @@ import {useGet} from '../useGet'
 import {usePost} from '../usePost'
 import {logSkjemaFullført, skjemanavn} from '../utils/amplitude'
 import {UtvidetAvtale} from "./UtvidetAvtale";
+import {DownloadIcon} from "@navikt/aksel-icons";
+import {AppLink} from "../components/AppLink";
 
 export function OpprettUtvidetAvtale() {
     const {t} = useTranslation()
@@ -21,9 +23,13 @@ export function OpprettUtvidetAvtale() {
         control,
         handleSubmit,
         formState: {errors, isSubmitting},
-    } = useForm<{ lest: boolean }>({
+    } = useForm<{ lest: boolean, bilag1: boolean, bilag2: boolean, bilag3: boolean, bilag4: boolean }>({
         defaultValues: {
             lest: false,
+            bilag1: false,
+            bilag2: false,
+            bilag3: false,
+            bilag4: false
         },
     })
     const {
@@ -67,7 +73,119 @@ export function OpprettUtvidetAvtale() {
                 })}
             >
 
+                <Avstand marginTop={2} marginBottom={2}>
+                    <Controller
+                        control={control}
+                        name="bilag1"
+                        rules={{
+                            validate(value) {
+                                return value || t('avtale.må_huke_av')
+                            },
+                        }}
+                        render={({field}) => (
+                            <div style={{display: 'grid', gridTemplateColumns: '1fr auto'}}>
+                                <ConfirmationPanel
+                                    error={errors.bilag1?.message}
+                                    label={t('bilag1_bekreftelse')}
+                                    checked={field.value}
+                                    {...field}
+                                />
+
+                                <AppLink href="/avtale.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer", padding: '1rem'}}>
+                                    Last ned bilag
+                                    <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
+                                </AppLink>
+                            </div>
+                        )}
+                    />
+                </Avstand>
+
+                <Avstand marginTop={2} marginBottom={2}>
+                    <Controller
+                        control={control}
+                        name="bilag2"
+                        rules={{
+                            validate(value) {
+                                return value || t('avtale.må_huke_av')
+                            },
+                        }}
+                        render={({field}) => (
+                            <div style={{display: 'grid', gridTemplateColumns: '1fr auto'}}>
+                                <ConfirmationPanel
+                                    error={errors.bilag2?.message}
+                                    label={t('bilag2_bekreftelse')}
+                                    checked={field.value}
+                                    {...field}
+                                />
+                                <AppLink href="/avtale.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer", padding: '1rem'}}>
+                                    Last ned bilag
+                                    <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
+                                </AppLink>
+
+                            </div>
+                        )}
+                    />
+                </Avstand>
+
+                <Avstand marginTop={2} marginBottom={2}>
+                    <Controller
+                        control={control}
+                        name="bilag3"
+                        rules={{
+                            validate(value) {
+                                return value || t('avtale.må_huke_av')
+                            },
+                        }}
+                        render={({field}) => (
+                            <div style={{display: 'grid', gridTemplateColumns: '1fr auto'}}>
+                                <ConfirmationPanel
+                                    error={errors.bilag3?.message}
+                                    label={t('bilag3_bekreftelse')}
+                                    checked={field.value}
+                                    {...field}
+                                />
+                                <AppLink href="/avtale.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer", padding: '1rem'}}>
+                                    Last ned bilag
+                                    <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
+                                </AppLink>
+
+                            </div>
+                        )}
+                    />
+                </Avstand>
+                <Avstand marginTop={2} marginBottom={2}>
+                    <Controller
+                        control={control}
+                        name="bilag4"
+                        rules={{
+                            validate(value) {
+                                return value || t('avtale.må_huke_av')
+                            },
+                        }}
+                        render={({field}) => (
+                            <div style={{display: 'grid', gridTemplateColumns: '1fr auto'}}>
+                                <ConfirmationPanel
+                                    error={errors.bilag4?.message}
+                                    label={t('bilag4_bekreftelse')}
+                                    checked={field.value}
+                                    {...field}
+                                />
+                                <AppLink href="/avtale.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer", padding: '1rem'}}>
+                                    Last ned bilag
+                                    <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
+                                </AppLink>
+
+                            </div>
+                        )}
+                    />
+                </Avstand>
+
                 <Avstand marginTop={5} marginBottom={5}>
+
                     <Controller
                         control={control}
                         name="lest"
@@ -85,7 +203,9 @@ export function OpprettUtvidetAvtale() {
                             />
                         )}
                     />
+
                 </Avstand>
+
                 <Knapper>
                     <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
                         {t('avtale.inngå_avtale')}

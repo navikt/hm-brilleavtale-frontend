@@ -1,6 +1,10 @@
 {
   "avtale.bekreftelse": "Jeg har satt meg inn i vilkårene i avtalen, og bekrefter at firmaet forplikter seg til vilkårene i avtalen om direkte oppgjør for stønad til briller til barn.",
   "utvidet_avtale.bekreftelse": "Jeg har satt meg inn i vilkårene i avtalen, og bekrefter at firmaet forplikter seg til vilkårene i avtalen om utvidet avtale for å sende brillekrav via eget system.",
+  "bilag1_bekreftelse": "Jeg har lest og forstått bilag 'Bilag 1'",
+  "bilag2_bekreftelse": "Jeg har lest og forstått bilag 'Bilag 2'",
+  "bilag3_bekreftelse": "Jeg har lest og forstått bilag 'Bilag 3'",
+  "bilag4_bekreftelse": "Jeg har lest og forstått bilag 'Bilag 4'",
   "avtale.endre": "Endre avtale for {{navn}}",
   "avtale.endre_orgnr": "Orgnr. {{orgnr}}",
   "avtale.endre_kontaktinformasjon": "Endre kontaktinformasjon",
