@@ -15,7 +15,7 @@ RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
     NODE_AUTH_TOKEN=$(cat /run/secrets/NODE_AUTH_TOKEN) \
     npm ci --prefer-offline --no-audit --ignore-scripts --legacy-peer-deps
 COPY server .
-RUN npm rebuild && npm run prepare --if-present
+RUN npm run test && npm run build
 
 FROM node:16.15.0-alpine as server-dependencies
 WORKDIR /app
