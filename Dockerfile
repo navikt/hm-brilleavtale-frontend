@@ -3,7 +3,7 @@ WORKDIR /app
 COPY client/package.json client/package-lock.json ./
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
     echo '//npm.pkg.github.com/:_authToken='$(cat /run/secrets/NODE_AUTH_TOKEN) >> .npmrc \
-    npm ci --prefer-offline --no-audit --ignore-scripts --legacy-peer-deps
+    npm ci --prefer-offline --no-audit
 COPY client .
 # Kjør evt. script uten NODE_AUTH_TOKEN tilgjengelig
 RUN npm rebuild && npm run prepare --if-present
@@ -13,7 +13,7 @@ WORKDIR /app
 COPY server/package.json server/package-lock.json ./
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
     NODE_AUTH_TOKEN=$(cat /run/secrets/NODE_AUTH_TOKEN) \
-    npm ci --prefer-offline --no-audit --ignore-scripts --legacy-peer-deps
+    npm ci --prefer-offline --no-audit
 COPY server .
 RUN npm run test && npm run build
 
