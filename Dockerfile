@@ -2,7 +2,7 @@ FROM node:16.15.0-alpine as client-builder
 WORKDIR /app
 COPY client/package.json client/package-lock.json ./
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
-    NODE_AUTH_TOKEN=$(cat /run/secrets/NODE_AUTH_TOKEN) \
+    echo '//npm.pkg.github.com/:_authToken='$(cat /run/secrets/NODE_AUTH_TOKEN) >> .npmrc \
     npm ci --prefer-offline --no-audit --ignore-scripts --legacy-peer-deps
 COPY client .
 # Kjør evt. script uten NODE_AUTH_TOKEN tilgjengelig
