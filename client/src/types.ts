@@ -34,6 +34,11 @@ export interface OpprettAvtaleRequest {
 
 export interface OpprettUtvidetAvtaleRequest {
   orgnr: string
+  utvidetAvtale: boolean
+  bilag1: boolean
+  bilag2: boolean
+  bilag3: boolean
+  bilag4: boolean
 }
 
 export interface OpprettAvtaleResponse extends Virksomhet {}

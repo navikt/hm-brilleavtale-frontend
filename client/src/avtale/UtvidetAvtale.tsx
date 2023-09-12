@@ -2,12 +2,22 @@ import {BodyLong, Heading, Panel} from '@navikt/ds-react'
 import {useTranslation} from 'react-i18next'
 import nb from './nb_utvidet_avtale.json'
 import nn from './nn_utvidet_avtale.json'
+import {DownloadIcon} from "@navikt/aksel-icons";
+import {AppLink} from "../components/AppLink";
+import React from "react";
 
 export function UtvidetAvtale() {
     const {
         i18n: {language},
     } = useTranslation()
     const avtale: Avtaletekst = nb
+    const bilagsmap = new Map<string, string>([
+        ["Bilag 1", "/bilag1.pdf"],
+        ["Bilag 2", "/bilag2.pdf"],
+        ["Bilag 3", "/bilag3.pdf"],
+        ["Bilag 4", "/bilag4.pdf"],
+    ])
+
     return (
         <Panel border>
             {avtale.kapittel.map(({overskrift, avsnitt}, index) => (
@@ -25,12 +35,27 @@ export function UtvidetAvtale() {
                                 }
                                 {t.tekst}
                                 {t.liste?.map((listetekst, index) => (
-                                    <ul>
-                                        <li>{listetekst}</li>
-                                    </ul>
-                                ))}
+                                    bilagsmap.has(listetekst.substring(0, 7)) ?
+                                        <ul>
+                                            <li>
+                                                <AppLink href={bilagsmap.get(listetekst.substring(0, 7))}
+                                                         target="_blank"
+                                                         style={{
+                                                             textDecoration: "none",
+                                                             cursor: "pointer",
+                                                         }}>
+                                                    {listetekst}
+                                                </AppLink></li>
+                                        </ul>
+                                        : <ul>
+                                            <li>{listetekst}</li>
+                                        </ul>
+                                ))
+                                }
                             </>
                         </BodyLong>
+
+
                     ))}
                 </div>
             ))}

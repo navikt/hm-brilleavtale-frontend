@@ -23,6 +23,7 @@ export function OpprettUtvidetAvtale() {
         control,
         handleSubmit,
         formState: {errors, isSubmitting},
+        getValues
     } = useForm<{ lest: boolean, bilag1: boolean, bilag2: boolean, bilag3: boolean, bilag4: boolean }>({
         defaultValues: {
             lest: false,
@@ -67,7 +68,12 @@ export function OpprettUtvidetAvtale() {
             <form
                 onSubmit={handleSubmit(async (data) => {
                     await opprettUtvidetAvtale({
-                        orgnr: virksomhet.orgnr
+                        orgnr: virksomhet.orgnr,
+                        utvidetAvtale: getValues("lest"),
+                        bilag1: getValues("bilag1"),
+                        bilag2: getValues("bilag2"),
+                        bilag3: getValues("bilag3"),
+                        bilag4: getValues("bilag4")
                     })
                     logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
                 })}
@@ -86,13 +92,13 @@ export function OpprettUtvidetAvtale() {
                             <div style={{display: 'grid', gridTemplateColumns: '1fr auto'}}>
                                 <ConfirmationPanel
                                     error={errors.bilag1?.message}
-                                    label={t('bilag1_bekreftelse')}
+                                    label={<>{t('bilag_lest')}<i>{t('bilag1_bekreftelse')}</i></>}
                                     checked={field.value}
                                     {...field}
                                 />
 
-                                <AppLink href="/avtale.pdf" target="_blank"
-                                         style={{textDecoration: "none", cursor: "pointer", padding: '1rem'}}>
+                                <AppLink href="/bilag1.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer", padding: '0.5rem'}}>
                                     Last ned bilag
                                     <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
                                 </AppLink>
@@ -101,7 +107,7 @@ export function OpprettUtvidetAvtale() {
                     />
                 </Avstand>
 
-                <Avstand marginTop={2} marginBottom={2}>
+                <Avstand>
                     <Controller
                         control={control}
                         name="bilag2"
@@ -114,12 +120,12 @@ export function OpprettUtvidetAvtale() {
                             <div style={{display: 'grid', gridTemplateColumns: '1fr auto'}}>
                                 <ConfirmationPanel
                                     error={errors.bilag2?.message}
-                                    label={t('bilag2_bekreftelse')}
+                                    label={<>{t('bilag_lest')}<i>{t('bilag2_bekreftelse')}</i></>}
                                     checked={field.value}
                                     {...field}
                                 />
-                                <AppLink href="/avtale.pdf" target="_blank"
-                                         style={{textDecoration: "none", cursor: "pointer", padding: '1rem'}}>
+                                <AppLink href="/bilag2.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer", padding: '0.5rem'}}>
                                     Last ned bilag
                                     <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
                                 </AppLink>
@@ -142,12 +148,12 @@ export function OpprettUtvidetAvtale() {
                             <div style={{display: 'grid', gridTemplateColumns: '1fr auto'}}>
                                 <ConfirmationPanel
                                     error={errors.bilag3?.message}
-                                    label={t('bilag3_bekreftelse')}
+                                    label={<>{t('bilag_lest')}<i>{t('bilag3_bekreftelse')}</i></>}
                                     checked={field.value}
                                     {...field}
                                 />
-                                <AppLink href="/avtale.pdf" target="_blank"
-                                         style={{textDecoration: "none", cursor: "pointer", padding: '1rem'}}>
+                                <AppLink href="/bilag3.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer", padding: '0.5rem'}}>
                                     Last ned bilag
                                     <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
                                 </AppLink>
@@ -169,12 +175,12 @@ export function OpprettUtvidetAvtale() {
                             <div style={{display: 'grid', gridTemplateColumns: '1fr auto'}}>
                                 <ConfirmationPanel
                                     error={errors.bilag4?.message}
-                                    label={t('bilag4_bekreftelse')}
+                                    label={<>{t('bilag_lest')}<i>{t('bilag4_bekreftelse')}</i></>}
                                     checked={field.value}
                                     {...field}
                                 />
-                                <AppLink href="/avtale.pdf" target="_blank"
-                                         style={{textDecoration: "none", cursor: "pointer", padding: '1rem'}}>
+                                <AppLink href="/bilag4.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer", padding: '0.5rem'}}>
                                     Last ned bilag
                                     <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
                                 </AppLink>
