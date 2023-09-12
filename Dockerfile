@@ -2,19 +2,20 @@ FROM node:16.15.0-alpine as client-builder
 WORKDIR /app
 COPY client/package.json client/package-lock.json ./
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
-    echo '//npm.pkg.github.com/:_authToken='$(cat /run/secrets/NODE_AUTH_TOKEN) >> .npmrc
-RUN npm ci
+    NODE_AUTH_TOKEN=$(cat /run/secrets/NODE_AUTH_TOKEN) \
+    npm ci --prefer-offline --no-audit --ignore-scripts --legacy-peer-deps
 COPY client .
-RUN npm run && npm run build
+# Kjør evt. script uten NODE_AUTH_TOKEN tilgjengelig
+RUN npm rebuild && npm run prepare --if-present
 
 FROM node:16.15.0-alpine as server-builder
 WORKDIR /app
 COPY server/package.json server/package-lock.json ./
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
     NODE_AUTH_TOKEN=$(cat /run/secrets/NODE_AUTH_TOKEN) \
-    npm ci
+    npm ci --prefer-offline --no-audit --ignore-scripts --legacy-peer-deps
 COPY server .
-RUN npm run && npm run build
+RUN npm rebuild && npm run prepare --if-present
 
 FROM node:16.15.0-alpine as server-dependencies
 WORKDIR /app
