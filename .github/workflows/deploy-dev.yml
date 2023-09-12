@@ -51,8 +51,6 @@ jobs:
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          secrets: |
-            "NODE_AUTH_TOKEN=${{ secrets.READER_TOKEN }}"
       - name: deploy to dev
         uses: nais/deploy/actions/deploy@v1
         env:
