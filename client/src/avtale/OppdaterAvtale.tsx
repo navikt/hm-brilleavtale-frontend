@@ -14,6 +14,7 @@ import {logSkjemaFullført, logSkjemaStartet, skjemanavn} from '../utils/amplitu
 import {ChevronRightIcon, DownloadIcon} from "@navikt/aksel-icons";
 import {AppLink} from "../components/AppLink";
 import {Dato} from "../components/Dato";
+import {PennIkon} from "../resources/ikoner/Ikon";
 
 export function OppdaterAvtale() {
     const {t} = useTranslation()
@@ -52,40 +53,63 @@ export function OppdaterAvtale() {
 
     return (
         <main>
-            <Avtaleboks>
-                <div style={{maxWidth: '70%'}}>
-                    <Heading level="2" size="small">
-                        {t('avtale.hovedavtale_tittel')}
-                    </Heading>
-                    <BodyShort size="small">
-                        {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.opprettet}/>
-                    </BodyShort>
-
-                    {virksomhet.utvidetAvtale && (
-                        <>
-                            <Avstand marginBottom={10}/>
-                            <BodyShort size="medium">
-                                {t('avtale.utvidet_avtale_tittel')}
+            <Avtalecontainer>
+                <Avtalerad>
+                    <Avtaleboks>
+                        <div style={{maxWidth: '100%'}}>
+                            <Heading level="2" size="small">
+                                {t('avtale.hovedavtale_tittel')}
+                            </Heading>
+                            <BodyShort size="small" style={{color: '#525962'}}>
+                                {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.opprettet}/>
                             </BodyShort>
-                            <Avstand marginBottom={1}/>
-                            <BodyShort size="small">
-                                {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.utvidetAvtaleOpprettet}/>
-                            </BodyShort>
-                        </>
-                    )}
-                </div>
-                <LastNedKnapp>
-                    <AppLink href="/avtale.pdf" target="_blank" style={{textDecoration: "none", cursor: "pointer"}}>
-                        Last ned
-                        <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
-                    </AppLink>
+                        </div>
+                    </Avtaleboks>
+                    <LastNedKnapp>
+                        <AppLink href="/avtale.pdf" target="_blank" style={{textDecoration: "none", cursor: "pointer"}}>
+                            Last ned
+                            <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
+                        </AppLink>
 
-                </LastNedKnapp>
-            </Avtaleboks>
+                    </LastNedKnapp>
+                </Avtalerad>
+
+
+                {virksomhet.utvidetAvtale && (
+                    <>
+                        <hr style={{width: '100%'}}/>
+                        <Avtalerad>
+
+                            <Avtaleboks>
+                                <div style={{maxWidth: '100%'}}>
+                                    <BodyShort size="medium">
+                                        {t('avtale.utvidet_avtale_tittel')}
+                                    </BodyShort>
+                                    <BodyShort size="small" style={{color: '#525962'}}>
+                                        {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.utvidetAvtaleOpprettet}/>
+                                    </BodyShort>
+                                </div>
+                            </Avtaleboks>
+                            <LastNedKnapp>
+                                <AppLink href="/avtale.pdf" target="_blank"
+                                         style={{textDecoration: "none", cursor: "pointer"}}>
+                                    Last ned
+                                    <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
+                                </AppLink>
+
+                            </LastNedKnapp>
+                        </Avtalerad>
+                    </>
+                )}
+
+
+            </Avtalecontainer>
+
 
             {!virksomhet.utvidetAvtale && (
 
                 <UtvidetAvtaleBoks>
+                    <PennIkon/>
                     <Heading level="2" size="small" style={{maxWidth: '70%'}}>
                         {t('avtale.utvid_avtale_tittel')}
                     </Heading>
@@ -102,8 +126,8 @@ export function OppdaterAvtale() {
 
                     </LastNedKnapp>
                 </UtvidetAvtaleBoks>
-
             )}
+
 
             <Kontaktinformasjon>
                 <Heading level="2" size="small" spacing>
@@ -171,26 +195,38 @@ const Tekstfelt = styled(TextField)`
 
 const Avtaleboks = styled.div`
   display: flex;
+
+`
+
+const Avtalerad = styled.div`
+  display: flex;
+  padding: var(--a-spacing-4) 0;
+`
+
+const Avtalecontainer = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: var(--a-gray-100);
-  padding: var(--a-spacing-8);
-  margin: var(--a-spacing-4) 0;
   border-radius: 10px;
-  align-items: center;
+  padding: var(--a-spacing-2) var(--a-spacing-6);
+  margin: var(--a-spacing-2) 0;
 `
 
 const UtvidetAvtaleBoks = styled.div`
   display: flex;
   background-color: var(--a-blue-50);
-  padding: var(--a-spacing-8);
-  margin: var(--a-spacing-4) 0;
   border-radius: 10px;
   align-items: center;
+  padding: var(--a-spacing-6) var(--a-spacing-6);
+  margin: var(--a-spacing-2) 0;
 `
 
 const LastNedKnapp = styled.a`
   display: flex;
   color: var(--a-blue-600);
+  padding: var(--a-spacing-4);
   margin-left: auto;
+  flex-shrink: 0;
 `
 const Kontaktinformasjon = styled.div`
   margin-top: var(--a-spacing-10);
