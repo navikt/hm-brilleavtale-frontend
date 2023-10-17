@@ -116,7 +116,7 @@ export function OppdaterAvtale() {
                     <LastNedKnapp
                         onClick={() => {
                             logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
-                            navigate(`/godta-bruksvilkar${virksomhet.orgnr}`)
+                            navigate(`/godta-bruksvilkar/${virksomhet.orgnr}`)
                         }}
                     >
                         <div style={{display: 'flex', alignItems: 'center', cursor: "pointer"}}>
