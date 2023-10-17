@@ -13,7 +13,7 @@ import {Feilside} from './Feilside'
 import {baseUrl} from './http'
 import {Virksomheter} from './virksomhet/Virksomheter'
 import {Helmet} from "react-helmet";
-import {OpprettUtvidetAvtale} from "./avtale/OpprettUtvidetAvtale";
+import {GodtaBruksvilkår} from "./avtale/GodtaBruksvilkår";
 import {UtvidetAvtaleKvittering} from "./avtale/UtvidetAvtaleKvittering";
 
 export function App() {
@@ -46,12 +46,12 @@ export function App() {
                 <Route path="/" element={<SettTittel title="helmet.title.virksomheter"><Virksomheter/></SettTittel>}/>
                 <Route path="/opprett-avtale/kvittering"
                        element={<SettTittel title="helmet.title.avtale_kvittering"><AvtaleKvittering/></SettTittel>}/>
-                <Route path="/opprett-utvidet-avtale/kvittering" element={<SettTittel
+                <Route path="/godta-bruksvilkarkvittering" element={<SettTittel
                     title="helmet.title.avtale_kvittering"><UtvidetAvtaleKvittering/></SettTittel>}/>
                 <Route path="/opprett-avtale/:orgnr"
                        element={<SettTittel title="helmet.title.opprett_avtale"><OpprettAvtale/></SettTittel>}/>
-                <Route path="/opprett-utvidet-avtale/:orgnr"
-                       element={<SettTittel title="helmet.title.opprett_avtale"><OpprettUtvidetAvtale/></SettTittel>}/>
+                <Route path="/godta-bruksvilkar:orgnr"
+                       element={<SettTittel title="helmet.title.opprett_avtale"><GodtaBruksvilkår/></SettTittel>}/>
                 <Route path="/oppdater-avtale/:orgnr"
                        element={<SettTittel title="helmet.title.oppdater_avtale"><OppdaterAvtale/></SettTittel>}/>
                 <Route path="*"

@@ -75,7 +75,7 @@ export function OppdaterAvtale() {
                 </Avtalerad>
 
 
-                {virksomhet.utvidetAvtale && (
+                {virksomhet.bruksvilkår && (
                     <>
                         <hr style={{width: '100%'}}/>
                         <Avtalerad>
@@ -86,7 +86,7 @@ export function OppdaterAvtale() {
                                         {t('avtale.utvidet_avtale_tittel')}
                                     </BodyShort>
                                     <BodyShort size="small" style={{color: '#525962'}}>
-                                        {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.utvidetAvtaleOpprettet}/>
+                                        {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.bruksvilkårGodtattDato}/>
                                     </BodyShort>
                                 </div>
                             </Avtaleboks>
@@ -106,7 +106,7 @@ export function OppdaterAvtale() {
             </Avtalecontainer>
 
 
-            {!virksomhet.utvidetAvtale && (
+            {!virksomhet.bruksvilkår && (
 
                 <UtvidetAvtaleBoks>
                     <PennIkon/>
@@ -116,7 +116,7 @@ export function OppdaterAvtale() {
                     <LastNedKnapp
                         onClick={() => {
                             logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
-                            navigate(`/opprett-utvidet-avtale/${virksomhet.orgnr}`)
+                            navigate(`/godta-bruksvilkar${virksomhet.orgnr}`)
                         }}
                     >
                         <div style={{display: 'flex', alignItems: 'center', cursor: "pointer"}}>

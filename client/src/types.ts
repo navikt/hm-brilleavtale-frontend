@@ -15,8 +15,8 @@ export interface Virksomhet {
   aktiv: boolean
   kontonr?: string
   epost?: string
-  utvidetAvtale: boolean
-  utvidetAvtaleOpprettet?: string
+  bruksvilkår: boolean
+  bruksvilkårGodtattDato?: string
   avtaleversjon?: string
   opprettet?: string
   oppdatert?: string
@@ -32,13 +32,10 @@ export interface OpprettAvtaleRequest {
   epost: string
 }
 
-export interface OpprettUtvidetAvtaleRequest {
+export interface GodtaBruksvilkårRequest {
+  godtattBruksvilkår: boolean
   orgnr: string
-  utvidetAvtale: boolean
-  bilag1: boolean
-  bilag2: boolean
-  bilag3: boolean
-  bilag4: boolean
+  epostKontaktperson: String
 }
 
 export interface OpprettAvtaleResponse extends Virksomhet {}
