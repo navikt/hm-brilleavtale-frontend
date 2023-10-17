@@ -121,7 +121,7 @@ export function OppdaterAvtale() {
                         }}
                     >
                         <div style={{display: 'flex', alignItems: 'center', cursor: "pointer"}}>
-                            Se avtale
+                            {t('avtale.se_bruksvilkar')}
                             <ChevronRightIcon title="a11y-title"/>
                         </div>
 
