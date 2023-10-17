@@ -50,7 +50,7 @@ export function App() {
                     title="helmet.title.avtale_kvittering"><UtvidetAvtaleKvittering/></SettTittel>}/>
                 <Route path="/opprett-avtale/:orgnr"
                        element={<SettTittel title="helmet.title.opprett_avtale"><OpprettAvtale/></SettTittel>}/>
-                <Route path="/godta-bruksvilkar:orgnr"
+                <Route path="/godta-bruksvilkar/:orgnr"
                        element={<SettTittel title="helmet.title.opprett_avtale"><GodtaBruksvilkår/></SettTittel>}/>
                 <Route path="/oppdater-avtale/:orgnr"
                        element={<SettTittel title="helmet.title.oppdater_avtale"><OppdaterAvtale/></SettTittel>}/>
