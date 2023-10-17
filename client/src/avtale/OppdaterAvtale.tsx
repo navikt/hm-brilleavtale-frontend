@@ -38,7 +38,7 @@ export function OppdaterAvtale() {
 
     useEffect(() => {
         if (virksomhet) {
-            reset({kontonr: virksomhet.kontonr, epost: virksomhet.epost, epostBruksvilkar: virksomhet.epostBruksvilkår})
+            reset({kontonr: virksomhet.kontonr, epost: virksomhet.epost, epostBruksvilkar: virksomhet.bruksvilkårEpost})
         }
     }, [virksomhet])
 
@@ -164,7 +164,7 @@ export function OppdaterAvtale() {
                         })}
                     />
 
-                    {virksomhet.epostBruksvilkår && (
+                    {virksomhet.bruksvilkårEpost && (
                         <>
                             <Avstand marginBottom={5}/>
                             <Tekstfelt

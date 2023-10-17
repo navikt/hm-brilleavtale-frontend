@@ -17,7 +17,7 @@ export interface Virksomhet {
   epost?: string
   bruksvilkår: boolean
   bruksvilkårGodtattDato?: string
-  epostBruksvilkår?: string
+  bruksvilkårEpost?: string
   avtaleversjon?: string
   opprettet?: string
   oppdatert?: string

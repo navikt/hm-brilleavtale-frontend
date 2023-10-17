@@ -7,6 +7,7 @@ import { DsLink } from '../components/DsLink'
 import { Virksomhet } from '../types'
 import { AvtalePanel } from './AvtalePanel'
 import ScrollToTop from "../components/ScrollToTop";
+import {BruksvilkårPanel} from "./BruksvilkårPanel";
 
 export function BruksvilkårKvittering() {
   const { t } = useTranslation()
@@ -30,7 +31,7 @@ export function BruksvilkårKvittering() {
           </DsLink>
         </Trans>
       </BodyLong>
-      <AvtalePanel virksomhet={virksomhet} />
+      <BruksvilkårPanel virksomhet={virksomhet} />
       <Avstand marginBottom={5} />
       <Link to="/">{t('avtale.lenke_tilbake_til_forsiden')}</Link>
     </main>

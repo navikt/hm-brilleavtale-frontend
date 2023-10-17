@@ -17,7 +17,7 @@ const virksomheter: Record<string, Virksomhet> = {
     aktiv: true,
     bruksvilkår: true,
     bruksvilkårGodtattDato: '2023-08-10T14:27:31.487356',
-    epostBruksvilkår: 'teknisk@test',
+    bruksvilkårEpost: 'teknisk@test',
     kontonr: '12341112345',
     epost: 'test@test',
     opprettet: '2023-02-12T12:07:08.487356',
