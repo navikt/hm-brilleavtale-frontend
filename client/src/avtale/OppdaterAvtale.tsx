@@ -25,10 +25,11 @@ export function OppdaterAvtale() {
         handleSubmit,
         reset,
         formState: {errors, isSubmitting},
-    } = useForm<{ kontonr: string; epost: string }>({
+    } = useForm<{ kontonr: string; epost: string, epostBruksvilkar: string }>({
         defaultValues: {
             kontonr: '',
             epost: '',
+            epostBruksvilkar: '',
         },
     })
     const {put: endreAvtale, data: avtale} = usePut<OppdaterAvtaleRequest, OppdaterAvtaleResponse>(
@@ -37,7 +38,7 @@ export function OppdaterAvtale() {
 
     useEffect(() => {
         if (virksomhet) {
-            reset({kontonr: virksomhet.kontonr, epost: virksomhet.epost})
+            reset({kontonr: virksomhet.kontonr, epost: virksomhet.epost, epostBruksvilkar: virksomhet.epostBruksvilkår})
         }
     }, [virksomhet])
 
@@ -108,10 +109,10 @@ export function OppdaterAvtale() {
 
             {!virksomhet.bruksvilkår && (
 
-                <UtvidetAvtaleBoks>
+                <BruksvilkårBoks>
                     <PennIkon/>
                     <Heading level="2" size="small" style={{maxWidth: '70%'}}>
-                        {t('avtale.utvid_avtale_tittel')}
+                        {t('avtale.utvidet_avtale_tittel')}
                     </Heading>
                     <LastNedKnapp
                         onClick={() => {
@@ -125,7 +126,7 @@ export function OppdaterAvtale() {
                         </div>
 
                     </LastNedKnapp>
-                </UtvidetAvtaleBoks>
+                </BruksvilkårBoks>
             )}
 
 
@@ -138,6 +139,7 @@ export function OppdaterAvtale() {
                         await endreAvtale({
                             kontonr: removeWhitespaceAndDot(data.kontonr),
                             epost: data.epost,
+                            epostBruksvilkar: data.epostBruksvilkar
                         })
                         logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
                     })}
@@ -161,6 +163,23 @@ export function OppdaterAvtale() {
                             },
                         })}
                     />
+
+                    {virksomhet.epostBruksvilkår && (
+                        <>
+                            <Avstand marginBottom={5}/>
+                            <Tekstfelt
+                                label={t('ledetekst.epost-bruksvilkar')}
+                                error={errors.epost?.message}
+                                {...register('epostBruksvilkar', {
+                                    validate(epost) {
+                                        return validerEpost(epost) ? true : t('felles.ugyldig_epost')
+                                    },
+                                })}
+                            />
+                        </>
+
+                    )
+                    }
                     <Avstand marginBottom={5}/>
                     <Knapper>
                         <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
@@ -212,7 +231,7 @@ const Avtalecontainer = styled.div`
   margin: var(--a-spacing-2) 0;
 `
 
-const UtvidetAvtaleBoks = styled.div`
+const BruksvilkårBoks = styled.div`
   display: flex;
   background-color: var(--a-blue-50);
   border-radius: 10px;

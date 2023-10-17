@@ -1,4 +1,4 @@
-import {BodyLong, BodyShort, Button, ConfirmationPanel, Heading} from '@navikt/ds-react'
+import {BodyLong, BodyShort, Button, ConfirmationPanel, Heading, TextField} from '@navikt/ds-react'
 import React, {useEffect} from 'react'
 import {Controller, useForm} from 'react-hook-form'
 import {useTranslation} from 'react-i18next'
@@ -9,7 +9,8 @@ import {GodtaBruksvilkårRequest, HentVirksomhetResponse} from '../types'
 import {useGet} from '../useGet'
 import {usePost} from '../usePost'
 import {logSkjemaFullført, skjemanavn} from '../utils/amplitude'
-import {UtvidetAvtale} from "./UtvidetAvtale";
+import {Bruksvilkår} from "./Bruksvilkår";
+import {validerEpost} from "../epost";
 
 export function GodtaBruksvilkår() {
     const {t} = useTranslation()
@@ -57,7 +58,7 @@ export function GodtaBruksvilkår() {
             </Avstand>
             <BodyLong>{t('utvidet_avtale.ingress')}</BodyLong>
             <Avstand marginTop={5} marginBottom={5}>
-                <UtvidetAvtale/>
+                <Bruksvilkår/>
             </Avstand>
             <form
                 onSubmit={handleSubmit(async (data) => {
@@ -69,6 +70,16 @@ export function GodtaBruksvilkår() {
                     logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
                 })}
             >
+                <Avstand marginBottom={5} />
+                <Tekstfelt
+                    label={t('ledetekst.epost-bruksvilkar')}
+                    error={errors.epostKontaktperson?.message}
+                    {...register('epostKontaktperson', {
+                        validate(epost) {
+                            return validerEpost(epost) ? true : t('felles.ugyldig_epost')
+                        },
+                    })}
+                />
 
                 <Avstand marginTop={5} marginBottom={5}>
 
@@ -117,4 +128,7 @@ const Knapper = styled.div`
   grid-auto-flow: column;
   gap: var(--a-spacing-3);
   justify-content: left;
+`
+const Tekstfelt = styled(TextField)`
+  max-width: 330px;
 `

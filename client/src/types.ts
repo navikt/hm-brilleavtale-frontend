@@ -17,6 +17,7 @@ export interface Virksomhet {
   epost?: string
   bruksvilkår: boolean
   bruksvilkårGodtattDato?: string
+  epostBruksvilkår?: string
   avtaleversjon?: string
   opprettet?: string
   oppdatert?: string
@@ -43,6 +44,7 @@ export interface OpprettAvtaleResponse extends Virksomhet {}
 export interface OppdaterAvtaleRequest {
   kontonr: string
   epost: string
+  epostBruksvilkar: string
 }
 
 export interface OppdaterAvtaleResponse extends Virksomhet {}

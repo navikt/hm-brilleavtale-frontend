@@ -14,7 +14,7 @@ import {baseUrl} from './http'
 import {Virksomheter} from './virksomhet/Virksomheter'
 import {Helmet} from "react-helmet";
 import {GodtaBruksvilkår} from "./avtale/GodtaBruksvilkår";
-import {UtvidetAvtaleKvittering} from "./avtale/UtvidetAvtaleKvittering";
+import {BruksvilkårKvittering} from "./avtale/BruksvilkårKvittering";
 
 export function App() {
     const {t} = useTranslation()
@@ -47,7 +47,7 @@ export function App() {
                 <Route path="/opprett-avtale/kvittering"
                        element={<SettTittel title="helmet.title.avtale_kvittering"><AvtaleKvittering/></SettTittel>}/>
                 <Route path="/godta-bruksvilkarkvittering" element={<SettTittel
-                    title="helmet.title.avtale_kvittering"><UtvidetAvtaleKvittering/></SettTittel>}/>
+                    title="helmet.title.avtale_kvittering"><BruksvilkårKvittering/></SettTittel>}/>
                 <Route path="/opprett-avtale/:orgnr"
                        element={<SettTittel title="helmet.title.opprett_avtale"><OpprettAvtale/></SettTittel>}/>
                 <Route path="/godta-bruksvilkar/:orgnr"

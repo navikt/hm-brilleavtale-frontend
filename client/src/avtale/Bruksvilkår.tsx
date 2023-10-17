@@ -6,7 +6,7 @@ import {DownloadIcon} from "@navikt/aksel-icons";
 import {AppLink} from "../components/AppLink";
 import React from "react";
 
-export function UtvidetAvtale() {
+export function Bruksvilkår() {
     const {
         i18n: {language},
     } = useTranslation()

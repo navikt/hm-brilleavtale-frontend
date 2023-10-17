@@ -8,7 +8,7 @@ import { Virksomhet } from '../types'
 import { AvtalePanel } from './AvtalePanel'
 import ScrollToTop from "../components/ScrollToTop";
 
-export function UtvidetAvtaleKvittering() {
+export function BruksvilkårKvittering() {
   const { t } = useTranslation()
   const { state: virksomhet } = useLocation() as { state: Virksomhet }
   if (!virksomhet) {
