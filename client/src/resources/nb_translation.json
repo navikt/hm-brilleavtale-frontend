@@ -1,6 +1,6 @@
 {
   "avtale.bekreftelse": "Jeg har satt meg inn i vilkårene i avtalen, og bekrefter at firmaet forplikter seg til vilkårene i avtalen om direkte oppgjør for stønad til briller til barn.",
-  "utvidet_avtale.bekreftelse": "Jeg har satt meg inn i vilkårene i avtalen, og bekrefter at firmaet forplikter seg til vilkårene i avtalen om utvidet avtale for å sende brillekrav via eget system.",
+  "utvidet_avtale.bekreftelse": "Jeg har satt meg inn i bruksvilkårene, og bekrefter at firmaet forplikter seg til vilkårene for innsending av brillekrav via eget system.",
   "bilag_lest": "Jeg har lest og forstått ",
   "bilag1_bekreftelse": "'Bilag 1: Formål med innhenting/utveksling av personopplysninger og opplysningstyper'.",
   "bilag2_bekreftelse": "'Bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet'.",
@@ -10,8 +10,9 @@
   "avtale.endre_orgnr": "Orgnr. {{orgnr}}",
   "avtale.endre_kontaktinformasjon": "Endre kontaktinformasjon",
   "avtale.ingress": "Her kan du inngå avtale om direkte oppgjør for stønad til briller til barn på vegne av firmaet ditt. Les grundig gjennom avtaleteksten. Kryss av for at du har satt deg inn i vilkårene for avtalen, og trykk på \"inngå avtale\".",
-  "utvidet_avtale.ingress": "Her kan du inngå utvidet avtale for å sende brillekrav via eget system på vegne av firmaet ditt. Les grundig gjennom avtaleteksten. Kryss av for at du har sett deg inn i vilkåra for avtalen, og trykk på \"inngå avtale\".",
+  "utvidet_avtale.ingress": "Her kan du godta bruksvilkår for å sende brillekrav via eget system på vegne av firmaet ditt. Les grundig gjennom bruksvilkårene. Kryss av for at du har satt deg inn i vilkårene for avtalen, og trykk på \"godta bruksvilkår\".",
   "avtale.inngå_avtale": "Inngå avtale",
+  "avtale.inngå_bruksvilkar": "Godta bruksvilkår",
   "avtale.kvittering_for": "Kvittering for {{navn}}",
   "avtale.legg_inn_kravet": "Legg inn kravet etter at brillen er bestilt.",
   "avtale.lenke_last_ned_avtalen": "Last ned kopi av avtalen",

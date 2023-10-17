@@ -105,7 +105,7 @@ export function GodtaBruksvilkår() {
 
                 <Knapper>
                     <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
-                        {t('avtale.inngå_avtale')}
+                        {t('avtale.inngå_bruksvilkar')}
                     </Button>
                     <Button
                         type="button"
