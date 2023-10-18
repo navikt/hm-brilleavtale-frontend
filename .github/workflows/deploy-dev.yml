@@ -6,6 +6,10 @@ on:
       - '.gitignore'
       - 'LICENCE'
       - 'CODEOWNERS'
+      - 'docs/**'
+      - 'docs'
+      - 'docs/'
+      - '/docs'
     branches:
       - main
       - utvidetAvtale
