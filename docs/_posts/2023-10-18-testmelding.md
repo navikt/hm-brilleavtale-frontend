@@ -10,7 +10,7 @@ category:   nyheter
 I forbindelse med Digdir sin varslede overgang til ny plattform for Maskinporten (og utfasing av gammel
 plattform), vil Aa-registeret sine applikasjoner gå over til ny plattform **1. mars 2023**.
 
-Les mer om endringen her på [Digdir sine sider](https://samarbeid.digdir.no/maskinporten/maskinporten/1245)
+Les mer om endringen på [Digdir sine sider](https://samarbeid.digdir.no/maskinporten/maskinporten/1245)
 
 Konsumenter som benytter Aa-registeret sine apper i testmiljø må endre fra **ver2.maskinporten.no** til
 **test.maskinporten.no** for å kunne fortsette å bruke appene i testmiljøet.
