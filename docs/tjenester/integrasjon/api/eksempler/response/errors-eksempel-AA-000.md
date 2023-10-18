@@ -1,0 +1,21 @@
+```json
+{
+    "errors": [
+        {
+            "message": "En ukjent feil oppstod",
+            "locations": [],
+            "extensions": {
+                "errormessages": {
+                    "code": "AA-000",
+                    "message": "Det oppsto en feil under behandlingen av forespøselen",
+                    "details": null
+                },
+                "classification": "ExecutionAborted"
+            }
+        }
+    ],
+    "data": {
+        "finnArbeidsforhold": null
+    }
+}
+```
