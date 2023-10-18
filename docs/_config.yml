@@ -22,7 +22,7 @@ title: Integrasjon brillekrav
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Integrasjon brillekrav docs
-baseurl: "/hm-brilleavtale-frontend" # the subpath of your site, e.g. /blog
+baseurl: "/brillekrav-api" # the subpath of your site, e.g. /blog
 url: "https://navikt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
