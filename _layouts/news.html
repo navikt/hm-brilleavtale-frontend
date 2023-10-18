@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<div class="news">
+
+    {{ content }}
+
+    {%- if site.posts.size > 0 -%}
+    <table class="break-words">
+        <thead>
+        <tr>
+            <th style="text-align: left">Nyheter</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%- for post in site.categories.nyheter -%}
+        <tr>
+            <td style="text-align: left">
+                <h3>
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </h3>
+                <br>
+                {{ post.date | date: "%-d %b %Y" }}
+                <br>
+                <p>
+                    {{ post.excerpt }}
+                </p>
+            </td>
+        </tr>
+        {%- endfor -%}
+        </tbody>
+    </table>
+
+    <table class="break-words">
+        <thead>
+        <tr>
+            <th style="text-align: left">Driftsvarsler</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%- for post in site.categories.driftsvarsler -%}
+        <tr>
+            <td style="text-align: left">
+                <h3>
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </h3>
+                <br>
+                {{ post.date | date: "%-d %b %Y" }}
+                <br>
+                <p>
+                    {{ post.excerpt }}
+                </p>
+            </td>
+        </tr>
+        {%- endfor -%}
+        </tbody>
+    </table>
+    {%- endif -%}
+</div>
