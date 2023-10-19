@@ -68,7 +68,7 @@ export function OppdaterAvtale() {
                     </Avtaleboks>
                     <LastNedKnapp>
                         <AppLink href="/avtale.pdf" target="_blank" style={{textDecoration: "none", cursor: "pointer"}}>
-                            Last ned
+                            {t('last.ned')}
                             <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
                         </AppLink>
 

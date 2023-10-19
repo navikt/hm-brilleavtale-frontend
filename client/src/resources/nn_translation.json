@@ -2,6 +2,7 @@
   "avtale.bekreftelse": "Eg har sett meg inn i vilkåra i avtalen, og bekreftar at firmaet forpliktar seg til vilkåra i avtalen om direkte oppgjer for stønad til briller til barn.",
   "utvidet_avtale.bekreftelse": "Eg har sett meg inn i bruksvilkåra, og bekreftar at firmaet forpliktar seg til vilkåra for innsending av brillekrav via eige system.",
   "avtale.endre": "Endre avtale for {{navn}}",
+  "last.ned": "Last ned",
   "avtale.endre_orgnr": "Orgnr. {{orgnr}}",
   "avtale.endre_kontaktinformasjon": "Endre kontaktinformasjon",
   "avtale.ingress": "Her kan du inngå avtale om direkte oppgjer for stønad til briller til barn på vegne av verksemda di. Les grundig gjennom avtaleteksten. Kryss av for at du har sett deg inn i vilkåra for avtalen, og trykk på \"inngå avtale\".",
