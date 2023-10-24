@@ -22,10 +22,9 @@ export function GodtaBruksvilkår() {
         handleSubmit,
         formState: {errors, isSubmitting},
         getValues
-    } = useForm<{ lest: boolean, epostKontaktperson: string }>({
+    } = useForm<{ lest: boolean }>({
         defaultValues: {
             lest: false,
-            epostKontaktperson: ''
         },
     })
     const {
@@ -64,22 +63,11 @@ export function GodtaBruksvilkår() {
                 onSubmit={handleSubmit(async (data) => {
                     await godtaBruksvilkår({
                         orgnr: virksomhet.orgnr,
-                        epostKontaktperson: getValues("epostKontaktperson"),
                         godtattBruksvilkår: getValues("lest"),
                     })
                     logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
                 })}
             >
-                <Avstand marginBottom={5} />
-                <Tekstfelt
-                    label={t('ledetekst.epost-bruksvilkar')}
-                    error={errors.epostKontaktperson?.message}
-                    {...register('epostKontaktperson', {
-                        validate(epost) {
-                            return validerEpost(epost) ? true : t('felles.ugyldig_epost')
-                        },
-                    })}
-                />
 
                 <Avstand marginTop={5} marginBottom={5}>
 

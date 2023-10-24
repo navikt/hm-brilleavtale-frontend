@@ -25,11 +25,10 @@ export function OppdaterAvtale() {
         handleSubmit,
         reset,
         formState: {errors, isSubmitting},
-    } = useForm<{ kontonr: string; epost: string, epostBruksvilkar: string }>({
+    } = useForm<{ kontonr: string; epost: string }>({
         defaultValues: {
             kontonr: '',
             epost: '',
-            epostBruksvilkar: '',
         },
     })
     const {put: endreAvtale, data: avtale} = usePut<OppdaterAvtaleRequest, OppdaterAvtaleResponse>(
@@ -38,7 +37,7 @@ export function OppdaterAvtale() {
 
     useEffect(() => {
         if (virksomhet) {
-            reset({kontonr: virksomhet.kontonr, epost: virksomhet.epost, epostBruksvilkar: virksomhet.bruksvilkårEpost})
+            reset({kontonr: virksomhet.kontonr, epost: virksomhet.epost})
         }
     }, [virksomhet])
 
@@ -139,7 +138,6 @@ export function OppdaterAvtale() {
                         await endreAvtale({
                             kontonr: removeWhitespaceAndDot(data.kontonr),
                             epost: data.epost,
-                            epostBruksvilkar: data.epostBruksvilkar
                         })
                         logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
                     })}
@@ -164,22 +162,6 @@ export function OppdaterAvtale() {
                         })}
                     />
 
-                    {virksomhet.bruksvilkårEpost && (
-                        <>
-                            <Avstand marginBottom={5}/>
-                            <Tekstfelt
-                                label={t('ledetekst.epost-bruksvilkar')}
-                                error={errors.epost?.message}
-                                {...register('epostBruksvilkar', {
-                                    validate(epost) {
-                                        return validerEpost(epost) ? true : t('felles.ugyldig_epost')
-                                    },
-                                })}
-                            />
-                        </>
-
-                    )
-                    }
                     <Avstand marginBottom={5}/>
                     <Knapper>
                         <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>

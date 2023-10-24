@@ -38,7 +38,6 @@ export function BruksvilkårPanel(props: AvtalePanelProps) {
                     <Datum label="ledetekst.dato_opprettet">
                         <Dato verdi={virksomhet.opprettet}/>
                     </Datum>
-                    <Datum label="ledetekst.epost-bruksvilkar">{virksomhet.bruksvilkårEpost}</Datum>
                 </Data>
             </LinkPanel.Description>
         </LinkPanel>
