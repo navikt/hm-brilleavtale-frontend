@@ -7,6 +7,7 @@ import { HentVirksomheterResponse } from '../types'
 import { useGet } from '../useGet'
 import { VirksomhetPanel } from './VirksomhetPanel'
 import ScrollToTop from "../components/ScrollToTop";
+import {Endringsvarsel} from "@navikt/hm-react-components";
 
 export function Virksomheter() {
   const { t } = useTranslation()
@@ -36,6 +37,14 @@ export function Virksomheter() {
         <ScrollToTop />
         {virksomheterUtenAvtale.length > 0 && (
           <>
+              <Avstand marginBottom={5}>
+                  <Endringsvarsel
+                      tittel={t('endringsvarsel.bv.tittel')}
+                      tekst={t('endringsvarsel.bv.tekst')}
+                      lenketekst={t('endringsvarsel.bv.lenketekst')}
+                      lenke="https://navikt.github.io/hm-brille-integrasjon/"
+                  />
+              </Avstand>
             <Heading level="2" size="medium" spacing>
               {t('virksomhet.uten_avtale')}
             </Heading>

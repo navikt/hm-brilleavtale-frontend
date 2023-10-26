@@ -57,5 +57,8 @@
   "helmet.title.feilside": "Feilside – Brilleavtale",
   "helmet.title.opprett_avtale": "Opprett avtale - Brilleavtale",
   "helmet.title.oppdater_avtale": "Oppdater avtale - Brilleavtale",
-  "helmet.title.avtale_kvittering": "Kvittering opprettet avtale - Brilleavtale"
+  "helmet.title.avtale_kvittering": "Kvittering opprettet avtale - Brilleavtale",
+  "endringsvarsel.bv.tittel": "Det er no mogleg signere nye bruksvilkår",
+  "endringsvarsel.bv.tekst": "Bruksvilkår gjeld for å sende brillekrav via eige system. Denne funksjonen vil gradvis rullast ut og vil ikkje umiddelbart vere tilgjengelig i alle optikarsystem.",
+  "endringsvarsel.bv.lenketekst": "Les meir på denne sida (opnast i ny fane)"
 }
