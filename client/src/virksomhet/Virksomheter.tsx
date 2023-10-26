@@ -34,17 +34,18 @@ export function Virksomheter() {
   return (
     <>
       <main>
+          <Avstand marginBottom={5}>
+              <Endringsvarsel
+                  tittel={t('endringsvarsel.bv.tittel')}
+                  tekst={t('endringsvarsel.bv.tekst')}
+                  lenketekst={t('endringsvarsel.bv.lenketekst')}
+                  lenke="https://navikt.github.io/hm-brille-integrasjon/"
+              />
+          </Avstand>
         <ScrollToTop />
         {virksomheterUtenAvtale.length > 0 && (
           <>
-              <Avstand marginBottom={5}>
-                  <Endringsvarsel
-                      tittel={t('endringsvarsel.bv.tittel')}
-                      tekst={t('endringsvarsel.bv.tekst')}
-                      lenketekst={t('endringsvarsel.bv.lenketekst')}
-                      lenke="https://navikt.github.io/hm-brille-integrasjon/"
-                  />
-              </Avstand>
+
             <Heading level="2" size="medium" spacing>
               {t('virksomhet.uten_avtale')}
             </Heading>
