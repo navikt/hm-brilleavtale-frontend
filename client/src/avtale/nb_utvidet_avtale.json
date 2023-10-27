@@ -1,108 +1,133 @@
 {
   "kapittel": [
     {
-      "overskrift": "Avtalens formål",
+      "overskrift": "Innledning",
       "avsnitt": [
         {
-          "tekst": "Avtalen gjelder etablering av elektronisk samhandling mellom partene. Formålet med avtalen er å regulere partenes forhold og samarbeid når det gjelder utveksling av personopplysninger i forbindelse med arbeid med en pilot-applikasjon for automatisk saksbehandling av stønad til briller til barn. Avtalen skal legge til rette for at partene etter beste evne skal få gjennomført den elektroniske samhandlingen som fremgår av denne avtalen og dens bilag.",
+          "tekst": "For å sikre en god og effektiv saksbehandling for sine brukere har Arbeids- og velferdsdirektoratet utviklet en automatisert saksbehandlingsløsning for direkteoppgjør med optiker som utsteder briller til barn. Dette innebærer at stønaden som er innvilget barnet, trekkes fra briller som barnet får kjøpt i optikerbutikk, og at optiker får beløpet tilsvarende stønad refundert fra NAV.",
+          "liste": []
+        },
+        {
+          "tekst": "Disse bruksvilkårene skisserer bruk av en API-integrasjonen som optikerfirmaer kan sette opp mot direkteoppgjørsløsningen.",
+          "liste": []
+        },
+        {
+          "tekst": "Partene i denne avtalen er Arbeids- og velferdsdirektoratet og virksomhet/optikerfirma som signerer under for bruksvilkår (heretter omtalt som konsument eller part). Partene er å anse som selvstendige behandlingsansvarlige.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Avtalens parter",
+      "overskrift": "Omfang og avgrensing",
       "avsnitt": [
         {
-          "tekst": "Partene i denne avtalen er Arbeids- og velferdsdirektoratet og Firmaet som selvstendige behandlingsansvarlige.",
+          "tekst": "Gjeldende bruksvilkår gjelder for bruk av integrasjon og opplysninger slik det fremkommer av disse vilkårene. Integrasjonen kan ikke brukes utover dette eller til andre formål. Det er kun optikerfirma som har inngått avtale om direkteoppgjørsordning som kan godkjenne bruksvilkår og ta i bruk integrasjonen. Opplysninger kan ikke deles eller benyttes utover formål og bruk etter disse vilkårene.",
           "liste": []
         },
         {
-          "tekst": "Arbeids- og velferdsdirektoratet opptrer som mottaker og avgiver. Firmaet opptrer i denne avtalen som avgiver og mottaker. Se herunder bilag 1 for hvilke opplysninger som blir mottatt og avgitt av de ulike partene.",
+          "tekst": "Ofte vil konsumenten, herunder optikerfirma, benytte seg av en leverandør av en pasientjournalløsning (databehandler). Det er da konsumentens ansvar å informere om, og påse at deres leverandør kan svare ut teknisk krav og krav til sikkerhet fastsatt i bruksvilkårene. Konsumenten må vurdere om det er behov for å revidere avtaler med databehandler for at dette oppfylles, eller om instruksjonsmyndigheten anses å være tilstrekkelig.",
           "liste": []
         },
         {
-          "tekst": "Firmaet har rett til å benytte databehandler/leverandør for å avgi/motta informasjon på sine vegne, se herunder kapittel 18 i denne avtalen.",
+          "tekst": "NAV avgir kun opplysninger om og størrelse på eventuell stønad som barnet får innvilget. Dersom kravet til barn avvises så kommer det en melding om avvisning. Informasjon om fødselsnummer eller andre personopplysninger som optiker trenger i sin behandling, må optikerfirma innhente selv på valgt måte i tråd med deres lovpålagte oppgaver, herunder etter bl.a. helsepersonelloven og pasientjournalloven, og i tråd med personvernforordningen.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Avtaledokumentene",
+      "overskrift": "Formål",
       "avsnitt": [
         {
-          "tekst": "Avtalen består av dette avtaledokument og 4 tilhørende bilag/vedlegg som hver for seg er underskrevet.",
+          "tekst": "Formålet er å regulere partenes rettigheter og plikter for utveksling av personopplysninger som en del av informasjonsinnhenting for automatisk saksbehandling av stønad til briller til barn. Bruksvilkår skal legge til rette for at partene etter beste evne skal få gjennomført den elektroniske samhandlingen. Gjennom å akseptere bruksvilkårene gis konsumenten rett til å benytte integrasjonen for direkteoppgjørsløsning for optiker.",
           "liste": []
         },
         {
-          "tekst": "Bilagsoversikt",
-          "liste": [
-            "Bilag 1: Formål med innhenting/utveksling av personopplysninger og opplysningstyper",
-            "Bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet",
-            "Bilag 3: Varsling, feilretting og kontakt",
-            "Bilag 4: Endringslogg for avtalen"
-          ]
-        },
-        {
-          "tekst": "Løsningen som leveres er en pilot i et utforskende stadium, som innebærer at det vil være endringer i tjenesten, og det er i større grad forventet ustabilitet enn ved en etablert løsning. Endringer og utvikling av løsningen kan ikke avvike fra krav satt i Bilag 2, tekniske grensesnitt og særskilte krav til sikkerhet.",
+          "tekst": "NAV har en lovpålagt oppgave om å sørge for at personer som oppfyller vilkårene, får nødvendige hjelpemidler. Behandlingen av personopplysninger skjer som følge av at NAV har denne lovpålagte oppgaven fastsatt i folketrygdloven § 10-7 a. Rett til stønad til briller for barn forutsetter at visse vilkår er oppfylt. Disse vilkårene er oppstilt i forskrift om stønad til briller til barn i §§ 2-3.",
           "liste": []
         },
         {
-          "tekst": "Endringer i selve avtalen, herunder etablering av ny informasjonstjeneste, skal også føres i særskilt endringslogg, se bilag 4: Endringslogg for avtalen.",
-          "liste": []
-        },
-        {
-          "tekst": "Bilag kan endres uavhengig av den generelle avtaleteksten. Ved motstrid mellom avtalen og bilagene går den generelle avtaleteksten foran.",
+          "tekst": "For at NAV skal kunne oppfylle sin forpliktelse til å sørge for at brukerne får stønad til og mottar de hjelpemidlene de har krav på, er det behov for bistand fra leverandør av hjelpemidler, i dette tilfelle optiker. Optiker er en beskyttet tittel og autoriseres etter Helsepersonelloven § 48 a. Optikere utreder,\n\ntilpasser og selger briller, dette er en egen oppgave de allerede har og forvalter som leverandører og under sitt ansvar som helsepersonell, og er ikke en pålagt oppgave av NAV.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Grunnlag for utveksling av opplysninger",
+      "overskrift": "Bruksvilkår",
       "avsnitt": [
         {
-          "tekst": "NAV har plikt til å påse at saken er så godt opplyst som mulig før det blir fattet vedtak i saken, jf. forvaltningsloven § 17. Hvilke opplysninger som er nødvendige å innhente for å kunne fatte vedtak følger av forskrift om stønad til briller til barn.",
-          "liste": []
-        },
-        {
-          "tekst": "Innhenting av personopplysninger følger rettslig grunnlag i personvernforordningens artikkel 6, punkt 1 bokstav e og artikkel 9, punkt 2 bokstav b. For saker vedrørende behandling om krav om støtte til briller til barn, følger NAV rett til å innhente nødvendige opplysninger i supplerende rettslig grunnlag av forskrift om stønad til briller til barn §§ 2, 6-7.",
-          "liste": []
-        },
-        {
-          "tekst": "Videre innhentes opplysninger som følge av avtale «Avtale om direkte oppgjør for stønad til briller til barn» som inngås før optikerbedrift kan benytte og tilby direkteoppgjørsløsningen.",
-          "liste": []
-        },
-        {
-          "tekst": "Opplysningene som utveksles skal ikke benyttes utenfor avtalens formål eller utenfor hjemmelsgrunnlag, ei heller viderebehandles for andre formål.",
+          "tekst": "Konsumenten må godkjenne bruksvilkårene for løsningen for å få mulighet til å benytte integrasjonsløsningen. Bruksvilkår kan kun godkjennes etter at det er inngått avtale om direkteoppgjørsordning. Konsument forplikter seg til å holde seg oppdatert på de til enhver tid gjeldende bruksvilkår. Eventuelle endringer i bruksvilkår varsles gjennom utsendelse av epost. Alle endringer av bruksvilkårene anses akseptert av konsumenten så lenge NAV ikke mottar innsigelser etter at varsel om endringen er gitt. Slike innsigelser må fremsettes uten ugrunnet opphold fra varselet er mottatt. Innsigelsen må meldes til NAV gjennom epost-adresse for kontakt.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Overordnede krav",
+      "overskrift": "Konsumentens tilgang til tjenestene",
       "avsnitt": [
         {
-          "tekst": "Partene plikter å følge lovpålagte krav til behandling av opplysningene. Avtalen er begrenset til lovpålagt utveksling av opplysninger. Partene plikter å holde seg informert og oppdatert om gjeldende lover og forskrifter, og instrukser som regulerer informasjonsutvekslingen.",
+          "tekst": "For å signere bruksvilkår for tjenesten velger man en av avtalepartene man kan representere og oppgir kontaktperson(er), og evt. Databehandler. I tillegg må konsumenten godkjenne bruksvilkårene. Dersom vilkår ikke godkjennes, vil ikke søk kunne foretas gjennom løsningen.",
           "liste": []
         },
         {
-          "tekst": "Overføring og behandling av opplysninger skal oppfylle de krav som følger av personopplysningsloven.",
+          "tekst": "Søknaden signeres digitalt av organisasjonens rolleinnehaver i Enhetsregisteret, eller den vedkommende har delegert rettigheten til. Konsumenten kan bare benytte tjenestene i det omfang som følger av konsumentens hjemmelsgrunnlag.",
           "liste": []
         },
         {
-          "tekst": "Overføring av opplysninger i henhold til avtalen skjer slik som definert i bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet.",
+          "tekst": "Når konsumenten har verifisert at deres løsning har gjennomført test og koblet seg til tjenesten i produksjon, vil konsumenten ha tilgang til tjenesten. Konsumenten forplikter seg til å sette seg godt inn i tekniske og funksjonelle grensesnitt samt følge tekniske krav og funksjonelle rutiner spesifisert i dokumentasjonen for tjenestene.",
+          "liste": []
+        },
+        {
+          "tekst": "Konsumenten er ansvarlig for sikkerheten i egne tjenester og skal stille med nødvendig kompetanse. Konsumenten plikter å underrette NAV (via etablerte kommunikasjonskanaler) dersom det oppstår endringer knyttet til det som er lagt til grunn for vedtak om tilgangen, samt andre endringer som kan ha betydning for tilgangen eller sikkerhet. Registrering og ajourhold av kontaktpersoner er beskrevet under kapittelet «Kontaktpersoner».",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Behandlingsansvar ",
+      "overskrift": "Kostnader ",
       "avsnitt": [
         {
-          "tekst": "Mottaker blir behandlingsansvarlig for opplysningene fra det tidspunktet opplysningene er mottatt, og plikter da å følge de krav som følger av personopplysningsloven og øvrig lovgivning.",
+          "tekst": "NAV utleverer opplysningene kostnadsfritt slik NAV selv forvalter dem gjennom standardiserte løsninger. Konsumenten dekker selv kostnader i forbindelse med utvikling, sikkerhet, tilpasning og tilrettelegging av egen teknisk løsning for å motta data fra NAV, samt drift og videreutvikling av disse.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Opplysningenes kvalitet/erstatningsansvar",
+      "avsnitt": [
+        {
+          "tekst": "NAV leverer opplysninger med den kvalitet som følger av egne data og vedtak. NAV kan ikke holdes ansvarlig for konsekvenser for eventuelle feil, forsinkelser eller andre forhold knyttet til opplysninger eller tjenester omfattet av disse vilkårene. NAV kan heller ikke holdes ansvarlig for tap eller indirekte tap knyttet til tjenesten. Indirekte tap omfatter, men er ikke begrenset til, tapt fortjeneste av enhver art, tapte besparelser og krav fra tredjeparter.",
+          "liste": []
+        }
+      ]
+    },
+    {
+      "overskrift": "Behandling av personopplysninger",
+      "avsnitt": [
+        {
+          "tekst": "NAV har plikt til å påse at saken er så godt opplyst som mulig før det blir fattet vedtak i saken, jf. forvaltningsloven § 17. Hvilke opplysninger som er nødvendige å innhente for å kunne fatte vedtak følger av forskrift om stønad til briller til barn. Innhenting av personopplysninger følger rettslig grunnlag i personvernforordningens artikkel 6, punkt 1 bokstav e og artikkel 9, punkt 2 bokstav b. For saker vedrørende behandling om krav om støtte til briller til barn, følger NAV rett til å innhente nødvendige opplysninger i supplerende rettslig grunnlag av forskrift om stønad til briller til barn §§ 2, 6-7. Videre innhentes opplysninger som følge av avtale «Avtale om direkte oppgjør for stønad til briller til barn» som inngås før optikerbedrift kan benytte og tilby direkteoppgjørsløsningen. Opplysningene som utveksles skal ikke benyttes utenfor avtalens formål eller utenfor hjemmelsgrunnlag, ei heller viderebehandles for andre formål.",
           "liste": []
         },
         {
-          "tekst": "Opplysningene anses mottatt når mottaker sender kvittering for at opplysningene er mottatt uten feil i eller ved forsendelsen. Slik kvittering skal sendes umiddelbart etter mottakelsen av forsendelse uten feil. Dersom mottaker registrerer feil i eller ved forsendelsen fra avgivende part, skal dette tas opp som bestemt i denne avtalens bilag 3 om feilretting. Avsender er ansvarlig for å rette opp feil ved forsendelsen.",
+          "tekst": "Optikerfirma, herunder konsument har bare adgang til å benytte tjenesten og behandle personopplysninger i den utstrekning det foreligger nødvendig behandlingsgrunnlag, jf. personvernforordningens artikkel 6 og artikkel 9. Konsumenten er behandlingsansvarlig for personopplysninger som konsumenten innhenter. Konsumenten er derfor ansvarlig for at personopplysningene blir behandlet i henhold til gjeldende regelverk om personvern. Konsumenten forplikter seg til å ikke hente ut mer informasjon enn det som er nødvendig for å oppnå formålet med innhentingen, og kan ikke benytte opplysningene videre til andre formål som er uforenelige med det opprinnelige formålet med utleveringen jf. personvernforordningen artikkel 5 bokstav b og c.",
+          "liste": []
+        },
+        {
+          "tekst": "Dersom NAV avdekker at konsumenten har benyttet informasjon utover rettslig grunnlag, kan NAV stenge tilgangen med øyeblikkelig virkning. Konsumenten skal påse at personopplysningene ikke blir lagret lenger enn det som er nødvendig for å gjennomføre formålet med behandlingen jf. personvernforordningen artikkel 5 bokstav e. Videre skal konsumenten etablere rutiner for regelmessig gjennomgang og sletting av personopplysninger som ikke lenger skal oppbevares, jf. personvernforordningens artikkel 17.",
+          "liste": []
+        },
+        {
+          "tekst": "Konsumenten må kunne redegjøre for hvordan opplysningene som er innhentet fra NAV lagres, hvem som har tilgang til dem og hvor lenge opplysningene skal oppbevares ved forespørsel fra NAV.",
+          "liste": []
+        },
+        {
+          "tekst": "Konsumenten eller dennes databehandler/underleverandør kan ikke overføre personopplysninger fra NAV til et tredjeland, dvs. utenfor EU/EØS, med mindre landet er forhåndsgodkjent av EU-kommisjonen. Det er et vilkår for tilgang at personvernforordningen gjelder for behandlingen av personopplysningene eller at landet personopplysningene skal overføres til, har et tilstrekkelig beskyttelsesnivå av personopplysningene tilsvarende som i EU/EØS. Konsumenten og dennes databehandler/underleverandør er ansvarlig for å overholde forpliktelsene knyttet til overføring av personopplysninger til tredjeland som nevnt her og som følger av personvernlovgivningen. På forespørsel fra NAV må det kunne dokumenteres lovlig geografisk lokasjon for behandling og lagring av personopplysningene gjennom hele verdikjeden.",
+          "liste": []
+        },
+        {
+          "tekst": "Statistikker eller publikasjoner med registeropplysninger som kilde, må ikke offentliggjøres slik at enkeltpersoner kan identifiseres. Ved bruk av opplysninger fra registeret til statistiske formål, skal formen for presentasjon av statistiske resultater på forhånd godkjennes av NAV.",
+          "liste": []
+        },
+        {
+          "tekst": "Gjennom planlagte og systematiske tiltak skal konsumenten sørge for tilfredsstillende informasjonssikkerhet med hensyn til konfidensialitet, integritet og tilgjengelighet, jf. personvernforordningens artikkel 32. Konsumenten er til enhver tid ansvarlig for at tilgang til opplysningene ikke gis til andre enn de medarbeidere som har et tjenstlig behov.",
           "liste": []
         }
       ]
@@ -111,251 +136,174 @@
       "overskrift": "Taushetsplikt",
       "avsnitt": [
         {
-          "overskrift": "7.1. Taushetsplikt - personopplysninger",
-          "tekst": "Enhver som utfører tjeneste eller arbeid for en enhet i Arbeids- og velferdsetaten har taushetsplikt etter arbeids- og velferdsforvaltningsloven § 7, jf. forvaltningsloven §§ 13 til 13e.",
+          "tekst": "Alle personopplysninger som konsumenten får tilgang til gjennom bruk av tjenestene, er underlagt lovbestemt taushetsplikt. Taushetsplikten følger av forskrift om Arbeids- og velferdsforvaltningsloven § 7, i tillegg til optikers egen taushetsplikt etter helsepersonelloven § 21.",
           "liste": []
         },
         {
-          "tekst": "Firmaet-ansatte har taushetsplikt etter forvaltningsloven §§ 13 – 13 e. Taushetsplikten gjelder både ansatte i Firmaet og kontraktshjelpere for Firmaet. Databehandlere eller andre kontraktshjelpere for Firmaet må følge kravene som fremkommer fra denne avtalen. Opplysninger som utveksles eller mottas kan ikke brukes videre for egne formål.",
+          "tekst": "Taushetsplikten etter arbeids- og velferdsforvaltningsloven § 7 omfatter blant annet opplysninger om fødselsdato, personnummer, yrke og arbeidssted. Det er konsumentens ansvar å sørge for at alle medarbeidere som skal bruke opplysningene er kjent med hva taushetsplikten innebærer og at de forplikter seg til å etterleve denne før de får tilgang til å benytte opplysningene. Konsumenten plikter, på forespørsel fra NAV, å dokumentere at informasjon om taushetsplikten og hva denne innebærer er gitt til alle medarbeidere som benytter integrasjonsløsningen. Taushetsplikten innebærer at man ikke skal avsløre opplysninger for andre, og at man aktivt skal hindre at uvedkommende får tilgang eller kjennskap til disse. Taushetsplikten gjelder både i arbeidet og på fritiden. Den omfatter også kunnskap om NAVs sikkerhetsrutiner mv. som konsumenten eventuelt får kjennskap til i forbindelse med opprettelse og ivaretakelse av tilgangen. Dette gjelder også etter tilgangens opphør.",
           "liste": []
         },
         {
-          "tekst": "Partene forplikter seg videre til ikke å utlevere noen opplysninger som er mottatt i forbindelse med gjennomføringen av denne avtalen til andre, med mindre slik utlevering er tillatt etter gjeldende lovgivning.",
-          "liste": []
-        },
-        {
-          "overskrift": "7.2. Taushetsplikt - driftshemmeligheter",
-          "tekst": "Bedriftshemmeligheter, herunder opplysninger som kan skade noen av partene eller som kan utnyttes av utenforstående, er underlagt taushetsplikt jf. forvaltningsloven § 13 første ledd nr. 2. Taushetsplikten omfatter også kunnskap om motpartens sikkerhetsrutiner m.v. som partene får kjennskap til i forbindelse med inngåelse og oppfyllelse av denne avtalen.",
-          "liste": []
-        },
-        {
-          "tekst": "Dette punktet er likevel ikke til hinder for at partene kan rapportere nødvendige opplysninger til overordnet myndighet, eller gi nødvendige opplysninger til underliggende enheter i vedkommende etat.",
+          "tekst": "Brudd på taushetsplikten kan straffes med bøter eller med fengsel i inntil 1 år, se straffeloven § 209.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Opplysningenes kvalitet",
+      "overskrift": "Bruk av underleverandører/databehandler",
       "avsnitt": [
         {
-          "tekst": "Partene leverer opplysninger med den kvalitet som til enhver tid er i de enkelte systemene.",
+          "tekst": "Dersom konsumenten benytter en databehandler, skal det opplyses om dette i søknad om tilgang til integrasjonsløsning. Konsumenten og underleverandører/databehandler må ha avtaler som regulerer forholdet dem imellom. Konsumenten er fullt ut ansvarlig for utførelsen av databehandlerens oppgaver som involverer håndtering av data. En avtale med databehandler skal ikke bryte med vilkårene her. NAV er ikke forpliktet til å verifisere informasjonssikkerhet hos konsumenten, herunder dennes databehandler, og legger til grunn at ansvaret for at personvernregelverket blir etterlevd ligger hos den enkelte konsument som behandlingsansvarlig. Konsumenten identifiseres med og svarer fullt ut for databehandlers handlinger og unnlatelser som om de var konsumentens egne.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Ansvar, sikkerhet og rutiner ved utveksling og bruk av opplysninger",
+      "overskrift": "Teknisk informasjon og tjenester",
       "avsnitt": [
         {
-          "tekst": "Den enkelte part har ansvaret for at opplysningene sikres under overføring slik at informasjonen ikke kommer uvedkommende i hende, at integriteten i opplysningene ivaretas og at tilgjengelighet ivaretas.",
+          "tekst": "Dokumentasjon av løsning er beskrevet på GitHub,",
           "liste": []
         },
         {
-          "overskrift": "9.1 Overføring av opplysninger",
-          "tekst": "Kommunikasjonen mellom partene skal sikre nødvendig konfidensialitet, integritet og tilgjengelighet.",
+          "lenke": "https://navikt.github.io/hm-brille-integrasjon/",
           "liste": []
         },
         {
-          "tekst": "Teknisk og sikkerhetsmessig løsning for overføring av opplysninger er beskrevet i bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet.",
+          "overskrift": "11.1 Krav til sikkerhet og verifisering",
+          "tekst": "For å tilstrekkelig sikre at det er optiker som bekrefter og sender inn kliniske data for integrasjon mot pasientjournal, oppføres det krav til sikkerhet og verifisering. Endepunkt som benyttes for å sende inn kliniske data skal bare benyttes av autorisert optiker. Konsument er ansvarlig for at journalløsning som benyttes av konsumenten må ha sikker identifisering av autorisert optiker.",
+          "liste": []
+        },
+        {
+          "tekst": "Videre stiller NAV krav til konsument om maskinell oversendelse av informasjon. Informasjon som kan hentes automatisk fra part sitt system, og som skal sendes NAV, skal settes maskinelt på kallet til NAV. Dette gjelder eksempelvis butikkens organisasjonsnummer og fødselsnummer for innlogget optiker.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Kommunikasjon og grensesnitt",
+      "overskrift": "Tilgjengelighet til tjenestene",
       "avsnitt": [
         {
-          "tekst": "Kommunikasjon og grensesnitt mellom partene er regulert i bilag 2: Teknisk grensesnitt og særskilte krav til sikkerhet og bilag 3.",
+          "tekst": "NAV vil tilstrebe å levere stabile og driftssikre tjenester. Tjenestene kan tas ut av drift som følge av hendelser utenfor NAVs kontroll. Konsumenten vil bli varslet så langt det er mulig.",
+          "liste": []
+        },
+        {
+          "tekst": "Krav til tilgjengelighet gjelder ikke ved feil hos tredjepart eller andre forhold som er utenfor NAVs kontroll. Tjenestene er normalt tilgjengelig hele døgnet alle virkedager i året med unntak av kortere stopp for nødvendig teknisk vedlikehold. NAV gir ingen garantier for tilgjengelighet av tjenestene i testmiljø.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Varslingsplikt og avvikshåndtering",
+      "overskrift": "Logging og innsyn i logg",
       "avsnitt": [
         {
-          "tekst": "Partene har gjensidig varslingsplikt hvis det er oppdaget, eller man har mistanke om, brudd på avtalens bestemmelser, herunder om det som ledd i overføringen kan ha eller har skjedd et brudd på personopplysningssikkerheten. Avvik skal varsles uten ugrunnet opphold etter at avviket er oppdaget.",
+          "tekst": "Alle oppslag blir logget på system- og/eller personnivå, og kan spores i ettertid. De registrerte har som utgangspunkt rett til å få innsyn i slike logger dersom de ber om dette. NAV har rett til å benytte disse loggene som grunnlag dersom det mistenkes uberettiget oppslag.",
           "liste": []
         },
         {
-          "tekst": "Varselet skal bidra til at den av partene som er behandlingsansvarlig på overføringstidspunktet jf. punkt 6, får den informasjonen som er nødvendig til å oppfylle sin varslingsplikt etter personopplysningsloven § 1 jf. personvernforordningen artikkel 33 og 34. Det skal varsles umiddelbart med vurdering av alvorlighetsgrad, og spesielt dersom det er foretatt en uautorisert utveksling av opplysninger. Varslingsplikten og varslingsrutiner er nærmere beskrevet i bilag 3.",
+          "overskrift": "13.1 Hva logges ved API-oppslag",
+          "tekst": "Ved tjenestekall logges hvem som spør (konsument og eventuell databehandler), hva det spørres på (request) og hvilke data som ble levert (response). Konsumenten har selv plikt til å loggføre oppslag/behandling i integrert løsning, jf. personvernforordningen art. 15.",
           "liste": []
         },
         {
-          "tekst": "Avvik skal rapporteres skriftlig innen 36 timer fra avviket ble oppdaget og inneholde informasjon om hva som har inntruffet, hvor og når hendelsen inntraff, hovedårsaken til avviket, antall og hvilke registrerte som er berørt, hva slags type personopplysninger som er berørt, hvor de berørte personopplysningene befinner seg nå, strakstiltak som ble iverksatt, hvilke konsekvenser hendelsen har eller kan ha for de registrertes rettigheter og friheter og hvem som er ansvarlig for videre oppfølging.",
-          "liste": []
-        },
-        {
-          "tekst": "Varsling av avtalebrudd eller sikkerhetsbrudd skal loggføres hos hver av partene. Varslingen skal skje via oppnevnte kontakter, jf. bilag 3.",
+          "overskrift": "13.2 Hva utgis ved begjæring om logginnsyn fra NAV?",
+          "tekst": "NAV utleverer ikke logg over oppslag foretatt av eksterne konsumenter, hverken på individ eller virksomhetsnivå. Dersom den registrerte ber om innsyn i logg over oppslag utleverer NAV en oversikt over de konsumentene som har tilgang til data. NAV informerer den registrerte om at vedkommende må henvende seg direkte til virksomheten de ønsker informasjon fra. Den enkelte virksomhet som mottar en begjæring om innsynslogg, må selv be NAV om å få utlevert loggen og vurdere om de skal/kan utlevere denne. Spørsmål knyttet til begjæring om logginnsyn i NAV kan rettes til Sikkerhetsseksjonen i Arbeids og velferdsdirektoratet (nav.sikkerhetsseksjonen@nav.no).",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Ansvar for retting av feil",
+      "overskrift": "Kontaktinformasjon og brukerstøtte",
       "avsnitt": [
         {
-          "tekst": "Den parten som oppdager feil i opplysninger, eller andre feil ved tjenestene, skal uten ugrunnet opphold varsle den annen part i henhold til bilag 3.",
+          "overskrift": "14.1 Konsumentens kontaktinformasjon",
+          "tekst": "Konsumenten skal oppnevne person(er), som skal være vedkommende parts kontaktperson(er), knyttet til avtale, endringer, feil og sikkerhet. Ved bytte av kontaktperson(er) skal dette meddeles til NAV. Kontaktperson(er) må oppgis når det holdes et innledende møte for påkobling til tjenesten. Det er konsumentens ansvar at informasjonen til enhver tid er oppdatert slik at NAV kan kontakte konsumenten ved behov.",
           "liste": []
         },
         {
-          "tekst": "Partene skal rette større feil og sikkerhetsfeil så raskt som mulig, og mindre feil så snart dette er praktisk mulig. Ved teknisk svikt i linjeoverføringen mellom partene skal partene i fellesskap sørge for at feilen blir rettet. Se bilag 3 om varsling, feilretting og kontakt.",
+          "overskrift": "14.2 Henvendelse til NAV - Brukerstøtteløsning",
+          "tekst": "Konsumenten skal ha nødvendig brukerstøtte overfor sine ansatte. Dersom konsumenten har faglige, funksjonelle eller tekniske spørsmål til NAV, skal konsumenten først gå igjennom løsningens «Spørsmål og svar (FAQ)» på GitHub for å søke svar på spørsmålene. For eventuelle faglige spørsmål kan man kontakte NAV Hjelpemiddelsentral for Behandlingsbriller, nav.hot.behandlingsbriller@nav.no, eventuelt NKS, NAV Kontaktsenter. Feil eller sikkerhetsbrudd skal meldes snarest til NAV via kontaktpunkt omtalt på GitHub.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Beredskap/Kontinuitetsplan",
+      "overskrift": "Hendelser og varsling",
       "avsnitt": [
         {
-          "tekst": "I en beredskapssituasjon, eller annen ekstraordinær situasjon utenfor partenes kontroll, forutsettes det at partene samarbeider om å etablere alternative elektroniske og/eller manuelle rutiner for utveksling av opplysninger, så fremt situasjonen gjør dette mulig.",
+          "overskrift": "15.1 Hendelser skal meldes",
+          "tekst": "Dersom NAV oppdager feil eller mangler ved tjenesten eller opplysningene som kan ha betydning for konsumenten, vil NAV varsle om feilen og hvilke tiltak som er gjort for å utbedre feilen. Dersom en konsument opplever tjenesten som ustabil, utilgjengelig eller at den feiler, skal konsumenten melde dette til NAV via kontaktinformasjon oppgitt i GitHub. Før feil meldes til NAV skal konsumenten, så langt det er mulig, sikre at årsaken ikke ligger i egne systemer eller i system knyttet til deres databehandler dersom dette benyttes. Konsumenten plikter å håndtere hendelsen innenfor egne kvalitetsprosesser. Ved behov vil NAV kunne eskalere saker i henhold til etatens interne avviksrutiner. Dersom ingen frister er avtalt vil feil eller mangel blir rettet innen rimelig tid, vurdert etter feilens eller mangelens alvorlighet og mulige konsekvenser for konsumenten.",
+          "liste": []
+        },
+        {
+          "overskrift": "15.2 Varsel/henvendelser",
+          "tekst": "NAVs kanal for å melde hendelser/varsel til konsumenter NAV varsler om endringer og feil i tjenestene gjennom løsningen som er beskrevet her:",
+          "liste": []
+        },
+        {
+          "lenke": "https://navikt.github.io/hm-brille-integrasjon/faq/brukerst%C3%B8tte.html",
+          "liste": []
+        },
+        {
+          "overskrift": "15.3 Sikkerhetsbrudd eller personavvik hos konsument",
+          "tekst": "Dersom konsumenten har mistanke om brudd, risiko eller hendelser relatert til alle typer sikkerhet eller personvernavvik som for eksempel uautorisert eller utilsiktet utlevering av opplysninger, uautorisert tilgang, spredning, tap eller misbruk av opplysninger, skal NAV varsles om dette umiddelbart, og det skal iverksettes nødvendige tiltak. NAV skal kun varsles dersom avviket er innenfor etatens grensesnitt for eierskap/behandlingsansvar. Sikkerhetsbruddet skal varsles snarest via oppgitte kontaktpunkter. Dersom konsumenten har meldt et personvernavvik til Datatilsynet som gjelder opplysninger omfattet av avtalen, skal personvernombudet i NAV informeres via personvernombudet@nav.no",
+          "liste": []
+        },
+        {
+          "overskrift": "15.4 Sikkerhetsbrudd hos NAV",
+          "tekst": "Ved sikkerhetsbrudd kontakter NAV den enkelte konsument som er berørt ut fra den/de som er oppgitt som kontaktpersoner i søknaden og eventuelle senere oppdateringer fra konsumenten.",
+          "liste": []
+        },
+        {
+          "overskrift": "15.5 Kategorisering av type hendelser og feil i tjenesten",
+          "tekst": "NAV garanterer ikke et bestemt tjenestenivå for hendelseshåndtering, men tilstreber å håndtere hendelser. Varsling og retting vil gjelde fra NAV er gjort oppmerksom på hendelsen/feilen. Omfang, alvorlighetsgrad og kompleksitet er avgjørende for behandlingstid.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Force Majeure",
+      "overskrift": "Endringshåndtering og varsling",
       "avsnitt": [
         {
-          "tekst": "Skulle det inntreffe en ekstraordinær situasjon, som etter norsk rett må regnes som force majeure, og som gjør det umulig for partene å oppfylle forpliktelsene i denne avtalen, blir partenes forpliktelser suspendert for det tidsrom den ekstraordinære situasjonen varer.",
+          "tekst": "NAV skal varsle konsumenten ved endring av bruksvilkår, endring og feil i tjenester, ved planlagte nedetider, og ved nyheter som er knyttet til løsningene. Varsling skjer via tjenesten beskrevet i kap. 16.2.",
           "liste": []
         },
         {
-          "tekst": "I forbindelse med force majeure situasjonen har begge parter gjensidig informasjonsplikt om alle forhold som antas å være av betydning for den andre parten. Slik informasjon skal gis uten ugrunnet opphold. Partene dekker selv sine kostnader som følger av force majeure situasjonen.",
+          "overskrift": "16.1 Planlegging av endring",
+          "tekst": "Med endring menes alle typer endringer som påvirker tjenestene som er regulert i denne avtalen. Endringer skal som hovedregel være planlagt og varslet på forhånd. Det må sikres at endringer som kan påvirke stabilitet og tilgjengelighet på tjenestene gjennomføres på en koordinert og sikker måte. Alle endringer skal så langt det er mulig/hensiktsmessig være gjenstand for testing.",
+          "liste": []
+        },
+        {
+          "overskrift": "16.2 Type endring og varslingsfrister",
+          "tekst": "Konsumenten er selv ansvarlig for å varsle NAV dersom en standardendring gir problemer for konsumenten. Endring varsles på GitHub eller via epost.",
+          "liste": []
+        },
+        {
+          "tekst": "Hvis endring på eksisterende tjeneste så vil gammel versjon erstattes av ny ved release i produksjon. Konsumenten må kunne håndtere dette uten endring på sin side. Ved ny versjon av tjenesten, vil\n\ngammel versjon som hovedregel være tilgjengelig i 4 måneder etter at ny versjon er introdusert. Konsumenten må i slike tilfeller ta i bruk ny versjon i løpet av perioden.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Endringshåndtering/revisjon av avtale og bilag ",
+      "overskrift": "Mislighold",
       "avsnitt": [
         {
-          "tekst": "Partene kan kreve endring i avtalen dersom endringer i lov eller forskrift nødvendiggjør dette. Krav som følger av endringer i lover og forskrifter skal gjennomføres innen de tidsfrister som følger av lov eller forskrift. Det samme gjelder krav som følger av pålegg eller instrukser fra regjeringen eller departementene.",
-          "liste": []
-        },
-        {
-          "tekst": "Partene skal alltid varsle hverandre så snart som mulig ved planlagte endringer av datasystemene som kan påvirke overføringen av opplysninger til/fra den andre part, eller på annen måte påvirke den andre parts systemer. Prosedyre for varsling fremkommer av bilag 3.",
-          "liste": []
-        },
-        {
-          "tekst": "Endres krav til sikkerhet skal nye retningslinjer tas inn som en del av avtalen umiddelbart, og partene har da gjensidig varslingsplikt.",
-          "liste": []
-        },
-        {
-          "tekst": "Endring og tillegg til avtalen og/eller bilag skal følge fastsatte prosedyrer, skje skriftlig, og være undertegnet. Endringer i avtale skal fremkomme av egen endringslogg, jf bilag 8 der det føres logg over alle endringer.",
+          "tekst": "NAV har ensidig rett til umiddelbart å stanse konsumentens tilgang til data, dersom NAV anser at konsumenten ikke lenger oppfyller vilkårene for utlevering av opplysninger. Ved mislighold av tilgangsrettighetene kan NAV nekte tilgang til løsningene for kortere eller lengre tid. Brudd på taushetsplikten anses som vesentlig mislighold som gir adgang til å stanse utvekslingen inntil årsaken til bruddet er rettet. NAV skal kontakte konsumenten skriftlig innen rimelig tid etter at misligholdet er oppdaget. NAV kan allikevel stanse konsumentens tilgang til data med øyeblikkelig virkning.",
           "liste": []
         }
       ]
     },
     {
-      "overskrift": "Mislighold av avtalen",
+      "overskrift": "Endringer og varighet ",
       "avsnitt": [
         {
-          "tekst": "Den som vil påberope seg mislighold av avtalen, må meddele dette til den annen part med skriftlig begrunnelse, uten ugrunnet opphold etter at det aktuelle forholdet ble kjent.  ",
+          "overskrift": "18.1 Endringer i tjenestene og vilkårene",
+          "tekst": "NAV kan endre tjenesten samt vilkår for bruk dersom endringer i lov, forskrift eller eventuelle konsesjonsvilkår nødvendiggjør dette. Krav som følger av endringer i lover og forskrifter skal gjennomføres innen de tidsfrister som følger av lov eller forskrift. Det samme gjelder krav som følger av pålegg eller instrukser fra regjeringen eller departementene samt endrede krav til sikkerhet. Vilkårene gjelder til de blir erstattet av nye vilkår fra NAV og tilgang til opplysningene gjelder så lenge hjemmelsgrunnlaget og øvrige vilkår er til stede, og det ikke foreligger mislighold som fører til terminering av tilgang. Ved behov for endringer i vilkårene vil det bli utarbeidet en ny versjon av dokumentet. Vilkårene vil være versjonert. Dersom det planlegges endringer av vilkårene, vil det informeres om dette via GitHub eller på epost. Konsumentene kan fremsette forslag om endring av bruksvilkårene skriftlig til NAV. Dersom NAV støtter forslaget, skal endringen gjennomføres som beskrevet over.",
           "liste": []
         },
         {
-          "tekst": "Dersom sikkerheten ikke er tilfredsstillende jf. krav fastsatt i punkt 9 og bilag 2 vil overføringer av opplysninger fra partene opphøre inntil mangler eller mislighold er rettet.",
-          "liste": []
-        },
-        {
-          "tekst": "En part kan heve avtalen dersom den annen part i vesentlig grad misligholder sine forpliktelser etter avtalen. En part som ønsker å heve avtalen skal i skriftlig varsel sette en rimelig frist for retting av forholdet. Av varselet skal det fremgå at avtalen vil bli hevet dersom forholdet ikke er rettet innen fristen.",
-          "liste": []
-        },
-        {
-          "tekst": "Overtredelse av taushetsplikt vil alltid anses som vesentlig mislighold.",
-          "liste": []
-        }
-      ]
-    },
-    {
-      "overskrift": "Samarbeid",
-      "avsnitt": [
-        {
-          "tekst": "Partene har plikt til å samarbeide om oppfyllelse av avtalens intensjon. Alle meldinger, pålegg, krav etc. i tilknytning til avtalen og det den regulerer, skal gis skriftlig til den annen part ved den avtalte kontaktperson/enhet, såfremt ikke noe annet fremkommer i avtalen eller bilag.",
-          "liste": []
-        },
-        {
-          "overskrift": "17.1 Kontaktopplysninger",
-          "tekst": "Hver av partene skal oppnevne en person/enhet, som skal være vedkommende parts kontaktperson/enhet under utøvelsen av avtalen.",
-          "liste": []
-        },
-        {
-          "tekst": "Partenes kontakter/enhet fremgår av Bilag 3. Ved skifte av kontakter/enhet skal dette meddeles skriftlig til den annen part. Samtidig må parten som foretar skiftet oppdatere Bilag 3 med ny kontaktinformasjon.",
-          "liste": []
-        },
-        {
-          "overskrift": "17.2. Forholdet til tilsynsmyndigheter",
-          "tekst": "Partene skal bistå hverandre i å fremskaffe nødvendig dokumentasjon som etterspørres om den annen parts virksomhet av tilsynsmyndigheten ved vurdering av sikkerhetskrav, eller ved tilsyn/kontroll.",
-          "liste": []
-        }
-      ]
-    },
-    {
-      "overskrift": "Bruk av underleverandør ",
-      "avsnitt": [
-        {
-          "tekst": "Partene har rett til å la deler av sine avtaleforpliktelser utføres av underleverandør. Partene er fullt ut ansvarlig for utførelsen av underleverandørens oppgaver, på samme måte som om parten selv stod for utførselen.",
-          "liste": []
-        },
-        {
-          "tekst": "Dersom underleverandøren er en databehandler, må kravene som etter denne avtalen påhviler parten som benytter underleverandør, gjenspeiles i avtalen med underleverandøren.",
-          "liste": []
-        }
-      ]
-    },
-    {
-      "overskrift": "Overdragelse ved fusjon og/eller eierskifte",
-      "avsnitt": [
-        {
-          "tekst": "Avtalen, eller rettigheter og forpliktelser etter avtalen, kan ikke overdras eller overføres til andre.",
-          "liste": []
-        },
-        {
-          "tekst": "Dersom det finner sted strukturelle endringer hos en eller begge parter som medfører behov for å la andre juridiske personer stå som part i avtalen, forplikter partene seg etter beste evne til å bistå hverandre, slik at avtalen og ordningen den regulerer, kan opprettholdes.",
-          "liste": []
-        },
-        {
-          "tekst": "Arbeids- og velferdsdirektoratet tar forbehold om godkjenning av en ny part, for å sikre seg at en eventuell ny part tilfredsstiller de krav, herunder lovmessige krav og krav til informasjonssikkerhet, som denne avtalen forutsetter.",
-          "liste": []
-        }
-      ]
-    },
-    {
-      "overskrift": "Godtgjørelse/utgiftsdekning",
-      "avsnitt": [
-        {
-          "tekst": "Hver av partene dekker egne kostnader ved gjennomføring av denne avtalen.",
-          "liste": []
-        },
-        {
-          "tekst": "Partene dekker også egne kostnader ved nødvendig oppgradering av den tekniske løsningen. Arbeids- og velferdsdirektoratet dekker ingen kostander knyttet til kostnader for optiker eller deres leverandører/databehandlere/kontraktsparter.",
-          "liste": []
-        }
-      ]
-    },
-    {
-      "overskrift": "Tvister",
-      "avsnitt": [
-        {
-          "tekst": "Dersom det oppstår tvist mellom partene om tolkningen eller rettsvirkningen av avtalen, skal tvisten søkes løst ved forhandlinger mellom partene. Hvis tvisten ikke løses ved forhandlinger eskaleres tvisten linjevei av partene.",
-          "liste": []
-        }
-      ]
-    },
-    {
-      "overskrift": "Avtalens varighet og ikrafttredelse ",
-      "avsnitt": [
-        {
-          "tekst": "Denne avtalen gjelder i pilotperioden frem til og med [dato]. Når løsningen er besluttet satt i produksjon skal det inngås ny avtale som erstatter pilotavtalen. Hvis begge partene er enige, kan avtalen i en mellomperiode forlenges med seks måneder utover avtalt dato. Dette skal gjøres skriftlig før utløpet av pilotperioden.",
-          "liste": []
-        },
-        {
-          "tekst": "Avtalen trer i kraft fra dato for undertegnelse.",
-          "liste": []
-        },
-        {
-          "tekst": "Avtalen er utarbeidet i to eksemplarer, hvorav partene beholder hvert sitt underskrevne eksemplar.",
+          "overskrift": "18.2 Opphør av tilganger og/eller avtaleforholdet",
+          "tekst": "Dersom konsumenten ønsker å opphøre tilganger eller avslutte avtaleforholdet, må konsumenten varsle dette gjennom oppgitte kontaktpunkt. Velger konsumenten å avslutte avtalen vil alle tilganger opphøre. I tilfeller hvor organisasjonsnummeret som er oppgitt i søknaden opphører i Enhetsregisteret, vil tilgang til tjenestene opphøre uten ugrunnet opphold. Dersom konsumenten ikke godtar de til enhver tid gjeldende bruksvilkår og NAV ikke kan imøtekomme eventuelle innsigelser, opphører tilgangen. NAV kan opphøre tilganger på bakgrunn av forhold nevnt tidligere i bruksvilkårene (bl.a. endringer i rettslig grunnlag, brudd på taushetsplikt eller mislighold).",
           "liste": []
         }
       ]
