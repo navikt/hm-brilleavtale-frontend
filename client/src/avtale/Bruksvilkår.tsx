@@ -2,12 +2,13 @@ import {BodyLong, Heading, Panel} from '@navikt/ds-react'
 import {useTranslation} from 'react-i18next'
 import nb from './nb_utvidet_avtale.json'
 import React from "react";
+import nn from './nn_utvidet_avtale.json'
 
 export function Bruksvilkår() {
     const {
         i18n: {language},
     } = useTranslation()
-    const avtale: Avtaletekst = nb
+    const avtale = language === 'nn' ? nn : nb
 
     return (
         <Panel border>
