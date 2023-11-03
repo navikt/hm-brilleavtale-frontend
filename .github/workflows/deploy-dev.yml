@@ -12,8 +12,7 @@ on:
       - '/docs'
     branches:
       - main
-      - nynorsk
-      - dummy
+      - utvidetAvtale
 
 env:
   IMAGE: 'ghcr.io/navikt/hm-brilleavtale-frontend:${{ github.sha }}'

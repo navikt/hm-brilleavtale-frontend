@@ -3,6 +3,9 @@ import amplitude from 'amplitude-js'
 export enum skjemanavn {
   SKJEMANAVN_ENDRE = 'Endre brilleavtale',
   SKJEMANAVN_OPPRETT = 'Opprett brilleavtale',
+  SKJEMANAVN_OPPRETT_UTVIDET = 'Opprett utvidet brilleavtale',
+  SKJEMANAVN_LAST_NED = 'Last ned brilleavtale',
+  SKJEMANAVN_ENDRE_BRUKSVILKÅR = 'Endre bruksvilkår'
 }
 
 export enum amplitude_taxonomy {

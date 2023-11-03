@@ -6,6 +6,8 @@ import { Avstand } from '../components/Avstand'
 import { HentVirksomheterResponse } from '../types'
 import { useGet } from '../useGet'
 import { VirksomhetPanel } from './VirksomhetPanel'
+import ScrollToTop from "../components/ScrollToTop";
+import {Endringsvarsel} from "@navikt/hm-react-components";
 
 export function Virksomheter() {
   const { t } = useTranslation()
@@ -21,6 +23,7 @@ export function Virksomheter() {
   if (virksomheter && !virksomheter.length) {
     return (
       <main>
+        <ScrollToTop />
         <Alert variant="info">
           <BodyLong>{t('virksomhet.ingen_virksomheter')}</BodyLong>
         </Alert>
@@ -31,8 +34,18 @@ export function Virksomheter() {
   return (
     <>
       <main>
+          <Avstand marginBottom={5}>
+              <Endringsvarsel
+                  tittel={t('endringsvarsel.bv.tittel')}
+                  tekst={t('endringsvarsel.bv.tekst')}
+                  lenketekst={t('endringsvarsel.bv.lenketekst')}
+                  lenke="https://navikt.github.io/hm-brille-integrasjon/"
+              />
+          </Avstand>
+        <ScrollToTop />
         {virksomheterUtenAvtale.length > 0 && (
           <>
+
             <Heading level="2" size="medium" spacing>
               {t('virksomhet.uten_avtale')}
             </Heading>
