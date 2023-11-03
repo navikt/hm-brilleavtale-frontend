@@ -16,7 +16,7 @@ export interface Virksomhet {
     kontonr?: string
     epost?: string
     bruksvilkår: boolean
-    bruksvilkårGodtattDato?: string
+    bruksvilkårOpprettet?: string
     avtaleversjon?: string
     opprettet?: string
     oppdatert?: string

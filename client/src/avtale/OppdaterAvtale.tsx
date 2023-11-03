@@ -86,7 +86,7 @@ export function OppdaterAvtale() {
                                         {t('avtale.utvidet_avtale_tittel')}
                                     </BodyShort>
                                     <BodyShort size="small" style={{color: '#525962'}}>
-                                        {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.bruksvilkårGodtattDato}/>
+                                        {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.bruksvilkårOpprettet}/>
                                     </BodyShort>
                                 </div>
                             </Avtaleboks>
