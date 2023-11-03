@@ -16,7 +16,7 @@ const virksomheter: Record<string, Virksomhet> = {
     navn: 'Optikerkjeden AS',
     aktiv: true,
     bruksvilkår: true,
-    bruksvilkårGodtattDato: '2023-08-10T14:27:31.487356',
+    bruksvilkårOpprettet: '2023-08-10T14:27:31.487356',
     kontonr: '12341112345',
     epost: 'test@test',
     opprettet: '2023-02-12T12:07:08.487356',
