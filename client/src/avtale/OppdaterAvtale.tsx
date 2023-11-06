@@ -91,7 +91,7 @@ export function OppdaterAvtale() {
                                 </div>
                             </Avtaleboks>
                             <LastNedKnapp>
-                                <AppLink href="/avtale.pdf" target="_blank"
+                                <AppLink href="/bruksvilkar_1_0.pdf" target="_blank"
                                          style={{textDecoration: "none", cursor: "pointer"}}>
                                     Last ned
                                     <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
