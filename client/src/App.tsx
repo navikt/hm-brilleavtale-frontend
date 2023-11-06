@@ -15,15 +15,10 @@ import {Virksomheter} from './virksomhet/Virksomheter'
 import {Helmet} from "react-helmet";
 import {GodtaBruksvilkår} from "./avtale/GodtaBruksvilkår";
 import {BruksvilkårKvittering} from "./avtale/BruksvilkårKvittering";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 export function App() {
     const {t} = useTranslation()
-    useEffect(() => {
-        setBreadcrumbs([
-            {url: 'https://www.nav.no/barnebriller', title: t('brødsmuler.1')},
-            {url: baseUrl('/'), title: t('brødsmuler.2')},
-        ])
-    }, [])
 
     return (
         <ErrorBoundary
@@ -35,6 +30,7 @@ export function App() {
                 }
             }}
         >
+            <Breadcrumbs/>
             <header>
                 <Banner>
                     <Heading level="1" size="large">
@@ -57,6 +53,7 @@ export function App() {
                 <Route path="*"
                        element={<SettTittel title="helmet.title.feilside"><Feilside status={404}/></SettTittel>}/>
             </Routes>
+            <Breadcrumbs/>
         </ErrorBoundary>
     )
 }
