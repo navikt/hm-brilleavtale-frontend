@@ -1,6 +1,4 @@
 import {Heading} from '@navikt/ds-react'
-import {setBreadcrumbs} from '@navikt/nav-dekoratoren-moduler'
-import {useEffect} from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
 import {useTranslation} from 'react-i18next'
 import {Route, Routes} from 'react-router-dom'
@@ -10,7 +8,6 @@ import {OpprettAvtale} from './avtale/OpprettAvtale'
 import {Banner} from './components/Banner'
 import {isHttpError} from './error'
 import {Feilside} from './Feilside'
-import {baseUrl} from './http'
 import {Virksomheter} from './virksomhet/Virksomheter'
 import {Helmet} from "react-helmet";
 import {GodtaBruksvilkår} from "./avtale/GodtaBruksvilkår";
