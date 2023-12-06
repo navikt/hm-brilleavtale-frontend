@@ -10,6 +10,7 @@ import { baseUrl, http } from './http'
 import './i18n'
 import { initMSW } from './mocks/initMSW'
 import { initAmplitude } from './utils/amplitude'
+import { HelmetProvider } from 'react-helmet-async'
 
 const swrConfig: SWRConfiguration = {
   async fetcher(url: string) {
@@ -27,9 +28,11 @@ initMSW().then(() => {
     <React.StrictMode>
       <GlobalStyle />
       <SWRConfig value={swrConfig}>
-        <BrowserRouter basename={baseUrl()}>
-          <App />
-        </BrowserRouter>
+        <HelmetProvider>
+          <BrowserRouter basename={baseUrl()}>
+            <App />
+          </BrowserRouter>
+        </HelmetProvider>
       </SWRConfig>
     </React.StrictMode>
   )

@@ -48,7 +48,7 @@ export function GodtaBruksvilkår() {
                 {t('avtale.utvidet_avtale_tittel')}
             </Heading>
             <Avstand marginTop={5} marginBottom={5}>
-                <Heading level="2" size="small">
+                <Heading level="3" size="small">
                     {virksomhet.navn}
                 </Heading>
                 <BodyShort size="small">

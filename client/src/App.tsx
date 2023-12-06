@@ -1,18 +1,18 @@
-import {Heading} from '@navikt/ds-react'
-import {ErrorBoundary} from 'react-error-boundary'
-import {useTranslation} from 'react-i18next'
-import {Route, Routes} from 'react-router-dom'
-import {AvtaleKvittering} from './avtale/AvtaleKvittering'
-import {OppdaterAvtale} from './avtale/OppdaterAvtale'
-import {OpprettAvtale} from './avtale/OpprettAvtale'
-import {Banner} from './components/Banner'
-import {isHttpError} from './error'
-import {Feilside} from './Feilside'
-import {Virksomheter} from './virksomhet/Virksomheter'
-import {Helmet} from "react-helmet";
-import {GodtaBruksvilkår} from "./avtale/GodtaBruksvilkår";
-import {BruksvilkårKvittering} from "./avtale/BruksvilkårKvittering";
-import Breadcrumbs from "./components/Breadcrumbs";
+import { Heading } from '@navikt/ds-react'
+import { ErrorBoundary } from 'react-error-boundary'
+import { useTranslation } from 'react-i18next'
+import { Route, Routes } from 'react-router-dom'
+import { AvtaleKvittering } from './avtale/AvtaleKvittering'
+import { OppdaterAvtale } from './avtale/OppdaterAvtale'
+import { OpprettAvtale } from './avtale/OpprettAvtale'
+import { Banner } from './components/Banner'
+import { isHttpError } from './error'
+import { Feilside } from './Feilside'
+import { Virksomheter } from './virksomhet/Virksomheter'
+import { Helmet } from 'react-helmet-async'
+import { GodtaBruksvilkår } from './avtale/GodtaBruksvilkår'
+import { BruksvilkårKvittering } from './avtale/BruksvilkårKvittering'
+import Breadcrumbs from './components/Breadcrumbs'
 
 export function App() {
     const {t} = useTranslation()

@@ -70,16 +70,13 @@ export function OppdaterAvtale() {
                             {t('last.ned')}
                             <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
                         </AppLink>
-
                     </LastNedKnapp>
                 </Avtalerad>
-
 
                 {virksomhet.bruksvilkår && (
                     <>
                         <hr style={{width: '100%'}}/>
                         <Avtalerad>
-
                             <Avtaleboks>
                                 <div style={{maxWidth: '100%'}}>
                                     <BodyShort size="medium">
@@ -96,38 +93,28 @@ export function OppdaterAvtale() {
                                     Last ned
                                     <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{marginLeft: '0.25rem'}}/>
                                 </AppLink>
-
                             </LastNedKnapp>
                         </Avtalerad>
                     </>
                 )}
-
-
             </Avtalecontainer>
 
-
             {!virksomhet.bruksvilkår && (
-
                 <BruksvilkårBoks>
                     <PennIkon/>
                     <Heading level="2" size="small" style={{maxWidth: '70%'}}>
                         {t('avtale.utvidet_avtale_tittel')}
                     </Heading>
-                    <LastNedKnapp
-                        onClick={() => {
+                    <LastNedKnapp>
+                        <AppLink href={`/godta-bruksvilkar/${virksomhet.orgnr}`} onClick={(it) => {
                             logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
-                            navigate(`/godta-bruksvilkar/${virksomhet.orgnr}`)
-                        }}
-                    >
-                        <div style={{display: 'flex', alignItems: 'center', cursor: "pointer"}}>
+                        }} style={{textDecoration: "none", cursor: "pointer"}}>
                             {t('avtale.se_bruksvilkar')}
-                            <ChevronRightIcon title="a11y-title"/>
-                        </div>
-
+                            <ChevronRightIcon />
+                        </AppLink>
                     </LastNedKnapp>
                 </BruksvilkårBoks>
             )}
-
 
             <Kontaktinformasjon>
                 <Heading level="2" size="small" spacing>
@@ -222,7 +209,7 @@ const BruksvilkårBoks = styled.div`
   margin: var(--a-spacing-2) 0;
 `
 
-const LastNedKnapp = styled.a`
+const LastNedKnapp = styled.div`
   display: flex;
   color: var(--a-blue-600);
   padding: var(--a-spacing-4);

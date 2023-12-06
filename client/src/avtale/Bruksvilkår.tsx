@@ -1,13 +1,14 @@
-import {BodyLong, Heading, Panel} from '@navikt/ds-react'
-import {useTranslation} from 'react-i18next'
+import { BodyLong, Heading, Panel } from '@navikt/ds-react'
+import { useTranslation } from 'react-i18next'
+import React from 'react'
 import nb from './nb_utvidet_avtale.json'
-import React from "react";
 import nn from './nn_utvidet_avtale.json'
 
 export function Bruksvilkår() {
     const {
         i18n: {language},
     } = useTranslation()
+
     const avtale = language === 'nn' ? nn : nb
 
     return (
@@ -18,21 +19,19 @@ export function Bruksvilkår() {
                         {`${index + 1}. ${overskrift}`}
                     </Heading>
                     {avsnitt.map((t, index) => (
-                        <BodyLong key={index} spacing>
-                            <>
-                                {t.overskrift &&
-                                    <Heading size="xsmall" level="4">
-                                        {t.overskrift}
-                                    </Heading>
-                                }
+                        <div key={index}>
+                            {t.overskrift &&
+                                <Heading size="xsmall" level="4">
+                                    {t.overskrift}
+                                </Heading>
+                            }
+                            <BodyLong spacing>
                                 {t.tekst}
                                 {t.lenke &&
                                     <a href={t.lenke}>{t.lenke}</a>
                                 }
-                            </>
-                        </BodyLong>
-
-
+                            </BodyLong>
+                        </div>
                     ))}
                 </div>
             ))}
