@@ -7,7 +7,8 @@ import {
   OpprettAvtaleResponse,
   OppdaterAvtaleRequest,
   OppdaterAvtaleResponse,
-  Virksomhet, GodtaBruksvilkårRequest,
+  Virksomhet,
+  GodtaBruksvilkårRequest,
 } from '../types'
 
 const virksomheter: Record<string, Virksomhet> = {
@@ -54,9 +55,12 @@ const handlers: RequestHandler[] = [
   rest.post<OpprettAvtaleRequest, {}, OpprettAvtaleResponse>(apiUrl('/avtale/virksomheter'), (req, res, ctx) => {
     return res(ctx.status(201), ctx.json(virksomheter['123456789']))
   }),
-  rest.post<GodtaBruksvilkårRequest, {}, OpprettAvtaleResponse>(apiUrl('/avtale/virksomheter/bruksvilkar'), (req, res, ctx) => {
-    return res(ctx.status(201), ctx.json(virksomheter['123456789']))
-  }),
+  rest.post<GodtaBruksvilkårRequest, {}, OpprettAvtaleResponse>(
+    apiUrl('/avtale/virksomheter/bruksvilkar'),
+    (req, res, ctx) => {
+      return res(ctx.status(201), ctx.json(virksomheter['123456789']))
+    }
+  ),
   rest.put<OppdaterAvtaleRequest, { orgnr: string }, OppdaterAvtaleResponse>(
     apiUrl('/avtale/virksomheter/:orgnr'),
     (req, res, ctx) => {

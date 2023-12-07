@@ -6,7 +6,7 @@ import { Avstand } from '../components/Avstand'
 import { DsLink } from '../components/DsLink'
 import { Virksomhet } from '../types'
 import { AvtalePanel } from './AvtalePanel'
-import ScrollToTop from "../components/ScrollToTop";
+import ScrollToTop from '../components/ScrollToTop'
 
 export function AvtaleKvittering() {
   const { t } = useTranslation()

@@ -5,7 +5,6 @@ import { initReactI18next } from 'react-i18next'
 import nb from './resources/nb_translation.json'
 import nn from './resources/nn_translation.json'
 
-
 let language = Cookies.get('decorator-language')
 if (language === undefined || !['nb', 'nn'].includes(language)) {
   language = 'nb'

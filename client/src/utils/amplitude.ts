@@ -5,7 +5,7 @@ export enum skjemanavn {
   SKJEMANAVN_OPPRETT = 'Opprett brilleavtale',
   SKJEMANAVN_OPPRETT_UTVIDET = 'Opprett utvidet brilleavtale',
   SKJEMANAVN_LAST_NED = 'Last ned brilleavtale',
-  SKJEMANAVN_ENDRE_BRUKSVILKÅR = 'Endre bruksvilkår'
+  SKJEMANAVN_ENDRE_BRUKSVILKÅR = 'Endre bruksvilkår',
 }
 
 export enum amplitude_taxonomy {

@@ -15,13 +15,13 @@ export function VirksomhetPanel(props: VirksomhetPanelProps) {
   const navigate = useNavigate()
   return (
     <LinkPanel
-        tabIndex={0}
+      tabIndex={0}
       onClick={() => {
         logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
         navigate(`/opprett-avtale/${virksomhet.orgnr}`)
       }}
-      onKeyDown={ (event) => {
-        if(event.key === 'Enter'){
+      onKeyDown={(event) => {
+        if (event.key === 'Enter') {
           logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
           navigate(`/opprett-avtale/${virksomhet.orgnr}`)
         }

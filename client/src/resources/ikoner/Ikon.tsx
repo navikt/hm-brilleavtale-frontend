@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import {DocPencilIcon, FilesIcon, PencilLineIcon} from "@navikt/aksel-icons";
+import { DocPencilIcon, FilesIcon, PencilLineIcon } from '@navikt/aksel-icons'
 
 export interface IkonProps {
   bgSize?: number
@@ -28,7 +28,6 @@ export const InnsendteKravIkon: React.FC<IkonProps> = ({ bgSize = 62, iconSize =
 
 export const PennIkon: React.FC<IkonProps> = ({ bgSize = 62, iconSize = 32 }) => (
   <IkonBakgrunn size={bgSize}>
-      <PencilLineIcon aria-hidden title="a11y-title" width={iconSize} height={iconSize} />
-
+    <PencilLineIcon aria-hidden title="a11y-title" width={iconSize} height={iconSize} />
   </IkonBakgrunn>
 )
