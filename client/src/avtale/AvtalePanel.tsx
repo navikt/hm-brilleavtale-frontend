@@ -28,6 +28,7 @@ export function AvtalePanel(props: AvtalePanelProps) {
           navigate(`/oppdater-avtale/${virksomhet.orgnr}`)
         }
       }}
+      style={{ cursor: 'pointer' }}
     >
       <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
       <LinkPanel.Description>

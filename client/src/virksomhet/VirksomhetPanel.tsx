@@ -26,6 +26,7 @@ export function VirksomhetPanel(props: VirksomhetPanelProps) {
           navigate(`/opprett-avtale/${virksomhet.orgnr}`)
         }
       }}
+      style={{ cursor: 'pointer' }}
     >
       <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
       <LinkPanel.Description>
