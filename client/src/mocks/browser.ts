@@ -1,15 +1,16 @@
-import { RequestHandler, rest, setupWorker } from 'msw'
+import { http, HttpResponse, RequestHandler } from 'msw'
 import { apiUrl } from '../http'
 import {
+  GodtaBruksvilkårRequest,
   HentVirksomheterResponse,
   HentVirksomhetResponse,
-  OpprettAvtaleRequest,
-  OpprettAvtaleResponse,
   OppdaterAvtaleRequest,
   OppdaterAvtaleResponse,
+  OpprettAvtaleRequest,
+  OpprettAvtaleResponse,
   Virksomhet,
-  GodtaBruksvilkårRequest,
 } from '../types'
+import { setupWorker } from "msw/browser";
 
 const virksomheter: Record<string, Virksomhet> = {
   '123456789': {
@@ -46,25 +47,25 @@ const virksomheter: Record<string, Virksomhet> = {
 }
 
 const handlers: RequestHandler[] = [
-  rest.get<{}, {}, HentVirksomheterResponse>(apiUrl('/avtale/virksomheter'), (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(Object.values(virksomheter)))
+  http.get<{}, {}, HentVirksomheterResponse>(apiUrl('/avtale/virksomheter'), ({}) => {
+    return HttpResponse.json(Object.values(virksomheter))
   }),
-  rest.get<{}, { orgnr: string }, HentVirksomhetResponse>(apiUrl('/avtale/virksomheter/:orgnr'), (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
+  http.get<{ orgnr: string }, {}, HentVirksomhetResponse>(apiUrl('/avtale/virksomheter/:orgnr'), ({ params }) => {
+    return HttpResponse.json(virksomheter[params.orgnr])
   }),
-  rest.post<OpprettAvtaleRequest, {}, OpprettAvtaleResponse>(apiUrl('/avtale/virksomheter'), (req, res, ctx) => {
-    return res(ctx.status(201), ctx.json(virksomheter['123456789']))
+  http.post<OpprettAvtaleRequest, {}, OpprettAvtaleResponse>(apiUrl('/avtale/virksomheter'), () => {
+    return HttpResponse.json(virksomheter['123456789'], { status: 201 })
   }),
-  rest.post<GodtaBruksvilkårRequest, {}, OpprettAvtaleResponse>(
+  http.post<{}, GodtaBruksvilkårRequest, OpprettAvtaleResponse>(
     apiUrl('/avtale/virksomheter/bruksvilkar'),
-    (req, res, ctx) => {
-      return res(ctx.status(201), ctx.json(virksomheter['123456789']))
+    () => {
+      return HttpResponse.json(virksomheter['123456789'], { status: 201 })
     }
   ),
-  rest.put<OppdaterAvtaleRequest, { orgnr: string }, OppdaterAvtaleResponse>(
+  http.put<{ orgnr: string }, OppdaterAvtaleRequest, OppdaterAvtaleResponse>(
     apiUrl('/avtale/virksomheter/:orgnr'),
-    (req, res, ctx) => {
-      return res(ctx.status(200), ctx.json(virksomheter[req.params.orgnr]))
+    ({ params }) => {
+      return HttpResponse.json(virksomheter[params.orgnr])
     }
   ),
 ]
