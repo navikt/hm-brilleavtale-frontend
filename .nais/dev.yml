@@ -37,7 +37,6 @@ spec:
       level: Level4
       locale: nb
       autoLogin: true
-      errorPath: ""
   tokenx:
     enabled: true
   env:
