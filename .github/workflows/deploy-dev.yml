@@ -11,8 +11,7 @@ on:
       - 'docs/'
       - '/docs'
     branches:
-      - main
-      - utvidetAvtale
+      - main_
 
 env:
   IMAGE: 'ghcr.io/navikt/hm-brilleavtale-frontend:${{ github.sha }}'
