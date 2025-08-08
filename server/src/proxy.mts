@@ -1,6 +1,6 @@
 import proxy, { ProxyOptions } from 'express-http-proxy'
-import type { ExchangeToken } from './auth'
-import { config } from './config'
+import type { ExchangeToken } from './auth.mjs'
+import { config } from './config.mjs'
 
 function createProxy(
   host: string,

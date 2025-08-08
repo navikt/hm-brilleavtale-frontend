@@ -1,7 +1,7 @@
-import { fetchDecoratorHtml } from '@navikt/nav-dekoratoren-moduler/ssr'
+import { fetchDecoratorHtml } from '@navikt/nav-dekoratoren-moduler/ssr/index.js'
 import react from '@vitejs/plugin-react'
-import { render } from 'mustache'
-import { defineConfig, Plugin, splitVendorChunkPlugin } from 'vite'
+import Mustache from 'mustache'
+import { defineConfig, Plugin } from 'vite'
 
 const htmlPlugin = ({ development }: { development?: boolean }): Plugin => ({
   name: 'html-transform',
@@ -24,7 +24,7 @@ const htmlPlugin = ({ development }: { development?: boolean }): Plugin => ({
         ],
       })
       return {
-        html: render(html, decorator),
+        html: Mustache.render(html, decorator),
         tags: [
           {
             tag: 'script',
@@ -59,7 +59,7 @@ const htmlPlugin = ({ development }: { development?: boolean }): Plugin => ({
 // https://vitejs.dev/config/
 export default defineConfig((env) => ({
   base: env.mode === 'development' ? '/' : '/hjelpemidler/brilleavtale/',
-  plugins: [htmlPlugin({ development: env.mode === 'development' }), react(), splitVendorChunkPlugin()],
+  plugins: [htmlPlugin({ development: env.mode === 'development' }), react()],
   build: {
     sourcemap: true,
   },

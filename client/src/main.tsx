@@ -21,9 +21,6 @@ const swrConfig: SWRConfiguration = {
 initMSW().then(() => {
   const container = document.getElementById('root')!
   initAmplitude()
-  if (Modal.setAppElement) {
-    Modal.setAppElement(container)
-  }
   createRoot(container).render(
     <React.StrictMode>
       <GlobalStyle />

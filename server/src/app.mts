@@ -1,8 +1,8 @@
 import express, { Express } from 'express'
 import mustacheExpress from 'mustache-express'
-import type { Auth } from './auth'
-import { config } from './config'
-import { routes } from './routes'
+import type { Auth } from './auth.mjs'
+import { config } from './config.mjs'
+import { routes } from './routes.mjs'
 
 export function createApp(auth: Auth): Express {
   const router = express.Router()

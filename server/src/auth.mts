@@ -5,8 +5,8 @@ import { JWK } from 'node-jose'
 import { Issuer, TokenSet } from 'openid-client'
 import { ulid } from 'ulid'
 import { URL } from 'url'
-import { config } from './config'
-import { logger } from './logger'
+import { config } from './config.mjs'
+import { logger } from './logger.mjs'
 
 export interface ExchangeToken {
   (req: Request, targetAudience: string): Promise<TokenSet>
