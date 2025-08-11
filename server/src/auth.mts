@@ -1,7 +1,7 @@
 import type { Request, RequestHandler } from 'express'
 import { createRemoteJWKSet, jwtVerify } from 'jose'
 import jwt from 'jsonwebtoken'
-import { JWK } from 'node-jose'
+import jose from 'node-jose'
 import { Issuer, TokenSet } from 'openid-client'
 import { ulid } from 'ulid'
 import { URL } from 'url'
@@ -105,6 +105,7 @@ function getBearerToken(req: Request): string | undefined {
 
 async function createClientAssertion(): Promise<string> {
   const now = Math.floor(Date.now() / 1000)
+  const { JWK } = jose
   const key = await JWK.asKey(config.auth.tokenx_private_jwk)
   return jwt.sign(
     {
