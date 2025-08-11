@@ -41,4 +41,4 @@ WORKDIR /app/server
 
 COPY --from=server-dependencies /app/node_modules ./node_modules
 
-CMD [ "--enable-source-maps", "-r", "dotenv/config", "dist/server.js" ]
+CMD [ "--enable-source-maps", "-r", "dotenv/config", "dist/server.mjs" ]
