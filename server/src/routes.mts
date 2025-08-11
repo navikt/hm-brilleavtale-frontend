@@ -1,4 +1,4 @@
-import { fetchDecoratorHtml, Locale } from '@navikt/nav-dekoratoren-moduler/ssr'
+import { fetchDecoratorHtml, Locale } from '@navikt/nav-dekoratoren-moduler/ssr/index.js'
 import cookieParser from 'cookie-parser'
 import express, { RequestHandler, Router } from 'express'
 import type { ExchangeToken } from './auth.mjs'
