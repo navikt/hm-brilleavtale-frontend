@@ -1,7 +1,7 @@
-import { createApp } from './app'
-import { createAuth } from './auth'
-import { config } from './config'
-import { logger } from './logger'
+import { createApp } from './app.mjs'
+import { createAuth } from './auth.mjs'
+import { config } from './config.mjs'
+import { logger } from './logger.mjs'
 
 createAuth()
   .then((auth) => createApp(auth))

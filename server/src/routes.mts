@@ -1,11 +1,11 @@
-import { fetchDecoratorHtml, Locale } from '@navikt/nav-dekoratoren-moduler/ssr'
+import { fetchDecoratorHtml, Locale } from '@navikt/nav-dekoratoren-moduler/ssr/index.js'
 import cookieParser from 'cookie-parser'
 import express, { RequestHandler, Router } from 'express'
-import type { ExchangeToken } from './auth'
-import { config } from './config'
-import { logger } from './logger'
-import { createMetrics } from './metrics'
-import { proxyHandlers } from './proxy'
+import type { ExchangeToken } from './auth.mjs'
+import { config } from './config.mjs'
+import { logger } from './logger.mjs'
+import { createMetrics } from './metrics.mjs'
+import { proxyHandlers } from './proxy.mjs'
 
 export const routes = {
   internal(): Router {

@@ -1,3 +1,4 @@
+/// <reference types="jest" />
 import { exec } from 'child_process'
 import nb from '../resources/nb_translation.json'
 import nn from '../resources/nn_translation.json'
