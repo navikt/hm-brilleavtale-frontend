@@ -12,12 +12,12 @@ spec:
   ingresses:
     - https://www.nav.no/hjelpemidler/brilleavtale
   liveness:
-    path: /hjelpemidler/brilleavtale/internal/isalive
+    path: /isalive
   readiness:
-    path: /hjelpemidler/brilleavtale/internal/isready
+    path: /isready
   prometheus:
-    enabled: true
-    path: /hjelpemidler/brilleavtale/internal/metrics
+    enabled: false
+    path: /metrics
   replicas:
     max: 2
     min: 2
@@ -41,9 +41,7 @@ spec:
     - name: BRILLE_API_BASE_URL
       value: 'http://hm-brille-api.teamdigihot.svc.cluster.local'
     - name: BRILLE_API_TARGET_AUDIENCE
-      value: prod-gcp:teamdigihot:hm-brille-api
-    - name: PORT
-      value: '5000'
+      value: api://prod-gcp:teamdigihot:hm-brille-api/.default
     - name: GIT_COMMIT
       value: {{commit}}
   accessPolicy:
