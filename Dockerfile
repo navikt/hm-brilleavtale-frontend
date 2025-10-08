@@ -15,7 +15,7 @@ RUN npm run build
 FROM golang:1.25.1-alpine AS server-builder
 WORKDIR /app
 COPY server ./
-RUN go build -o server .
+RUN go build .
 
 # runtime
 FROM gcr.io/distroless/static-debian12 AS runtime
@@ -25,6 +25,6 @@ ENV TZ="Europe/Oslo"
 EXPOSE 5000
 
 COPY --from=client-builder /app/dist ./dist
-COPY --from=server-builder /app/server .
+COPY --from=server-builder /app/hm-brilleavtale-frontend .
 
-CMD [ "./server" ]
+CMD [ "./hm-brilleavtale-frontend" ]
