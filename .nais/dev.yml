@@ -41,7 +41,7 @@ spec:
     - name: BRILLE_API_BASE_URL
       value: 'http://hm-brille-api.teamdigihot.svc.cluster.local'
     - name: BRILLE_API_TARGET_AUDIENCE
-      value: api://dev-gcp:teamdigihot:hm-brille-api/.default
+      value: dev-gcp:teamdigihot:hm-brille-api
     - name: GIT_COMMIT
       value: {{commit}}
   accessPolicy:
