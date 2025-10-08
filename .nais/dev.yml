@@ -49,3 +49,4 @@ spec:
       rules:
         - application: hm-brille-api
         - application: nav-dekoratoren
+          namespace: personbruker
