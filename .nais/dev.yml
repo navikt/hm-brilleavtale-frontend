@@ -48,3 +48,4 @@ spec:
     outbound:
       rules:
         - application: hm-brille-api
+        - application: nav-dekoratoren
