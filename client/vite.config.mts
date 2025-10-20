@@ -9,22 +9,35 @@ const htmlPlugin = ({ development }: { development?: boolean }): Plugin => ({
     if (development) {
       const decorator = await fetchDecoratorHtml({
         env: 'dev',
-        context: 'samarbeidspartner',
-        chatbot: false,
-        language: 'nb',
-        availableLanguages: [
-          {
-            locale: 'nb',
-            handleInApp: true,
-          },
-          {
-            locale: 'nn',
-            handleInApp: true,
-          },
-        ],
+        params: {
+          context: 'samarbeidspartner',
+          chatbot: false,
+          language: 'nb',
+          availableLanguages: [
+            {
+              locale: 'nb',
+              handleInApp: true,
+            },
+            {
+              locale: 'nn',
+              handleInApp: true,
+            },
+          ],
+        },
       })
+      const {
+        DECORATOR_HEAD_ASSETS: HeadAssets,
+        DECORATOR_HEADER: Header,
+        DECORATOR_FOOTER: Footer,
+        DECORATOR_SCRIPTS: Scripts,
+      } = decorator
       return {
-        html: Mustache.render(html, decorator),
+        html: Mustache.render(html.replace(/\{\{\./g, '{{{').replace(/\}\}/g, '}}}'), {
+          HeadAssets,
+          Header,
+          Footer,
+          Scripts,
+        }),
         tags: [
           {
             tag: 'script',
