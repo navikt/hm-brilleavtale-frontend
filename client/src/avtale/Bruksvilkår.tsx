@@ -1,4 +1,4 @@
-import { BodyLong, Heading, Panel } from '@navikt/ds-react'
+import { BodyLong, Heading, Box } from '@navikt/ds-react'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
 import nb from './nb_utvidet_avtale.json'
@@ -12,7 +12,7 @@ export function Bruksvilkår() {
   const avtale = language === 'nn' ? nn : nb
 
   return (
-    <Panel border>
+    <Box.New borderWidth="1" borderColor="neutral" padding="4" borderRadius="large">
       {avtale.kapittel.map(({ overskrift, avsnitt }, index) => (
         <div key={index}>
           <Heading size="small" level="3" spacing>
@@ -33,7 +33,7 @@ export function Bruksvilkår() {
           ))}
         </div>
       ))}
-    </Panel>
+    </Box.New>
   )
 }
 

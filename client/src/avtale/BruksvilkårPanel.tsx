@@ -1,9 +1,8 @@
-import { LinkPanel } from '@navikt/ds-react'
-import { useNavigate } from 'react-router-dom'
+import { LinkCard } from '@navikt/ds-react'
+import { Link } from 'react-router-dom'
 import { Data } from '../components/Data'
 import { Dato } from '../components/Dato'
 import { Datum } from '../components/Datum'
-import { Kontonummer } from '../components/Kontonummer'
 import { Organisasjonsnummer } from '../components/Organisasjonsnummer'
 import { Virksomhet } from '../types'
 import { logSkjemaStartet, skjemanavn } from '../utils/amplitude'
@@ -14,23 +13,19 @@ export interface AvtalePanelProps {
 
 export function BruksvilkårPanel(props: AvtalePanelProps) {
   const { virksomhet } = props
-  const navigate = useNavigate()
   return (
-    <LinkPanel
-      tabIndex={0}
-      onClick={() => {
-        logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE_BRUKSVILKÅR)
-        navigate(`/oppdater-avtale/${virksomhet.orgnr}`)
-      }}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter') {
-          logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE_BRUKSVILKÅR)
-          navigate(`/oppdater-avtale/${virksomhet.orgnr}`)
-        }
-      }}
-    >
-      <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
-      <LinkPanel.Description>
+    <LinkCard tabIndex={0}>
+      <LinkCard.Title>
+        <LinkCard.Anchor asChild>
+          <Link
+            to={`/oppdater-avtale/${virksomhet.orgnr}`}
+            onClick={() => { logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE_BRUKSVILKÅR); window.scrollTo(0, 0); }}
+          >
+            {virksomhet.navn}
+          </Link>
+        </LinkCard.Anchor>
+      </LinkCard.Title>
+      <LinkCard.Description>
         <Data>
           <Datum label="ledetekst.orgnr">
             <Organisasjonsnummer verdi={virksomhet.orgnr} />
@@ -39,7 +34,7 @@ export function BruksvilkårPanel(props: AvtalePanelProps) {
             <Dato verdi={virksomhet.opprettet} />
           </Datum>
         </Data>
-      </LinkPanel.Description>
-    </LinkPanel>
+      </LinkCard.Description>
+    </LinkCard>
   )
 }

@@ -1,4 +1,4 @@
-import { BodyLong, BodyShort, Button, ConfirmationPanel, Heading, TextField } from '@navikt/ds-react'
+import { BodyLong, BodyShort, Button, Checkbox, CheckboxGroup, Heading, TextField } from '@navikt/ds-react'
 import React, { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -21,6 +21,7 @@ export function GodtaBruksvilkår() {
     handleSubmit,
     formState: { errors, isSubmitting },
     getValues,
+    watch,
   } = useForm<{ lest: boolean }>({
     defaultValues: {
       lest: false,
@@ -30,6 +31,8 @@ export function GodtaBruksvilkår() {
     '/avtale/virksomheter/bruksvilkar'
   )
   const navigate = useNavigate()
+  const lestValue = watch('lest')
+
   useEffect(() => {
     if (bruksvilkår) {
       navigate('/godta-bruksvilkarkvittering', {
@@ -37,6 +40,14 @@ export function GodtaBruksvilkår() {
       })
     }
   }, [bruksvilkår])
+
+  let dataColor = 'warning'
+  if (errors.lest?.message) {
+    dataColor = 'danger'
+  } else if (lestValue) {
+    dataColor = 'success'
+  }
+
   if (!virksomhet) {
     return null
   }
@@ -74,12 +85,15 @@ export function GodtaBruksvilkår() {
               },
             }}
             render={({ field }) => (
-              <ConfirmationPanel
-                error={errors.lest?.message}
-                label={t('utvidet_avtale.bekreftelse')}
-                checked={field.value}
-                {...field}
-              />
+              <div data-color={dataColor}>
+                <div className="aksel-confirmation-panel__inner">
+                  <CheckboxGroup legend="" hideLegend error={errors.lest?.message}>
+                    <Checkbox checked={field.value} {...field}>
+                      {t('utvidet_avtale.bekreftelse')}
+                    </Checkbox>
+                  </CheckboxGroup>
+                </div>
+              </div>
             )}
           />
         </Avstand>

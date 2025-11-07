@@ -1,5 +1,5 @@
-import { LinkPanel } from '@navikt/ds-react'
-import { useNavigate } from 'react-router-dom'
+import { LinkCard } from '@navikt/ds-react'
+import { Link } from 'react-router-dom'
 import { Data } from '../components/Data'
 import { Datum } from '../components/Datum'
 import { Organisasjonsnummer } from '../components/Organisasjonsnummer'
@@ -12,30 +12,25 @@ export interface VirksomhetPanelProps {
 
 export function VirksomhetPanel(props: VirksomhetPanelProps) {
   const { virksomhet } = props
-  const navigate = useNavigate()
   return (
-    <LinkPanel
-      tabIndex={0}
-      onClick={() => {
-        logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
-        navigate(`/opprett-avtale/${virksomhet.orgnr}`)
-      }}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter') {
-          logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
-          navigate(`/opprett-avtale/${virksomhet.orgnr}`)
-        }
-      }}
-      style={{ cursor: 'pointer' }}
-    >
-      <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
-      <LinkPanel.Description>
+    <LinkCard tabIndex={0}>
+      <LinkCard.Title>
+        <LinkCard.Anchor asChild>
+          <Link
+            to={`/opprett-avtale/${virksomhet.orgnr}`}
+            onClick={() => { logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT); window.scrollTo(0, 0); }}
+          >
+            {virksomhet.navn}
+          </Link>
+        </LinkCard.Anchor>
+      </LinkCard.Title>
+      <LinkCard.Description>
         <Data>
           <Datum label="ledetekst.orgnr">
             <Organisasjonsnummer verdi={virksomhet.orgnr} />
           </Datum>
         </Data>
-      </LinkPanel.Description>
-    </LinkPanel>
+      </LinkCard.Description>
+    </LinkCard>
   )
 }

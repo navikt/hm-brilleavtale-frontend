@@ -1,5 +1,5 @@
-import { LinkPanel } from '@navikt/ds-react'
-import { useNavigate } from 'react-router-dom'
+import { LinkCard } from '@navikt/ds-react'
+import { Link } from 'react-router-dom'
 import { Data } from '../components/Data'
 import { Dato } from '../components/Dato'
 import { Datum } from '../components/Datum'
@@ -14,24 +14,19 @@ export interface AvtalePanelProps {
 
 export function AvtalePanel(props: AvtalePanelProps) {
   const { virksomhet } = props
-  const navigate = useNavigate()
   return (
-    <LinkPanel
-      tabIndex={0}
-      onClick={() => {
-        logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
-        navigate(`/oppdater-avtale/${virksomhet.orgnr}`)
-      }}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter') {
-          logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
-          navigate(`/oppdater-avtale/${virksomhet.orgnr}`)
-        }
-      }}
-      style={{ cursor: 'pointer' }}
-    >
-      <LinkPanel.Title className="navds-heading--small">{virksomhet.navn}</LinkPanel.Title>
-      <LinkPanel.Description>
+    <LinkCard tabIndex={0}>
+      <LinkCard.Title>
+        <LinkCard.Anchor asChild>
+          <Link
+            to={`/oppdater-avtale/${virksomhet.orgnr}`}
+            onClick={() => { logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE); window.scrollTo(0, 0); }}
+          >
+            {virksomhet.navn}
+          </Link>
+        </LinkCard.Anchor>
+      </LinkCard.Title>
+      <LinkCard.Description>
         <Data>
           <Datum label="ledetekst.orgnr">
             <Organisasjonsnummer verdi={virksomhet.orgnr} />
@@ -44,7 +39,7 @@ export function AvtalePanel(props: AvtalePanelProps) {
           </Datum>
           <Datum label="ledetekst.epost">{virksomhet.epost}</Datum>
         </Data>
-      </LinkPanel.Description>
-    </LinkPanel>
+      </LinkCard.Description>
+    </LinkCard>
   )
 }
