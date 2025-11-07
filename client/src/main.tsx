@@ -1,5 +1,6 @@
-import '@navikt/ds-css'
-import { Modal } from '@navikt/ds-react'
+
+import "@navikt/ds-css/darkside";
+import { Theme } from "@navikt/ds-react";
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
@@ -27,7 +28,9 @@ initMSW().then(() => {
       <SWRConfig value={swrConfig}>
         <HelmetProvider>
           <BrowserRouter basename={baseUrl()}>
-            <App />
+            <Theme>
+              <App />
+            </Theme>
           </BrowserRouter>
         </HelmetProvider>
       </SWRConfig>

@@ -106,7 +106,7 @@ export function GodtaBruksvilkår() {
 const Knapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  gap: var(--a-spacing-3);
+  gap: var(--ax-space-12);
   justify-content: left;
 `
 const Tekstfelt = styled(TextField)`

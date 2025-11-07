@@ -1,4 +1,4 @@
-import { BodyLong, Heading, Panel } from '@navikt/ds-react'
+import { BodyLong, Box, Heading } from '@navikt/ds-react'
 import { useTranslation } from 'react-i18next'
 import nb from './nb_avtale.json'
 import nn from './nn_avtale.json'
@@ -9,7 +9,7 @@ export function Avtale() {
   } = useTranslation()
   const avtale = language === 'nn' ? nn : nb
   return (
-    <Panel border>
+    <Box.New borderWidth="1" borderColor="neutral" padding="4" borderRadius="large">
       {avtale.map(({ overskrift, tekst }, index) => (
         <div key={index}>
           <Heading size="small" level="3" spacing>
@@ -22,6 +22,6 @@ export function Avtale() {
           ))}
         </div>
       ))}
-    </Panel>
+    </Box.New>
   )
 }
