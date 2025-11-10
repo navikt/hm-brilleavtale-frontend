@@ -84,11 +84,11 @@ export function GodtaBruksvilkår() {
                 return value || t('avtale.må_huke_av')
               },
             }}
-            render={({ field }) => (
+            render={({ field: { value, onChange, onBlur } }) => (
               <div data-color={dataColor}>
                 <div className="aksel-confirmation-panel__inner">
-                  <CheckboxGroup legend="" hideLegend error={errors.lest?.message}>
-                    <Checkbox checked={field.value} {...field}>
+                  <CheckboxGroup legend={t('felles.duMåBekreftefølgende')} hideLegend error={errors.lest?.message}>
+                    <Checkbox checked={value} onChange={onChange} onBlur={onBlur}>
                       {t('utvidet_avtale.bekreftelse')}
                     </Checkbox>
                   </CheckboxGroup>
