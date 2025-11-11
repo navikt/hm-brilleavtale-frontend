@@ -1,4 +1,3 @@
-
 import "@navikt/ds-css/darkside";
 import { Theme } from "@navikt/ds-react";
 import React from 'react'

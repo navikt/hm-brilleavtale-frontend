@@ -18,7 +18,10 @@ export function VirksomhetPanel(props: VirksomhetPanelProps) {
         <LinkCard.Anchor asChild>
           <Link
             to={`/opprett-avtale/${virksomhet.orgnr}`}
-            onClick={() => { logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT); window.scrollTo(0, 0); }}
+            onClick={() => {
+              logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT);
+              window.scrollTo(0, 0);
+            }}
           >
             {virksomhet.navn}
           </Link>

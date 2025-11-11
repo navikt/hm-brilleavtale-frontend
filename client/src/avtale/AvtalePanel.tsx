@@ -20,7 +20,10 @@ export function AvtalePanel(props: AvtalePanelProps) {
         <LinkCard.Anchor asChild>
           <Link
             to={`/oppdater-avtale/${virksomhet.orgnr}`}
-            onClick={() => { logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE); window.scrollTo(0, 0); }}
+            onClick={() => {
+              logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_ENDRE);
+              window.scrollTo(0, 0);
+            }}
           >
             {virksomhet.navn}
           </Link>
