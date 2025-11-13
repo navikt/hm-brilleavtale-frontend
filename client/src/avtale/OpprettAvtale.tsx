@@ -1,4 +1,4 @@
-import { BodyLong, Button, ConfirmationPanel, Heading, TextField } from '@navikt/ds-react'
+import { BodyLong, Button, Checkbox, CheckboxGroup, Heading, TextField } from '@navikt/ds-react'
 import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -23,6 +23,7 @@ export function OpprettAvtale() {
     control,
     handleSubmit,
     formState: { errors, isSubmitting },
+    watch,
   } = useForm<{ kontonr: string; epost: string; lest: boolean }>({
     defaultValues: {
       kontonr: '',
@@ -32,6 +33,8 @@ export function OpprettAvtale() {
   })
   const { post: opprettAvtale, data: avtale } = usePost<OpprettAvtaleRequest, void>('/avtale/virksomheter')
   const navigate = useNavigate()
+  const lestValue = watch('lest')
+
   useEffect(() => {
     if (avtale) {
       navigate('/opprett-avtale/kvittering', {
@@ -39,6 +42,14 @@ export function OpprettAvtale() {
       })
     }
   }, [avtale])
+
+  let dataColor = 'warning'
+  if (errors.lest?.message) {
+    dataColor = 'danger'
+  } else if (lestValue) {
+    dataColor = 'success'
+  }
+
   if (!virksomhet) {
     return null
   }
@@ -94,13 +105,16 @@ export function OpprettAvtale() {
                 return value || t('avtale.må_huke_av')
               },
             }}
-            render={({ field }) => (
-              <ConfirmationPanel
-                error={errors.lest?.message}
-                label={t('avtale.bekreftelse')}
-                checked={field.value}
-                {...field}
-              />
+            render={({ field: { value, onChange, onBlur } }) => (
+              <div data-color={dataColor}>
+                <div className="aksel-confirmation-panel__inner">
+                  <CheckboxGroup legend={t('felles.duMåBekreftefølgende')} hideLegend error={errors.lest?.message}>
+                    <Checkbox checked={value} onChange={onChange} onBlur={onBlur}>
+                      {t('avtale.bekreftelse')}
+                    </Checkbox>
+                  </CheckboxGroup>
+                </div>
+              </div>
             )}
           />
         </Avstand>
@@ -126,7 +140,7 @@ export function OpprettAvtale() {
 const Knapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  gap: var(--a-spacing-3);
+  gap: var(--ax-space-12);
   justify-content: left;
 `
 

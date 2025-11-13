@@ -1,11 +1,10 @@
-import { Heading } from '@navikt/ds-react'
+import { Heading, Box } from '@navikt/ds-react'
 import { ErrorBoundary } from 'react-error-boundary'
 import { useTranslation } from 'react-i18next'
 import { Route, Routes } from 'react-router-dom'
 import { AvtaleKvittering } from './avtale/AvtaleKvittering'
 import { OppdaterAvtale } from './avtale/OppdaterAvtale'
 import { OpprettAvtale } from './avtale/OpprettAvtale'
-import { Banner } from './components/Banner'
 import { isHttpError } from './error'
 import { Feilside } from './Feilside'
 import { Virksomheter } from './virksomhet/Virksomheter'
@@ -29,11 +28,11 @@ export function App() {
     >
       <Breadcrumbs />
       <header>
-        <Banner>
+        <Box.New background="neutral-soft" padding="4" style={{ textAlign: "center" }}>
           <Heading level="1" size="large">
             {t('banner')}
           </Heading>
-        </Banner>
+        </Box.New>
       </header>
       <Routes>
         <Route

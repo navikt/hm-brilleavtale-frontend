@@ -81,7 +81,7 @@ export function Virksomheter() {
 
 const Kolonne = styled.div`
   display: grid;
-  gap: var(--a-spacing-5);
+  gap: var(--ax-space-20);
 `
 
 const Kontakt = styled.div`

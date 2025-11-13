@@ -178,7 +178,7 @@ export function OppdaterAvtale() {
 const Knapper = styled.div`
   display: grid;
   grid-auto-flow: column;
-  gap: var(--a-spacing-3);
+  gap: var(--ax-space-12);
   justify-content: left;
 `
 
@@ -192,34 +192,34 @@ const Avtaleboks = styled.div`
 
 const Avtalerad = styled.div`
   display: flex;
-  padding: var(--a-spacing-4) 0;
+  padding: var(--ax-space-16) 0;
 `
 
 const Avtalecontainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: var(--a-gray-100);
+  background-color: var(--ax-neutral-200);
   border-radius: 10px;
-  padding: var(--a-spacing-2) var(--a-spacing-6);
-  margin: var(--a-spacing-2) 0;
+  padding: var(--ax-space-8) var(--ax-space-24);
+  margin: var(--ax-space-8) 0;
 `
 
 const BruksvilkårBoks = styled.div`
   display: flex;
-  background-color: var(--a-blue-50);
+  background-color: var(--ax-accent-100);
   border-radius: 10px;
   align-items: center;
-  padding: var(--a-spacing-6) var(--a-spacing-6);
-  margin: var(--a-spacing-2) 0;
+  padding: var(--ax-space-24) var(--ax-space-24);
+  margin: var(--ax-space-8) 0;
 `
 
 const LastNedKnapp = styled.div`
   display: flex;
-  color: var(--a-blue-600);
-  padding: var(--a-spacing-4);
+  color: var(--ax-accent-700);
+  padding: var(--ax-space-16);
   margin-left: auto;
   flex-shrink: 0;
 `
 const Kontaktinformasjon = styled.div`
-  margin-top: var(--a-spacing-10);
+  margin-top: var(--ax-space-40);
 `
