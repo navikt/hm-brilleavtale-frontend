@@ -1,9 +1,8 @@
-import { BodyLong, BodyShort, Button, Checkbox, CheckboxGroup, Heading, TextField } from '@navikt/ds-react'
+import { BodyLong, BodyShort, Button, Checkbox, CheckboxGroup, Heading, HStack, TextField } from '@navikt/ds-react'
 import React, { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
-import styled from 'styled-components'
 import { Avstand } from '../components/Avstand'
 import { GodtaBruksvilkårRequest, HentVirksomhetResponse } from '../types'
 import { useGet } from '../useGet'
@@ -98,7 +97,7 @@ export function GodtaBruksvilkår() {
           />
         </Avstand>
 
-        <Knapper>
+        <HStack gap="3" justify="start">
           <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
             {t('avtale.inngå_bruksvilkar')}
           </Button>
@@ -111,18 +110,8 @@ export function GodtaBruksvilkår() {
           >
             {t('felles.avbryt')}
           </Button>
-        </Knapper>
+        </HStack>
       </form>
     </main>
   )
 }
-
-const Knapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  gap: var(--ax-space-12);
-  justify-content: left;
-`
-const Tekstfelt = styled(TextField)`
-  max-width: 330px;
-`

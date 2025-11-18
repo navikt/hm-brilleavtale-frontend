@@ -1,9 +1,8 @@
-import { BodyLong, Button, Checkbox, CheckboxGroup, Heading, TextField } from '@navikt/ds-react'
+import { BodyLong, Button, Checkbox, CheckboxGroup, Heading, HStack, TextField } from '@navikt/ds-react'
 import { useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
-import styled from 'styled-components'
 import { AppLink } from '../components/AppLink'
 import { Avstand } from '../components/Avstand'
 import { validerEpost } from '../epost'
@@ -77,7 +76,7 @@ export function OpprettAvtale() {
           logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_OPPRETT)
         })}
       >
-        <Tekstfelt
+        <TextField
           label={t('ledetekst.kontonr')}
           error={errors.kontonr?.message}
           {...register('kontonr', {
@@ -85,9 +84,10 @@ export function OpprettAvtale() {
               return validerKontonummer(kontonummer) ? true : t('felles.ugyldig_kontonr')
             },
           })}
+          style={{ maxWidth: '330px' }}
         />
         <Avstand marginBottom={5} />
-        <Tekstfelt
+        <TextField
           label={t('ledetekst.epost')}
           error={errors.epost?.message}
           {...register('epost', {
@@ -95,6 +95,7 @@ export function OpprettAvtale() {
               return validerEpost(epost) ? true : t('felles.ugyldig_epost')
             },
           })}
+          style={{ maxWidth: '330px' }}
         />
         <Avstand marginTop={5} marginBottom={5}>
           <Controller
@@ -118,7 +119,7 @@ export function OpprettAvtale() {
             )}
           />
         </Avstand>
-        <Knapper>
+        <HStack gap="3" justify="start">
           <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
             {t('avtale.inngå_avtale')}
           </Button>
@@ -131,19 +132,8 @@ export function OpprettAvtale() {
           >
             {t('felles.avbryt')}
           </Button>
-        </Knapper>
+        </HStack>
       </form>
     </main>
   )
 }
-
-const Knapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  gap: var(--ax-space-12);
-  justify-content: left;
-`
-
-const Tekstfelt = styled(TextField)`
-  max-width: 330px;
-`
