@@ -1,9 +1,8 @@
-import { BodyShort, Button, Heading, TextField } from '@navikt/ds-react'
+import { BodyShort, Box, Button, Heading, HStack, TextField, VStack } from '@navikt/ds-react'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
-import styled from 'styled-components'
 import { Avstand } from '../components/Avstand'
 import { validerEpost } from '../epost'
 import { removeWhitespaceAndDot, validerKontonummer } from '../kontonummer'
@@ -11,10 +10,9 @@ import { HentVirksomhetResponse, OppdaterAvtaleRequest, OppdaterAvtaleResponse }
 import { useGet } from '../useGet'
 import { usePut } from '../usePut'
 import { logSkjemaFullført, logSkjemaStartet, skjemanavn } from '../utils/amplitude'
-import { ChevronRightIcon, DownloadIcon } from '@navikt/aksel-icons'
+import { ChevronRightIcon, DownloadIcon, PencilLineIcon } from '@navikt/aksel-icons'
 import { AppLink } from '../components/AppLink'
 import { Dato } from '../components/Dato'
-import { PennIkon } from '../resources/ikoner/Ikon'
 
 export function OppdaterAvtale() {
   const { t } = useTranslation()
@@ -53,9 +51,9 @@ export function OppdaterAvtale() {
 
   return (
     <main>
-      <Avtalecontainer>
-        <Avtalerad>
-          <Avtaleboks>
+      <Box.New borderRadius="xlarge" background="neutral-moderate">
+        <VStack marginBlock="2" paddingBlock="2" paddingInline="6">
+          <HStack paddingBlock="4">
             <div style={{ maxWidth: '100%' }}>
               <Heading level="2" size="small">
                 {t('avtale.hovedavtale_tittel')}
@@ -64,64 +62,64 @@ export function OppdaterAvtale() {
                 {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.opprettet} />
               </BodyShort>
             </div>
-          </Avtaleboks>
-          <LastNedKnapp>
-            <AppLink href="/avtale.pdf" target="_blank" style={{ textDecoration: 'none', cursor: 'pointer' }}>
-              {t('last.ned')}
-              <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{ marginLeft: '0.25rem' }} />
-            </AppLink>
-          </LastNedKnapp>
-        </Avtalerad>
+            <Box.New marginInline="auto 0" flexShrink="0" padding="4">
+              <AppLink href="/avtale.pdf" target="_blank" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                {t('last.ned')}
+                <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{ marginLeft: '0.25rem' }} />
+              </AppLink>
+            </Box.New>
+          </HStack>
 
-        {virksomhet.bruksvilkår && (
-          <>
-            <hr style={{ width: '100%' }} />
-            <Avtalerad>
-              <Avtaleboks>
+          {virksomhet.bruksvilkår && (
+            <>
+              <hr style={{ width: '100%' }} />
+              <HStack paddingBlock="4">
                 <div style={{ maxWidth: '100%' }}>
                   <BodyShort size="medium">{t('avtale.utvidet_avtale_tittel')}</BodyShort>
                   <BodyShort size="small" style={{ color: '#525962' }}>
                     {t('ledetekst.opprettet')}: <Dato verdi={virksomhet.bruksvilkårOpprettet} />
                   </BodyShort>
                 </div>
-              </Avtaleboks>
-              <LastNedKnapp>
-                <AppLink
-                  href="/bruksvilkar_1_0.pdf"
-                  target="_blank"
-                  style={{ textDecoration: 'none', cursor: 'pointer' }}
-                >
-                  Last ned
-                  <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{ marginLeft: '0.25rem' }} />
-                </AppLink>
-              </LastNedKnapp>
-            </Avtalerad>
-          </>
-        )}
-      </Avtalecontainer>
+                <Box.New marginInline="auto 0" flexShrink="0" padding="4">
+                  <AppLink
+                    href="/bruksvilkar_1_0.pdf"
+                    target="_blank"
+                    style={{ textDecoration: 'none', cursor: 'pointer' }}
+                  >
+                    Last ned
+                    <DownloadIcon title="a11y-title" fontSize="1.5rem" style={{ marginLeft: '0.25rem' }} />
+                  </AppLink>
+                </Box.New>
+              </HStack>
+            </>
+          )}
+        </VStack>
+      </Box.New>
 
       {!virksomhet.bruksvilkår && (
-        <BruksvilkårBoks>
-          <PennIkon />
-          <Heading level="2" size="small" style={{ maxWidth: '70%' }}>
-            {t('avtale.utvidet_avtale_tittel')}
-          </Heading>
-          <LastNedKnapp>
-            <AppLink
-              href={`/godta-bruksvilkar/${virksomhet.orgnr}`}
-              onClick={(it) => {
-                logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
-              }}
-              style={{ textDecoration: 'none', cursor: 'pointer' }}
-            >
-              {t('avtale.se_bruksvilkar')}
-              <ChevronRightIcon />
-            </AppLink>
-          </LastNedKnapp>
-        </BruksvilkårBoks>
+        <Box.New borderRadius="xlarge" background="brand-blue-soft">
+          <HStack align="center" padding="6" marginBlock="2" wrap={false}>
+            <HStack marginInline="0 4" align="center"><PencilLineIcon aria-hidden title="a11y-title" width={32} height={32} /></HStack>
+            <Heading level="2" size="small" style={{ maxWidth: '70%' }}>
+              {t('avtale.utvidet_avtale_tittel')}
+            </Heading>
+            <Box.New marginInline="auto 0" flexShrink="0" padding="4">
+              <AppLink
+                href={`/godta-bruksvilkar/${virksomhet.orgnr}`}
+                onClick={(it) => {
+                  logSkjemaStartet(virksomhet.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
+                }}
+                style={{ textDecoration: 'none', cursor: 'pointer' }}
+              >
+                {t('avtale.se_bruksvilkar')}
+                <ChevronRightIcon />
+              </AppLink>
+            </Box.New>
+          </HStack>
+        </Box.New>
       )}
 
-      <Kontaktinformasjon>
+      <Box.New marginBlock="10 0">
         <Heading level="2" size="small" spacing>
           {t('avtale.endre_kontaktinformasjon')}
         </Heading>
@@ -134,7 +132,7 @@ export function OppdaterAvtale() {
             logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_ENDRE)
           })}
         >
-          <Tekstfelt
+          <TextField
             label={t('ledetekst.kontonr')}
             error={errors.kontonr?.message}
             {...register('kontonr', {
@@ -142,9 +140,10 @@ export function OppdaterAvtale() {
                 return validerKontonummer(kontonummer) ? true : t('felles.ugyldig_kontonr')
               },
             })}
+            style={{ maxWidth: '330px' }}
           />
           <Avstand marginBottom={5} />
-          <Tekstfelt
+          <TextField
             label={t('ledetekst.epost')}
             error={errors.epost?.message}
             {...register('epost', {
@@ -152,10 +151,11 @@ export function OppdaterAvtale() {
                 return validerEpost(epost) ? true : t('felles.ugyldig_epost')
               },
             })}
+            style={{ maxWidth: '330px' }}
           />
 
           <Avstand marginBottom={5} />
-          <Knapper>
+          <HStack gap="3" justify="start">
             <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
               {t('felles.lagre_endringer')}
             </Button>
@@ -168,58 +168,9 @@ export function OppdaterAvtale() {
             >
               {t('felles.avbryt')}
             </Button>
-          </Knapper>
+          </HStack>
         </form>
-      </Kontaktinformasjon>
+      </Box.New>
     </main>
   )
 }
-
-const Knapper = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  gap: var(--ax-space-12);
-  justify-content: left;
-`
-
-const Tekstfelt = styled(TextField)`
-  max-width: 330px;
-`
-
-const Avtaleboks = styled.div`
-  display: flex;
-`
-
-const Avtalerad = styled.div`
-  display: flex;
-  padding: var(--ax-space-16) 0;
-`
-
-const Avtalecontainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: var(--ax-neutral-200);
-  border-radius: 10px;
-  padding: var(--ax-space-8) var(--ax-space-24);
-  margin: var(--ax-space-8) 0;
-`
-
-const BruksvilkårBoks = styled.div`
-  display: flex;
-  background-color: var(--ax-accent-100);
-  border-radius: 10px;
-  align-items: center;
-  padding: var(--ax-space-24) var(--ax-space-24);
-  margin: var(--ax-space-8) 0;
-`
-
-const LastNedKnapp = styled.div`
-  display: flex;
-  color: var(--ax-accent-700);
-  padding: var(--ax-space-16);
-  margin-left: auto;
-  flex-shrink: 0;
-`
-const Kontaktinformasjon = styled.div`
-  margin-top: var(--ax-space-40);
-`

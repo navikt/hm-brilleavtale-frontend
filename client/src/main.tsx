@@ -5,12 +5,12 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { SWRConfig, SWRConfiguration } from 'swr'
 import { App } from './App'
-import { GlobalStyle } from './GlobalStyle'
 import { baseUrl, http } from './http'
 import './i18n'
 import { initMSW } from './mocks/initMSW'
 import { initAmplitude } from './utils/amplitude'
 import { HelmetProvider } from 'react-helmet-async'
+import './main.css'
 
 const swrConfig: SWRConfiguration = {
   async fetcher(url: string) {
@@ -23,7 +23,6 @@ initMSW().then(() => {
   initAmplitude()
   createRoot(container).render(
     <React.StrictMode>
-      <GlobalStyle />
       <SWRConfig value={swrConfig}>
         <HelmetProvider>
           <BrowserRouter basename={baseUrl()}>

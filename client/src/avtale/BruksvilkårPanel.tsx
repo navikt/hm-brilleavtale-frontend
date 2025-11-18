@@ -1,6 +1,5 @@
-import { LinkCard } from '@navikt/ds-react'
+import { HGrid, LinkCard } from '@navikt/ds-react'
 import { Link } from 'react-router-dom'
-import { Data } from '../components/Data'
 import { Dato } from '../components/Dato'
 import { Datum } from '../components/Datum'
 import { Organisasjonsnummer } from '../components/Organisasjonsnummer'
@@ -26,14 +25,14 @@ export function BruksvilkårPanel(props: AvtalePanelProps) {
         </LinkCard.Anchor>
       </LinkCard.Title>
       <LinkCard.Description>
-        <Data>
+        <HGrid columns={{ xs: "block", sm: "190px auto" }} gap="1" margin="0" align="center">
           <Datum label="ledetekst.orgnr">
             <Organisasjonsnummer verdi={virksomhet.orgnr} />
           </Datum>
           <Datum label="ledetekst.dato_opprettet">
             <Dato verdi={virksomhet.opprettet} />
           </Datum>
-        </Data>
+        </HGrid>
       </LinkCard.Description>
     </LinkCard>
   )

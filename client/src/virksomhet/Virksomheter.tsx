@@ -1,13 +1,11 @@
-import { Alert, BodyLong, Heading } from '@navikt/ds-react'
+import { Alert, BodyLong, Box, Heading, VStack } from '@navikt/ds-react'
 import { Trans, useTranslation } from 'react-i18next'
-import styled from 'styled-components'
 import { AvtalePanel } from '../avtale/AvtalePanel'
 import { Avstand } from '../components/Avstand'
 import { HentVirksomheterResponse } from '../types'
 import { useGet } from '../useGet'
 import { VirksomhetPanel } from './VirksomhetPanel'
 import ScrollToTop from '../components/ScrollToTop'
-import { Endringsvarsel } from '@navikt/hm-react-components'
 
 export function Virksomheter() {
   const { t } = useTranslation()
@@ -35,12 +33,10 @@ export function Virksomheter() {
     <>
       <main>
         <Avstand marginBottom={5}>
-          <Endringsvarsel
-            tittel={t('endringsvarsel.bv.tittel')}
-            tekst={t('endringsvarsel.bv.tekst')}
-            lenketekst={t('endringsvarsel.bv.lenketekst')}
-            lenke="https://navikt.github.io/hm-brille-integrasjon/"
-          />
+          <Alert inline variant="info">
+            <Heading size="small" level="3">{t('endringsvarsel.bv.tittel')}</Heading>
+            {t('endringsvarsel.bv.tekst')} <a href="https://navikt.github.io/hm-brille-integrasjon/">{t('endringsvarsel.bv.lenketekst')}</a>
+          </Alert>
         </Avstand>
         <ScrollToTop />
         {virksomheterUtenAvtale.length > 0 && (
@@ -48,11 +44,11 @@ export function Virksomheter() {
             <Heading level="2" size="medium" spacing>
               {t('virksomhet.uten_avtale')}
             </Heading>
-            <Kolonne>
+            <VStack gap="5">
               {virksomheterUtenAvtale.map((virksomhet) => (
                 <VirksomhetPanel key={virksomhet.orgnr} virksomhet={virksomhet} />
               ))}
-            </Kolonne>
+            </VStack>
           </>
         )}
         {virksomheterMedAvtale.length > 0 && (
@@ -61,35 +57,20 @@ export function Virksomheter() {
             <Heading level="2" size="medium" spacing>
               {t('virksomhet.med_avtale')}
             </Heading>
-            <Kolonne>
+            <VStack gap="5">
               {virksomheterMedAvtale.map((virksomhet) => (
                 <AvtalePanel key={virksomhet.orgnr} virksomhet={virksomhet} />
               ))}
-            </Kolonne>
+            </VStack>
           </>
         )}
       </main>
-      <Kontakt className="main">
+      <Box.New className="main" width={{ xs: "80%", md: "680px" }} marginBlock="0" marginInline="auto" paddingBlock={{ xs: "3", md: "0 10" }} paddingInline={{ xs: "3", md: "10" }}>
         <Trans t={t} i18nKey="problemer">
           <></>
           <a href="mailto:nav.hot.behandlingsbriller@nav.no" />
         </Trans>
-      </Kontakt>
+      </Box.New>
     </>
   )
 }
-
-const Kolonne = styled.div`
-  display: grid;
-  gap: var(--ax-space-20);
-`
-
-const Kontakt = styled.div`
-  width: 680px;
-  margin: 0 auto;
-  padding: 0 40px 40px 40px;
-  @media (max-width: 768px) {
-    width: 80%;
-    padding: 10px;
-  }
-`
