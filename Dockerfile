@@ -4,7 +4,7 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
-    pnpm config set //pnpm.pkg.github.com/:_authToken=$(cat /run/secrets/NODE_AUTH_TOKEN)
+    pnpm config set //npm.pkg.github.com/:_authToken=$(cat /run/secrets/NODE_AUTH_TOKEN)
 RUN pnpm config set @npavikt:registry=https://npm.pkg.github.com
 
 # build client
