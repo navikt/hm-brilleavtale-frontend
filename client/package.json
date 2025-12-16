@@ -2,6 +2,7 @@
   "name": "hm-brilleavtale-frontend-client",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@10.26.0",
   "scripts": {
     "dev": "vite",
     "test": "vitest run --dir src",
