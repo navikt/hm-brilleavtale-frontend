@@ -5,7 +5,7 @@ RUN corepack enable
 
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
     pnpm config set //npm.pkg.github.com/:_authToken=$(cat /run/secrets/NODE_AUTH_TOKEN)
-RUN pnpm config set @npavikt:registry=https://npm.pkg.github.com
+RUN pnpm config set @navikt:registry=https://npm.pkg.github.com
 
 # build client
 FROM node AS client-builder
