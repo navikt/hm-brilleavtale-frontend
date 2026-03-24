@@ -39,5 +39,8 @@ spec:
       value: {{commit}}
   accessPolicy:
     outbound:
+      rules:
+        - application: nav-dekoratoren
+          namespace: personbruker
       external:
         - host: dekoratoren.ekstern.dev.nav.no
