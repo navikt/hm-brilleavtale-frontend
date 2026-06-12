@@ -21,7 +21,7 @@ export function AvtaleKvittering() {
         {t('avtale.kvittering_for', { navn: virksomhet.navn })}
       </Heading>
       <Alert variant="success">{t('avtale.suksess')}</Alert>
-      <Avstand marginBottom={5} />
+      <Avstand marginBottom={20} />
       <BodyLong spacing>
         <AppLink href="/avtale.pdf" target="_blank">
           {t('avtale.lenke_last_ned_avtalen')}
@@ -50,7 +50,7 @@ export function AvtaleKvittering() {
         </Trans>
       </BodyLong>
       <AvtalePanel virksomhet={virksomhet} />
-      <Avstand marginBottom={5} />
+      <Avstand marginBottom={20} />
       <Link to="/">{t('avtale.lenke_tilbake_til_forsiden')}</Link>
     </main>
   )

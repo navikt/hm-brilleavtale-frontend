@@ -55,14 +55,14 @@ export function GodtaBruksvilkår() {
       <Heading level="2" size="medium" spacing>
         {t('avtale.utvidet_avtale_tittel')}
       </Heading>
-      <Avstand marginTop={5} marginBottom={5}>
+      <Avstand marginTop={20} marginBottom={20}>
         <Heading level="3" size="small">
           {virksomhet.navn}
         </Heading>
         <BodyShort size="small">org. nr. {virksomhet.orgnr}</BodyShort>
       </Avstand>
       <BodyLong>{t('utvidet_avtale.ingress')}</BodyLong>
-      <Avstand marginTop={5} marginBottom={5}>
+      <Avstand marginTop={20} marginBottom={20}>
         <Bruksvilkår />
       </Avstand>
       <form
@@ -74,7 +74,7 @@ export function GodtaBruksvilkår() {
           logSkjemaFullført(virksomhet?.orgnr, skjemanavn.SKJEMANAVN_OPPRETT_UTVIDET)
         })}
       >
-        <Avstand marginTop={5} marginBottom={5}>
+        <Avstand marginTop={20} marginBottom={20}>
           <Controller
             control={control}
             name="lest"

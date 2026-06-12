@@ -142,7 +142,7 @@ export function OppdaterAvtale() {
             })}
             style={{ maxWidth: '330px' }}
           />
-          <Avstand marginBottom={5} />
+          <Avstand marginBottom={20} />
           <TextField
             label={t('ledetekst.epost')}
             error={errors.epost?.message}
@@ -154,7 +154,7 @@ export function OppdaterAvtale() {
             style={{ maxWidth: '330px' }}
           />
 
-          <Avstand marginBottom={5} />
+          <Avstand marginBottom={20} />
           <HStack gap="3" justify="start">
             <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
               {t('felles.lagre_endringer')}

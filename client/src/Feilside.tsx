@@ -16,7 +16,7 @@ export function Feilside(props: FeilsideProps) {
   const utviklerinformasjon = hentUtviklerinformasjon(error)
   return (
     <main>
-      <Avstand paddingLeft={3} paddingRight={3}>
+      <Avstand paddingLeft={12} paddingRight={12}>
         <Heading level="1" size="large" spacing>
           <HStack align="center">
             {t(overskrift[status] || 'Teknisk feil')}

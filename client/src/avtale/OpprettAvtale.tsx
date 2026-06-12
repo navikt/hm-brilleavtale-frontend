@@ -58,7 +58,7 @@ export function OpprettAvtale() {
         {t('avtale.opprett_avtale_for', { navn: virksomhet.navn })}
       </Heading>
       <BodyLong>{t('avtale.ingress')}</BodyLong>
-      <Avstand marginTop={5} marginBottom={5}>
+      <Avstand marginTop={20} marginBottom={20}>
         <Avtale />
       </Avstand>
       <BodyLong spacing>
@@ -86,7 +86,7 @@ export function OpprettAvtale() {
           })}
           style={{ maxWidth: '330px' }}
         />
-        <Avstand marginBottom={5} />
+        <Avstand marginBottom={20} />
         <TextField
           label={t('ledetekst.epost')}
           error={errors.epost?.message}
@@ -97,7 +97,7 @@ export function OpprettAvtale() {
           })}
           style={{ maxWidth: '330px' }}
         />
-        <Avstand marginTop={5} marginBottom={5}>
+        <Avstand marginTop={20} marginBottom={20}>
           <Controller
             control={control}
             name="lest"

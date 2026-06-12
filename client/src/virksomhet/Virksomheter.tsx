@@ -32,7 +32,7 @@ export function Virksomheter() {
   return (
     <>
       <main>
-        <Avstand marginBottom={5}>
+        <Avstand marginBottom={20}>
           <Alert inline variant="info">
             <Heading size="small" level="3">{t('endringsvarsel.bv.tittel')}</Heading>
             {t('endringsvarsel.bv.tekst')} <a href="https://navikt.github.io/hm-brille-integrasjon/">{t('endringsvarsel.bv.lenketekst')}</a>
@@ -53,7 +53,7 @@ export function Virksomheter() {
         )}
         {virksomheterMedAvtale.length > 0 && (
           <>
-            <Avstand marginTop={10} />
+            <Avstand marginTop={40} />
             <Heading level="2" size="medium" spacing>
               {t('virksomhet.med_avtale')}
             </Heading>

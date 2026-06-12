@@ -20,9 +20,9 @@ export function BruksvilkårKvittering() {
         {t('avtale.kvittering_for', { navn: virksomhet.navn })}
       </Heading>
       <Alert variant="success">{t('avtale_utvidet.suksess')}</Alert>
-      <Avstand marginBottom={5}></Avstand>
+      <Avstand marginBottom={20}></Avstand>
       <Alert variant="info">{t('avtale_utvidet.informasjon')}</Alert>
-      <Avstand marginBottom={5} />
+      <Avstand marginBottom={20} />
       <BodyLong spacing>
         <Trans t={t} i18nKey="avtale.mer_informasjon">
           <></>
@@ -32,7 +32,7 @@ export function BruksvilkårKvittering() {
         </Trans>
       </BodyLong>
       <BruksvilkårPanel virksomhet={virksomhet} />
-      <Avstand marginBottom={5} />
+      <Avstand marginBottom={20} />
       <Link to="/">{t('avtale.lenke_tilbake_til_forsiden')}</Link>
     </main>
   )
