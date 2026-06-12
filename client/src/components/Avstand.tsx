@@ -45,5 +45,5 @@ function getSpacingStyle(props: MarginPadding, centered?: boolean): CSSPropertie
 }
 
 export function spacingVar(space?: number): string | undefined {
-  return typeof space === 'number' ? `var(--a-spacing-${space})` : undefined
+  return typeof space === 'number' ? `var(--ax-space-${space})` : undefined
 }
