@@ -22,7 +22,7 @@ export function App() {
         if (isHttpError(error)) {
           return <Feilside status={error.status} error={error} />
         } else {
-          return <Feilside status={500} error={error} />
+          return <Feilside status={500} error={error instanceof Error ? error : undefined} />
         }
       }}
     >
