@@ -1,5 +1,5 @@
 module hm-brilleavtale-frontend
 
-go 1.26.3
+go 1.26.11
 
 require github.com/navikt/hotbff v0.0.0-20260618071543-86e37de8042a
